@@ -3,7 +3,10 @@
 \usecolortheme{beaver} %beaver
 \usefonttheme{professionalfonts}
 
-\usepackage{../universe}
+\makeatletter
+\def\input@path{{../package}}  % 
+\makeatother
+\usepackage{universe}
 \uBigPaper
 
 \date{\today}
