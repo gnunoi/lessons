@@ -4,12 +4,12 @@ LATEXMK=latexmk -xelatex --shell-escape
 LATEXMK=latexmk -quiet -xelatex --shell-escape
 TEX=$(wildcard *.tex)
 PDF=$(TEX:.tex=.pdf)
-MAIN=C++程序设计
+MAIN=deepseek
 
 .PHONY:all clean distclean c d
 
-#all:$(MAIN).pdf
-all:$(PDF)
+all:$(MAIN).pdf
+#all:$(PDF)
 	make clean
 
 %.pdf:%.tex
