@@ -12,7 +12,6 @@
 \RequirePackage{tikz} % 引入 TikZ 包
 \RequirePackage{verbatim}
 \RequirePackage{xcolor}
-\usepackage{minted} % 语法高亮
 \RequirePackage{subfiles}
 
 % 使用 TikZ 库
@@ -27,31 +26,10 @@
 \definecolor{uLightGray}{rgb}{0.9, 0.9, 0.9} % 定义背景颜色
 \definecolor{uCommentColor}{rgb}{0.0, 0.5, 0.0}  % 定义注释颜色
 
-% 使用 \setminted 设置全局参数
-\newcommand{\uSetMinted}{
-\setminted{
-    autogobble=true,         % 自动去除多余空白行
-    bgcolor=black!5,         % 设置背景颜色
-    fontfamily=tt,           % 字体：默认tt，等宽字体；rm，衬线字体；sf，无衬线字体    
-    fontsize=\normalsize,    % 设置字体大小    
-    frame=single,            % 设置边框类型
-    framesep=5pt,            % 设置边框和代码的间距
-    highlightcolor=yellow,   % 高亮颜色
-    linenos=true,            % 显示行号
-    numberblanklines=true,   % 空行是否显示行号    
-    numbersep=5pt,           % 设置行号和代码的间距
-    showspaces=false,        % 是否显示空格  
-    style=xcode,             % 选择语法高亮风格
-    tabsize=2,               % 设置Tab大小    
-    xleftmargin=24pt,        % 设置左侧缩进
-    xrightmargin=24pt,       % 设置右侧缩进     
-}
-}
-
 % 自定义uSetList命令
 \newcommand{\uSetList}[1]{
 \lstset{
-    language=#1,                              % 设置语言为 Python
+    language=#1,                              % 设置语言
     basicstyle=\ttfamily\normalsize,          % 设置基本字体
     keywordstyle=\color{orange}\bfseries,     % 关键字用橙色和加粗显示
     commentstyle=\color{red},                 % 注释用红色显示
@@ -84,7 +62,7 @@
 	\renewcommand{\Large}{\fontsize{32pt}{40pt}\selectfont} % 14,16
 	\renewcommand{\LARGE}{\fontsize{36pt}{44pt}\selectfont} % 16,18
 	\renewcommand{\huge}{\fontsize{40pt}{48pt}\selectfont} % 20,24
-	\renewcommand{\Huge}{\fontsize{48pt}{56pt}\selectfont} % 24,28
+	\renewcommand{\Huge}{\fontsize{48pt}{60pt}\selectfont} % 24,28
 }
 
 \newcommand{\uSetSmallFont}{
@@ -92,11 +70,11 @@
 	\renewcommand{\scriptsize}{\fontsize{6pt}{8pt}\selectfont} % 6,7
 	\renewcommand{\footnotesize}{\fontsize{7pt}{9pt}\selectfont} % 7,8
 	\renewcommand{\small}{\fontsize{8pt}{10pt}\selectfont} % 8,9
-	\renewcommand{\normalsize}{\fontsize{9pt}{11pt}\selectfont} % 10,12
-	\renewcommand{\large}{\fontsize{10pt}{12pt}\selectfont} % 12,14
-	\renewcommand{\Large}{\fontsize{12pt}{14pt}\selectfont} % 14,16
-	\renewcommand{\LARGE}{\fontsize{14pt}{16pt}\selectfont} % 16,18
-	\renewcommand{\huge}{\fontsize{18pt}{22pt}\selectfont} % 20,24
+	\renewcommand{\normalsize}{\fontsize{10pt}{12pt}\selectfont} % 10,12
+	\renewcommand{\large}{\fontsize{12pt}{14pt}\selectfont} % 12,14
+	\renewcommand{\Large}{\fontsize{14pt}{16pt}\selectfont} % 14,16
+	\renewcommand{\LARGE}{\fontsize{16pt}{18pt}\selectfont} % 16,18
+	\renewcommand{\huge}{\fontsize{20pt}{24pt}\selectfont} % 20,24
 	\renewcommand{\Huge}{\fontsize{24pt}{28pt}\selectfont} % 24,28
 }
 
@@ -107,12 +85,6 @@
 		\input{#1}
 	\end{tikzpicture}
 }
-
-\newcommand{\uMintedFrame}[4][]{
-  \begin{frame}[t]{{#4}}
-  \inputminted[#1]{#2}{#3}
-  \end{frame}
-}
-
 % 全局设置
-%\uSetMinted
+%\uSetList[TeX]
+
