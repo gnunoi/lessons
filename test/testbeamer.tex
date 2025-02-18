@@ -1,0 +1,28 @@
+\documentclass[aspectratio=169]{ctexbeamer}
+\usepackage{ctex}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{subfiles}
+
+
+\begin{document}
+
+\frame
+{
+\frametitle{第一帧}
+第一帧的数据
+\begin{figure}
+	\scalebox{0.8}{\subfile{fig/相反数}}
+	\caption{相反数函数图象}
+	\label{fig:opposite}
+\end{figure}
+}
+
+\section{引用}
+\frame
+{
+\frametitle{第二帧}
+\subfile{fig/相反数}
+}
+\end{document}
