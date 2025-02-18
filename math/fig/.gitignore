@@ -4,6 +4,3 @@
 !*.tex
 !*.sty
 !Makefile
-!math
-!graph
-!cpp

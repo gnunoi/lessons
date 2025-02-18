@@ -1,0 +1,19 @@
+\documentclass[tikz, border=12pt]{standalone}
+\usetikzlibrary{intersections, through}
+\begin{document}
+
+\begin{tikzpicture}
+\coordinate (A) at (0, 0); % 定义坐标A
+\coordinate (B) at (5, 0); % 定义坐标B
+\draw[thick, dashed, name path=CA] (A) circle (5); % 绘制圆CA
+\draw[thick, dashed, name path=CB] (B) circle (5); % 绘制圆CB
+\path [name intersections={of=CA and CB, by={P}}]; % 求交点P
+\filldraw[black] (P) circle (1pt); % 给点P画上实心圆
+\draw[thick] (A) -- (P) -- (B) -- cycle; % 绘制等边三角形
+\node[below left] at (A) {A}; % 标注A
+\node[below right] at (B) {B}; % 标注B
+\node[above] at (P) {P}; % 标注P
+\end{tikzpicture}
+
+\end{document}
+

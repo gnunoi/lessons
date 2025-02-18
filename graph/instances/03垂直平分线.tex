@@ -1,0 +1,22 @@
+\documentclass[tikz, border=12pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{intersections}
+
+\begin{document}
+\begin{tikzpicture}
+	\coordinate (A) at (0:0); % 定义点A
+	\coordinate (B) at (0:5); % 定义点B
+	\draw [name path=A1] [thick] (A)+(65:5) arc(65:55:5); % A为圆心，半径5，65~55度角
+	\draw[thick, name path=A2] (B)+(125:5) arc(125:115:5); % B为圆心，半径5，125~115度角
+	\draw[thick, name path=A3] (A)+(-65:5) arc(-65:-55:5); % A为圆心，半径5，-65~-55度角
+	\draw [name path=A4] [thick] (B)+(-125:5) arc(-125:-115:5); % B为圆心，半径5，-125~-115度角
+	\path [name intersections={of=A1 and A2, by=P}]; % 求交点P
+	\path [name intersections={of=A3 and A4, by=Q}]; % 求交点Q
+	\draw (A) -- (B) (P) -- (Q); % 连接PQ两点
+	\draw [dotted] (A) -- (P) -- (B) (A) -- (Q) -- (B); % 画点线的辅助线
+	\node at (A) [left] {$A$}; % 点A左边标注A
+	\node at (B) [right] {$B$}; % 点B右边标注B
+	\node at (P) [above] {$P$}; % 点P上方标注P
+	\node at (Q) [below] {$Q$}; % 点Q下方标注Q
+\end{tikzpicture}
+\end{document}
