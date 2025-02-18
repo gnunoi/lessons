@@ -8,7 +8,7 @@ MAIN=用tikz作图
 
 .PHONY:all clean distclean c d
 
-all:$(PDF)
+all:$(MAIN).pdf
 	make clean
 
 %.pdf:%.tex
