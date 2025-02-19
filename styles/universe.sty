@@ -4,6 +4,7 @@
 \RequirePackage{amssymb}
 \RequirePackage{ctex} % 引入 ctex 包
 \RequirePackage{enumitem} % 有序列表
+\RequirePackage{fontspec}
 \RequirePackage{hyperref} % 用于创建超链接
 \usepackage{ifthen}  % 用于检查可选参数是否存在
 \RequirePackage{listings} % 语法高亮
@@ -88,3 +89,12 @@
 % 全局设置
 %\uSetList[TeX]
 
+% 设置英文主字体、无衬线字体和等宽字体
+\setmainfont{Times New Roman}    % 设置英文字体（正文）
+\setsansfont{Arial}             % 设置英文字体（无衬线）
+\setmonofont{Courier New}       % 设置英文字体（等宽）
+
+% 设置中文字体
+\setCJKmainfont{PingFang}         % 设置中文主字体（宋体）
+\setCJKsansfont{PingFang}         % 设置中文无衬线字体（黑体）
+\setCJKmonofont{PingFang}         % 设置中文等宽字体（仿宋）
