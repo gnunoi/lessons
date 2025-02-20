@@ -1,0 +1,49 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+\usetheme{Madrid} %Madrid，蓝色调为主。
+\usecolortheme{beaver} %beaver
+\usefonttheme{professionalfonts}
+
+\makeatletter
+\def\input@path{{../styles}}  % 
+\makeatother
+\usepackage{universe}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+% 1.5 有理数的代销比较
+\begin{frame}[t]{1.5有理数的大小比较规则}
+\large
+\begin{enumerate}[label={\arabic*.}]
+  \item 数轴上右边的数比左边的数\alert{大}
+  \item 正数 \alert{>} 0
+  \item 负数 \alert{<} 0
+  \item 正数 \alert{>} 负数
+  \item 两个负数比较，绝对值大的反而\alert{小} ！
+  \par 如果$a > b$，则：$-a < -b$
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}[t]{数轴比较法}
+\large
+\begin{enumerate}[label={\arabic*.}]
+  \item 画数轴并标出所有数
+  \begin{figure}
+  \begin{tikzpicture}[scale=2]
+  \fontsize{16}{20}\selectfont
+  \draw [black, thick, ->, >=stealth] (-6,0) -- (6,0); 
+  \foreach \x in {-5, ..., 5}
+  	\draw (\x cm,5pt) -- (\x cm,0pt) node[anchor=north] {$\x$};
+    \fill [blue] (-2,0) circle(2pt) node [above=0.3cm] {$a$};
+    \fill [blue] (3,0) circle(2pt) node [above=0.3cm] {$b$};    
+  \end{tikzpicture}
+  \end{figure}
+  \item 从左到右（从小到大）排列
+  \item 结果：$a \alert{<} b$
+\end{enumerate}
+
+\end{frame} 
+
+\end{document}

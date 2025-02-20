@@ -1,0 +1,160 @@
+\documentclass{ctexart}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{fontspec}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{amsmath}
+
+\lstset{
+    basicstyle=\ttfamily\normalsize,
+    backgroundcolor=\color[rgb]{0.9,0.95,0.95}, % 背景色为浅灰色
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{orange},
+    showstringspaces=false,
+    breaklines=true,
+    frame=single, % t：顶部，b：底部
+    numbers=left,                             % 在左侧显示行号
+    numberstyle=\small\color[RGB]{96,96,96},  % 行号为灰色且字号为小
+    stepnumber=1,                             % 每1行显示一个行号
+    numberstyle=\color{gray},
+    tabsize=4,
+    escapeinside=||
+}
+
+\begin{document}
+
+\section{数据类型与数据结构}
+\subsection{列表(List)}
+列表是Python中最常用的可变序列结构，具有以下特点：
+\begin{itemize}
+\item 元素可修改，支持动态增删
+\item 用方括号[]定义，元素用逗号分隔
+\item 支持嵌套形成多维数据结构
+\end{itemize}
+
+\begin{lstlisting}[language=Python]
+# 二维列表示例
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+print(matrix[1][2])  # 输出: 6
+\end{lstlisting}
+
+\subsection{字典(Dict)}
+字典是键值对的无序集合，具有以下特征：
+\begin{itemize}
+\item 通过键(key)实现快速查找，键必须不可变
+\item 用花括号\{\}定义，键值对用冒号:分隔
+\item 支持任意数据类型的嵌套组合
+\end{itemize}
+
+\begin{lstlisting}[language=Python]
+# 字典嵌套示例
+university = {
+    "name": "清华大学",
+    "departments": {
+        "CS": {"students": 500, "courses": 32},
+        "EE": {"students": 300, "courses": 28}
+    }
+}
+print(university["departments"]["CS"]["courses"])  # 输出: 32
+\end{lstlisting}
+
+\section{控制结构}
+\subsection{条件语句执行逻辑}
+条件语句通过布尔表达式控制程序流，注意：
+\begin{itemize}
+\item 使用缩进定义代码块范围
+\item elif可进行多重条件判断
+\item 条件表达式可进行链式比较(如 1 <= x < 5)
+\end{itemize}
+
+\begin{lstlisting}[language=Python]
+# 成绩评级系统
+score = 88
+if score >= 90:
+    grade = "A"
+elif 80 <= score < 90:
+    grade = "B"  # 执行此分支
+else:
+    grade = "C"
+print(f"成绩等级：{grade}")  # 输出: 成绩等级：B
+\end{lstlisting}
+
+\section{排序算法专题}
+\subsection{快速排序原理}
+快速排序采用分治策略，包含三个步骤：
+\begin{enumerate}
+\item 选择基准元素(pivot)
+\item 分区操作：将元素分为小于和大于基准的两个子序列
+\item 递归地对子序列排序
+\end{enumerate}
+时间复杂度：平均情况$O(n \log n)$，最坏情况$O(n^2)$
+
+\begin{lstlisting}[language=Python]
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr)//2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quick_sort(left) + middle + quick_sort(right)
+\end{lstlisting}
+
+\subsection{堆排序实现}
+堆排序基于二叉堆数据结构，主要步骤：
+\begin{itemize}
+\item 建立最大堆（父节点值总大于子节点）
+\item 将堆顶元素（最大值）与末尾元素交换
+\item 调整剩余元素重建最大堆
+\end{itemize}
+时间复杂度：始终为$O(n \log n)$
+
+\begin{lstlisting}[language=Python]
+def heap_sort(arr):
+    def sift_down(start, end):
+        # 堆调整函数实现...
+    
+    # 完整实现代码（保持之前的实现）
+\end{lstlisting}
+
+\section{面向对象编程}
+\subsection{八皇后问题解析}
+八皇后问题要求在国际象棋棋盘放置8个皇后，使其互不攻击。解决方案要点：
+\begin{itemize}
+\item 使用回溯算法逐行放置皇后
+\item 通过三个集合记录已被占据的列、左对角线和右对角线
+\item 递归搜索所有可能的解空间
+\end{itemize}
+
+\begin{lstlisting}[language=Python]
+class NQueensSolver:
+    def __init__(self, size=8):
+        self.size = size
+        self.solutions = []
+    
+    def solve(self):
+        def backtrack(row, cols, diag1, diag2):
+            if row == self.size:
+                self.solutions.append(cols)
+                return
+            for col in range(self.size):
+                if col not in cols and \
+                   row+col not in diag1 and \
+                   row-col not in diag2:
+                    backtrack(row+1, cols+[col], 
+                            diag1|{row+col}, diag2|{row-col})
+        
+        backtrack(0, [], set(), set())
+        return self.solutions
+
+# 使用示例
+solver = NQueensSolver(8)
+print(f"找到 {len(solver.solve())} 种解法")  # 输出: 找到 92 种解法
+\end{lstlisting}
+
+\end{document}

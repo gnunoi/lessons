@@ -1,0 +1,72 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+\usetheme{Madrid} %Madrid，蓝色调为主。
+\usecolortheme{beaver} %beaver
+\usefonttheme{professionalfonts}
+
+\makeatletter
+\def\input@path{{../styles}}  % 
+\makeatother
+\usepackage{universe}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+% 1.4 绝对值
+\begin{frame}{1.4绝对值}
+\textbf{\textcolor{orange}{定义：我们把在数轴上表示数$a$的点与原点的距离叫做数$a$的绝对值, 记作|$a$|.}}
+\begin{columns}
+\column{0.45\textwidth}
+\begin{enumerate}[label={\arabic*.}]
+\item 一个正数的绝对值是它本身; 
+\item 0 的绝对值是0;
+\item 一个负数的绝对值是它的相反数.
+\end{enumerate}
+
+\begin{itemize}
+    \item \textbf{数学表达式}:  $\left|  x  \right|$
+    \item  \textbf{函数定义}: \[ f(x) = \begin{cases}
+    x, x>0 \\
+    0, x=0 \\
+    -x, x<0
+    \end{cases}
+    \]
+    \item \textbf{定义域}: $x \in \mathbb{R}$
+    \item \textbf{值域}: $y \in \mathbb{R}, y \geq 0$
+    \item \textbf{对称性}: 关于y轴对称
+\end{itemize}
+
+%绝对值函数图象
+\column{0.5\textwidth}
+
+\begin{figure}
+\centering
+\scalebox{1.8}{\subfile{fig/绝对值}}
+\end{figure}
+
+\end{columns}
+\end{frame}
+
+% 绝对值与相反数的比较
+\begin{frame}{绝对值与相反数的比较}
+\begin{columns}
+%绝对值函数图象
+\column{0.5\textwidth}
+\textbf{绝对值的函数图象} \\
+\begin{figure}
+\centering
+\scalebox{1.8}{\subfile{fig/绝对值}}
+\end{figure}
+
+%相反数函数图象
+\column{0.5\textwidth}
+\textbf{相反数的函数图象} \\
+\begin{figure}
+\centering
+\scalebox{1.8}{\subfile{fig/相反数}}
+\end{figure}
+
+\end{columns}
+\end{frame}
+
+\end{document}

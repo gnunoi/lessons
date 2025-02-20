@@ -1,0 +1,90 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+\usetheme{Madrid} %Madrid，蓝色调为主。
+\usecolortheme{beaver} %beaver
+\usefonttheme{professionalfonts}
+
+\makeatletter
+\def\input@path{{../styles}}  % 
+\makeatother
+\usepackage{universe}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+%17.2 函数图象
+% 定义一个命令，包含 tikz 图形
+\newcommand{\fig}[1][1]{
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=#1]
+  \fontsize{14pt}{16pt}\selectfont % 设置normalsize
+  % 绘制坐标轴
+  \draw[->, >=stealth] (-3.5,0) -- (3.5,0) node[right] {$x$};
+  \draw[->, >=stealth] (0,-3.5) -- (0,3.5) node[above] {$y$};
+  
+  % 添加x轴刻度
+  \foreach \x in {-3,-2,-1,1,2,3}
+    \draw (\x,0.1) -- (\x,0) node[below] {$\x$};
+  
+  % 添加y轴刻度
+  \foreach \y in {-3,-2,-1,1,2,3}
+    \draw (0.1,\y) -- (0,\y) node[left] {$\y$};
+
+  % 标注原点O
+  \node at (0,0) [below right] {$O$};
+  
+  % 标注象限（使用大写罗马数字）
+  \node at (2,2.5) {\textrm{I}};
+  \node at (-2,2.5) {\textrm{II}};
+  \node at (-2,-2) {\textrm{III}};
+  \node at (2,-2) {\textrm{IV}};
+  
+  % 绘制点P(3,2)及其标签
+  \filldraw (3,2) circle (1pt) node[above right] {$P$};
+  
+  % 绘制虚线投影并标注M、N点
+  \draw[dashed] (3,2) -- (3,0);
+  \filldraw (3,0) circle (1pt) node[above right] {$M$};
+  \draw[dashed] (3,2) -- (0,2);
+  \filldraw (0,2) circle (1pt) node[above right] {$N$};
+\end{tikzpicture}
+\caption{17.2.2}
+\end{figure}
+}
+
+
+\begin{frame}{17.2 函数图象(平面直角坐标系)}
+\begin{columns}
+\column{0.5\textwidth}
+\textbf{在数学中，我们可以用一对有序实数来确定平面上点的位置。}\\
+\vspace{12pt}
+\textbf{\textcolor{orange}{为此，在平面上画两条原点重合、互相垂直且具有相同单位长度的数轴，这就建立了平面直角坐标系(rectangle coordinate system)。}} \\
+\vspace{12pt}
+\textbf{通常把其中水平的数轴叫做$x$轴或横轴，取向右为正方向；铅直的数轴叫做$y$轴或纵轴，取向上为正方向；两条数轴的交点$O$叫做坐标原点。} \\
+\vspace{12pt}
+\textbf{为了纪念法国数学家笛卡儿，通常称为笛卡儿直角坐标系。}
+\column{0.4\textwidth}
+\fig[1.6]
+
+\end{columns}
+\end{frame}
+
+\begin{frame}{平面直角坐标系}
+\begin{columns}
+\column{0.6\textwidth}
+%\setlength{\baselineskip}{32pt}  % 设置行间距
+\textbf{在平面直角坐标系中，任意一点都可以用一对有序实数来表示。例如，图17.2.2中的点$P$，从点$P$分别向$x$轴和$y$轴作垂线，垂足分别为点$M$和点$N$。}\\
+\vspace{12pt}
+\textbf{这时，点M在$x$轴上对应的数为3，\textcolor{orange}{称为点P的横坐标(abscissa)。}点$N$在$y$轴上对应的数为2，\textcolor{orange}{称为点$P$的纵坐标(ordinate)。}}\\
+\vspace{12pt}
+\textbf{依次写出点$P$的横坐标和纵坐标，得到一对有序实数(3, 2)，称为点$P$的坐标。这时点$P$可记作$P(3, 2)$。}\\
+\vspace{12pt}
+\textbf{在平面直角坐标系中，两条坐标轴把平面分成如图17.2.2所示的I、II、III、IV四个区域，\textcolor{orange}{分别称为第一、二、三、四象限。坐标轴上的点不属于任何一个象限。}}
+
+\column{0.4\textwidth}
+\fig[1.4]
+\end{columns}
+\end{frame}
+
+\end{document}

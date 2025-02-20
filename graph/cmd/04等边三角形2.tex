@@ -1,0 +1,13 @@
+\coordinate (A) at (0, 0); % 定义点A
+\coordinate (B) at (5, 0); % 定义点B
+% 画以A为圆心,65~55度,半径5的圆弧，并命名为A1
+\draw[name path=A1] (A)+(65:5) arc(65:55:5);
+% 画B为圆心,125~115度,半径5的圆弧，并命名为A2
+\draw[name path=A2] (B)+(125:5) arc(125:115:5);
+% 求圆弧A1和圆弧A2的交点P
+\path [name intersections={of=A1 and A2, by=P}]; 
+% 画连接A, B, P的等边三角形，cycle表示闭合图形
+\draw[thick] (A) -- (B) -- (P) -- cycle; 
+\node at (A) [below left] {A}; % 标注点A
+\node at (B) [below right] {B}; % 标注点B
+\node at (P) [above] {P}; % 标注点P

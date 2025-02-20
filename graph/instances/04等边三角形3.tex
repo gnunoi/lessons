@@ -1,0 +1,17 @@
+\documentclass[tikz, border=12pt]{standalone}
+\begin{document}
+\begin{tikzpicture}
+    % 定义点 A、B、C的坐标
+    \coordinate (A) at (0:0);
+    \coordinate (B) at (0:5);
+    \coordinate (C) at (60:5);
+    
+    % 标注点A、B、C
+    \node[below left] at (A) {$A$};
+    \node[below right] at (B) {$B$};
+    \node[above] at (C) {$C$};
+    
+    % 绘制从 A 到 B 的线段
+    \draw[thick] (A) -- (B) -- (C) -- (A);
+\end{tikzpicture}
+\end{document}

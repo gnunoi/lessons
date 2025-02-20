@@ -1,0 +1,259 @@
+\documentclass{ctexbeamer}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{setspace}
+\usetikzlibrary{shapes,arrows}
+\usetheme{Madrid}
+\usecolortheme{beaver} % 自定义主题颜色
+
+
+\title{DeepSeek智能助手教学应用}
+\subtitle{人工智能辅助教育实践指南}
+\author{丁保华}
+\institute{致慧星空工作室}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{准备工作}
+\begin{frame}[t]{准备工作}
+微信面对面建群：\\
+\begin{itemize}
+\item 右上角\textcircled{+}
+\item 发起群聊
+\item 面对面建群
+\item 输入数字：\alert{0221}
+\item 进入该群
+\end{itemize}
+\end{frame}
+
+\section{DeepSeek概述}
+\begin{frame}{DeepSeek是什么？}
+  \begin{columns}
+    \column{0.6\textwidth}
+    \begin{itemize}
+      \item 发展历程：
+        \begin{itemize}
+          \item 2021年：基础模型研发
+          \item 2022年：教育领域微调
+          \item 2023年：多模态能力增强
+        \end{itemize}
+      \item 核心能力：
+        \begin{tabular}{ll}
+          \toprule
+          擅长领域 & 不擅长领域 \\
+          \midrule
+          文本生成 & 实时数据查询 \\
+          知识问答 & 主观价值判断 \\
+          数学计算 & 实物操作演示 \\
+          \bottomrule
+        \end{tabular}
+    \end{itemize}
+
+    \column{0.4\textwidth}
+    \begin{tikzpicture}[node distance=2cm]
+      \node (input) [ellipse, draw] {输入};
+      \node (model) [rectangle, draw, below of=input] {深度模型};
+      \node (output) [ellipse, draw, below of=model] {输出};
+      \draw [->, >=stealth] (input) -- (model);
+      \draw [->, >=stealth] (model) -- (output);
+    \end{tikzpicture}
+  \end{columns}
+\end{frame}
+
+\section{学科应用指南}
+\begin{frame}{学科应用要点}
+  \begin{block}{通用原则}
+    \begin{itemize}
+      \item 明确学科要求（义务教育2022版课程标准）
+      \item 指定输出格式（Markdown/LaTeX）
+      \item 设置难度等级（初中/高中）
+    \end{itemize}
+  \end{block}
+
+  \begin{exampleblock}{学科专用技巧}
+    \begin{tabular}{ll}
+      \toprule
+      科目 & 关键提示词 \\
+      \midrule
+      语文 & "生成议论文框架：论点+论据" \\
+      数学 & "生成三角函数例题：含图解" \\
+      物理 & "解释牛顿第三定律：生活实例" \\
+      化学 & "设计中和反应实验：安全提示" \\
+      生物 & "制作细胞结构表：对比动植物" \\
+      \bottomrule
+    \end{tabular}
+  \end{exampleblock}
+\end{frame}
+
+\section{质量提升策略}
+\begin{frame}[t]{输入输出质量对比}
+  \begin{columns}
+    \column{0.45\textwidth}
+    \begin{block}{优质输入示例}
+      \footnotesize
+      "请生成5道关于二次函数的应用题：\\
+      1. 包含图像分析\\
+      2. 难度适合高一学生\\
+      3. 附带分步解答"
+    \end{block}
+
+    \column{0.45\textwidth}
+    \begin{alertblock}{低效输入示例}
+      \footnotesize
+      "给我一些数学题"
+    \end{alertblock}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{优化三维模型}
+  \begin{tikzpicture}
+    \draw[->] (0,0,0) -- (3,0,0) node[right] {明确性};
+    \draw[->] (0,0,0) -- (0,3,0) node[above] {结构性};
+    \draw[->] (0,0,0) -- (0,0,3) node[below left] {相关性};
+    \node at (2,2,2) {优质输出};
+  \end{tikzpicture}
+  
+  \begin{itemize}
+    \item 黄金三要素原则：
+      \begin{enumerate}
+        \item 定义目标受众（如：高一学生）
+        \item 明确内容范围（如：细胞结构）
+        \item 指定格式要求（如：表格对比）
+      \end{enumerate}
+  \end{itemize}
+\end{frame}
+
+\section{总结}
+\begin{frame}{核心要点回顾}
+  \begin{columns}
+    \column{0.6\textwidth}
+    \begin{itemize}
+      \item 智能助手的双刃剑特性
+      \item 学科适配的提示工程
+      \item 渐进式优化策略
+      \item 人机协同的教学模式
+    \end{itemize}
+
+    \column{0.4\textwidth}
+    \begin{tikzpicture}
+      \draw (0,0) circle (1cm);
+      \node at (0,0) {AI};
+      \node at (0,1.2) {教师};
+      \draw[<->] (-1,0) -- (1,0);
+    \end{tikzpicture}
+  \end{columns}
+
+  \vspace{1cm}
+  \centering
+  \begin{tabular}{ccc}
+    \rotatebox{45}{效率} & 
+    \rotatebox{45}{质量} &
+    \rotatebox{45}{创新} \\
+    \hline
+    +40\% & +35\% & +25\% \\
+  \end{tabular}
+\end{frame}
+
+\begin{frame}[t]{使用DeepSeek的三种模式}
+\normalsize
+\begin{spacing}{1.5}
+\begin{enumerate}
+  \item 搜索引擎模式：作为无广告的高级搜索引擎使用;
+  \item 远程AI模式：作为含渐进式优化策略的生成式人工智能使用;
+  \item 本地AI模式：自行部署DeepSeek系统，用自建硬件与自有数据训练AI模型使用
+  \end{enumerate}
+\end{spacing}
+\end{frame}
+
+\begin{frame}[t]{远程AI模式——搜索输入框架结构}
+\normalsize
+\begin{spacing}{1.5}
+\alert{用户：DeepSeek新用户}\\
+\alert{任务：编写DeepSeek新用户入门指南}\\
+详细要求，可以用列表形式;\\
+\alert{输出：LaTeX的beamer，引用ctex宏包，给出完整的LaTeX代码}
+\end{spacing}
+\end{frame}
+
+\begin{frame}[t]{LaTex在线编辑器}
+\vspace*{0.5cm}
+\large{访问overleaf的中文页面 }\\
+\vspace*{1.5cm}
+\centering
+\underline{\Huge \textbf{\href{https://cn.overleaf.com/}{\textcolor{blue}{https://cn.overleaf.com/}}}}
+
+\end{frame}
+
+\begin{frame}[t]{案例一、编写DeepSeek新用户入门指南}
+\fontsize{10pt}{14pt}\selectfont
+\alert{用户：deepseek新用户}\\
+\alert{任务：写一份deepseek新用户的入门指南}\\
+主要内容：\\
+1. deepseek是什么，包括发展经历，擅长干什么，不擅长干什么，deepseek的工作原理解释\\
+2. 如何使用deepseek，从中学生中英文写作、数学老师、物理老师、化学老师、生物老师编写课程讲义的角度讲解使用deepseek的要点\\
+3. 如何改善输出的质量，常规注意事项，适当举例对比好的和差的输入导致输出的差别\\
+4. 本讲稿适当增加相关的图表（代码自动生成）来提高讲稿的生动性\\
+\alert{输出：完整的latex代码}
+\end{frame}
+
+\begin{frame}[t]{案例二、编写LaTeX的Tikz绘图指南}
+\fontsize{12pt}{14pt}\selectfont
+\alert{用户：LaTeX新用户}\\
+\alert{任务：写一份讲解tikz的ctexbeamer的latex文件}\\
+主要内容：\\
+1. 提供中文支持，不指定字体\\
+2. 文档比例169，页面宽度240mm，页面高度135mm\\
+3. 使用Madrid主题，使用beaver主题颜色\\
+4. 每一帧增加[fragile]选项\\
+5. 包括基本的画点、画线段、画三角形、长方形，标注顶点名称及坐标\\
+6. 画圆、画椭圆、画圆弧操作，标注圆心O及坐标，椭圆与圆不要重叠\\
+7. 提供画图源代码，提供丰富的注释\\
+8. 先用minted将源代码高亮显示，在其后显示作图结果\\
+9. 每种图形的源码及图形作为一页\\
+\alert{输出：完整的latex代码}
+\end{frame}
+
+\begin{frame}[t]{案例三、编写Python入门教材}
+\fontsize{9pt}{11pt}\selectfont
+\alert{用户：python初学者}\\
+\alert{任务：写一份python讲义}\\
+1. 要求高亮语法，并显示输入输出数据\\
+2. 详细讲解以下内容：\\
+2.1 python安装于调试工具\\
+2.2 数据类型，数字、字符串\\
+2.3 自带数据结构，包括但不限于list，tuple，dict，set，包括互相的组合\\
+2.4 控制结构，包括但不限于if else，for，while\\
+2.5 自定义函数，实现所有八大排序算法的函数，在主程序分别调用这些排序算法函数进行排序\\
+2.6 定义类，增加八皇后问题的解决作为例子每段程序之前需要增加这些知识的相近讲解\\
+3. 补充要求：\\
+3.1 在所有源代码之前需要尽可能详尽第讲解\\
+3.2 添加算法可视化图示（需TikZ支持）\\
+3.3 包含复杂度对比图表\\
+3.4 添加常见错误示例分析\\
+3.5 包含练习题模块\\
+3.6 添加参考文献索引\\
+\alert{输出：完整的latex代码}
+\end{frame}
+
+\begin{frame}[t]{常用工具介绍}
+\fontsize{14pt}{18pt}\selectfont
+各类文档：LaTeX，Markdown，Python \\
+理科作图：LaTeX，GeoGebra，Python \\
+动画及视频制作：Python，Manim \\
+\end{frame}
+
+\begin{frame}[t]{致谢}
+\centering
+\fontsize{14pt}{18pt}\selectfont
+\vspace*{1.6cm}
+特别感谢牛校长与各位领导的大力支持！\\
+\vspace*{0.4cm}
+诚挚感谢现场诸位的持续关注与耐心聆听！\\
+\vspace*{0.4cm}
+真诚祝愿大家用好DeepSeek,早日插上腾飞的翅膀！
+\end{frame}
+
+\end{document}

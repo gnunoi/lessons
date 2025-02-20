@@ -1,0 +1,98 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+\usetheme{Madrid} %Madrid，蓝色调为主。
+\usecolortheme{beaver} %beaver
+\usefonttheme{professionalfonts}
+
+\makeatletter
+\def\input@path{{../styles}}  % 
+\makeatother
+\usepackage{universe}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+% 有理数的引入
+\begin{frame}{1.1 有理数的引入}
+\begin{definition}
+\textbf{\textcolor{orange}{正整数、0 和负整数统称为整数(integer), 正分数和负分数统称为分数(fraction).\\
+整数和分数统称为有理数(rational number).}}
+\end{definition}
+\begin{columns}
+\column{0.5\textwidth}
+\[
+\mbox{有理数}\begin{cases}
+\mbox{整数} \begin{cases}
+    \mbox{正整数} \\
+    0 \\
+    \mbox{负整数}
+    \end{cases} \\
+\mbox{分数}  \begin{cases}
+    \mbox{正分数} \\
+    \mbox{负分数}
+    \end{cases}
+\end{cases}
+\]
+
+\column{0.5\textwidth}
+\[
+\mbox{小数}\begin{cases}
+\mbox{有限小数} \\
+\mbox{无限小数} \begin{cases} 
+\mbox{无限循环小数} \\
+\mbox{无限不循环小数}
+\end{cases}
+\end{cases}
+\]
+
+\end{columns}
+\vspace{12pt}
+\alert{\textbf{0既不是正数，也不是负数，是正数与负数的分界点。}} \\
+\alert{\textbf{有限小数和无限循环小数是分数，无限不循环小数不是分数。}} \\
+\textbf{思考：无限不循环小数是什么数？}
+\end{frame}
+
+%小数如何转化为分数
+\begin{frame}{小数如何转化为分数}
+有限小数如何转化为分数：\\
+\[0.245=\dfrac{245}{1000}=\dfrac{49}{200}
+\]
+无限循环小数如何转化为分数？【华东师范大学七年级上册（2024）P73】
+%循环节的小圆点表示\dot{x}
+\begin{align*}
+1000\times 0.\dot{2}4\dot{5} &= 245.\dot{2}4\dot{5} = 245 + 0.\dot{2}4\dot{5} \\
+999 \times 0.\dot{2}4\dot{5} &= 245 \\
+0.\dot{2}4\dot{5} &= \dfrac{245}{999}
+\end{align*}
+\end{frame}
+
+%有理数集的表示方法
+\begin{frame}{数集与有理数集}
+数集的表示方法【数学A版必修第一册1.1集合的概念】：\\
+集合A是小于10的自然数组成的集合，表示方法如下：\\
+\begin{enumerate}[label={\arabic*.}]
+\item 列举法：$A = \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}$
+\item 描述法：$A = \{x \in \mathbb{Z} | 0 \leq x < 10\}$
+\end{enumerate}
+\textbf{\textcolor{orange}{有理数集的表示方法：$Q = \{ x \in \mathbb{R} | x = \dfrac{q}{p}, p,q \in \mathbb{Z}, p \neq 0\} $ }}\\
+数学中常见数集及其记法：
+\begin{enumerate}[itemsep=6pt,label={\arabic*.}]
+\item 全体非负整数组成的集合称为非负整数集（或自然数集），记作$\mathbb{N}$.
+\item 全体正整数组成的集合称为正整数集，记作$\mathbb{N}^*$或$\mathbb{N}_+$.
+\item 全体整数组成的集合称为整数集，记作$\mathbb{Z}$.
+\item 全体有理数组成的集合称为有理数集，记作$\mathbb{Q}$.
+\item 全体实数组成的集合称为实数集，记作$\mathbb{R}$.
+\end{enumerate}
+
+\end{frame}
+
+%思考有理数集的表示方法
+\begin{frame}{思考有理数集的表示方法}
+\textbf{为什么可以用下面的方法表示有理数集？ }\\
+\vspace{12pt}
+$Q = \{ x \in \mathbb{R} | x = \dfrac{q}{p}, p,q \in \mathbb{Z}, p \neq 0\} $
+\vspace{5cm}
+
+\end{frame}
+
+\end{document}

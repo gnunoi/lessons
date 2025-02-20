@@ -1,0 +1,49 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+\usetheme{Madrid} %Madrid，蓝色调为主。
+\usecolortheme{beaver} %beaver
+\usefonttheme{professionalfonts}
+
+\makeatletter
+\def\input@path{{../styles}}  % 
+\makeatother
+\usepackage{universe}
+\uBigPaper
+
+\author{致慧星空工作室}
+\date{\today}
+\begin{document}
+
+\begin{frame}[t]{无限循环小数化为分数}
+\begin{spacing}{2} %设置行距
+\large
+将$0.\dot 3$转化为分数\\
+解：设$a=0.\dot 3$，则：\\
+$10a = 3.\dot3 = 3 + 0.\dot3 = 3 + a$， \\
+$9a = 3$ \\
+$\therefore a = \dfrac{3}{9} = \dfrac{1}{3}$  \\
+\end{spacing}
+\end{frame}
+
+\begin{frame}[t]{无限循环小数化为分数}
+\begin{spacing}{2} %设置行距
+\large
+将$0.\dot 2 \dot 5$转化为分数\\
+解：设$a=0.\dot 2 \dot 5$，则：\\
+$100a = 25.\dot 2 \dot 5 = 25 + a$， \\
+$99a = 25$ \\
+$\therefore a = \dfrac{25}{99}$ \\
+\end{spacing}
+\end{frame}
+
+\begin{frame}[t]{无限循环小数化为分数}
+\begin{spacing}{2} %设置行距
+\large
+将$0.3\dot 2 \dot 5$转化为分数\\
+解：设$a = 0.3\dot 2 \dot 5$，则：\\
+$10a = 3 + 0.\dot 2 \dot 5 = 3 + \dfrac{25}{99}$ \\
+$10a = \dfrac{3 \times 99 + 25}{99} = \dfrac{322}{99}$ \\
+$\therefore a = \dfrac{322}{990}$ \\
+\end{spacing}
+\end{frame}
+
+\end{document}

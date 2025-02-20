@@ -1,0 +1,62 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+\usetheme{Madrid} %Madrid，蓝色调为主。
+\usecolortheme{beaver} %beaver
+\usefonttheme{professionalfonts}
+
+\makeatletter
+\def\input@path{{../styles}}  % 
+\makeatother
+\usepackage{universe}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+\begin{frame}[t]{1.6 有理数的加法法则}
+\begin{spacing}{1.1} %设置行距
+\normalsize
+\begin{enumerate}[label={\arabic*.}]
+\item 同号两数相加, 取与加数相同的正负号, 并把绝对值相加; \\
+$\text{当}a,b  > 0\text{时，}$ \\
+$(+a) + (+b) = +(a+b) = a + b$ \\
+$(-a) + (-b) = -(a+b)$ \\
+\item 绝对值不相等的异号两数相加, 取绝对值较大的加数的正负号, 并用较大的绝对值减去较小的绝对值; \\
+$\text{当}a > b > 0\text{时，}$ \\
+$(-a) + (+b) = -(a-b)$ \\
+$(+a) + (-b) = +(a-b) = a - b$ \\
+\item 互为相反数的两个数相加得0; \\
+ $a + (-a) = 0$ \\
+\item 一个数与0 相加, 仍得这个数. \\
+$a + 0 = 0 $\\
+\end{enumerate}
+\end{spacing}
+\end{frame}
+
+\begin{frame}[t]{有理数加法的运算律}
+\begin{spacing}{1.5} %设置行距
+\Large
+\begin{enumerate}[label={\arabic*.}]
+\item 加法交换律：两个数相加，交换加数的位置，和不变. \\
+$a + b = b + a$
+\item 加法结合律: 三个数相加, 先把前两个数相加，或者先把后两个数相加，和不变. \\
+$(a + b) + c = a + (b + c)$
+\end{enumerate}
+\end{spacing}
+\end{frame}
+
+\begin{frame}[t]{有理数去括号规则}
+\begin{spacing}{1.2} %设置行距
+\Large
+括号前的符号与数字前的符号存在下列关系，则：
+\begin{enumerate}[label={\arabic*.}]
+\item 同号取正（去括号，取正号） \\
+$+(+a) = +a = a$ \\
+$-(-a) = +a = a$ 
+\item 异号取负（去括号，取负号）\\
+$-(+a) = -a$ \\
+$+(-a) = -a$ \\
+\end{enumerate}
+\end{spacing}
+\end{frame}
+
+\end{document}

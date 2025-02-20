@@ -1,0 +1,15 @@
+\documentclass[tikz, border=12pt]{standalone}
+\begin{document}
+\begin{tikzpicture}
+% 定义点 A 和 B
+\coordinate (A) at (0,0);
+\coordinate (B) at (5,0);
+
+% 绘制等边三角形
+\draw[thick] (A) --++ (60:5) coordinate (C) -- (B) -- cycle;
+
+\node at (A) [below left] {$A$};
+\node at (B) [below right] {$B$};
+\node at (C) [above] {$C$};        
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,36 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+\usetheme{Madrid} %Madrid，蓝色调为主。
+\usecolortheme{beaver} %beaver
+\usefonttheme{professionalfonts}
+
+\makeatletter
+\def\input@path{{../styles}}  % 
+\makeatother
+\usepackage{universe}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+\begin{frame}[t]{1.8 有理数的加减混合运算}
+\begin{spacing}{1.2}
+\normalsize
+\begin{enumerate}[label={\arabic*.}]
+\item 加减法是一级运算，优先级最低；
+\item 加法与减法互为逆运算，加法与减法带符号统一理解为加法；
+\item 减一个数，等于加相反数：$a - b = a + (-b)$或$a - (-b) = a + b$；
+\item 加一个数，等于减相反数：$a + b = a -(-b)$或$a + (-b) = a - b$；
+\item 同号取正（去括号，取正号） \\
+$+(+a) = +a = a$ \\
+$-(-a) = +a = a$ \\
+\item 异号取负（去括号，取负号）\\
+$-(+a) = -a$ \\
+$+(-a) = -a$ \\
+\item 加法具有交换律：$a + b + c = a + c + b$；
+\item 加法具有结合律：$(a + b) + c = a + (b + c)$。
+\end{enumerate}
+
+\end{spacing}
+\end{frame}
+
+\end{document}

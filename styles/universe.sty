@@ -1,0 +1,103 @@
+% universe.sty (universal style)
+\ProvidesPackage{universe}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{ctex} % 引入 ctex 包
+\RequirePackage{enumitem} % 有序列表
+\RequirePackage{fontspec}
+\RequirePackage{hyperref} % 用于创建超链接
+\usepackage{ifthen}  % 用于检查可选参数是否存在
+\RequirePackage{listings} % 语法高亮
+\RequirePackage{pgfplots}
+\RequirePackage{setspace} % 设置行间距
+\RequirePackage{tikz} % 引入 TikZ 包
+\RequirePackage{verbatim}
+\RequirePackage{xcolor}
+\RequirePackage{subfiles}
+
+% 使用 TikZ 库
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc}
+\usetikzlibrary{intersections}
+\usetikzlibrary{through}
+
+\pgfplotsset{compat=1.18} %兼容到1.18版及以下版本的特性
+
+% 全局设置
+\author{致慧星空工作室}
+
+% 定义命令
+\definecolor{uLightGray}{rgb}{0.9, 0.9, 0.9} % 定义背景颜色
+\definecolor{uCommentColor}{rgb}{0.0, 0.5, 0.0}  % 定义注释颜色
+
+% 自定义uSetList命令
+\newcommand{\uSetList}[1]{
+\lstset{
+    language=#1,                              % 设置语言
+    basicstyle=\ttfamily\normalsize,          % 设置基本字体
+    keywordstyle=\color{orange}\bfseries,     % 关键字用橙色和加粗显示
+    commentstyle=\color{red},                 % 注释用红色显示
+    stringstyle=\color{blue},                 % 字符串用蓝色显示
+    numbers=left,                             % 在左侧显示行号
+    numberstyle=\small\color[RGB]{96,96,96},  % 行号为灰色且字号为小
+    stepnumber=1,                             % 每1行显示一个行号
+    frame=single,                             % 给代码加框
+    backgroundcolor=\color[RGB]{224,224,224}, % 背景色为浅灰色
+    showstringspaces=false,                   % 不显示字符串中的空格
+    tabsize=2,                                % 设置tab键为2个空格宽    
+}
+}
+
+% 定义页面大小
+\newcommand{\uBigPaper}{
+	\RequirePackage{geometry}
+	\geometry{paperwidth=320mm, paperheight=180mm}
+	\uSetBigFont
+}
+
+% 重新定义各个字体大小
+\newcommand{\uSetBigFont}{
+	\renewcommand{\tiny}{\fontsize{12pt}{14pt}\selectfont} % 5,6
+	\renewcommand{\scriptsize}{\fontsize{14pt}{16pt}\selectfont} % 6,7
+	\renewcommand{\footnotesize}{\fontsize{16pt}{18pt}\selectfont} % 7,8
+	\renewcommand{\small}{\fontsize{18pt}{20pt}\selectfont} % 8,9
+	\renewcommand{\normalsize}{\fontsize{24pt}{28pt}\selectfont} % 10,12
+	\renewcommand{\large}{\fontsize{28pt}{36pt}\selectfont} % 12,14
+	\renewcommand{\Large}{\fontsize{32pt}{40pt}\selectfont} % 14,16
+	\renewcommand{\LARGE}{\fontsize{36pt}{44pt}\selectfont} % 16,18
+	\renewcommand{\huge}{\fontsize{40pt}{48pt}\selectfont} % 20,24
+	\renewcommand{\Huge}{\fontsize{48pt}{60pt}\selectfont} % 24,28
+}
+
+\newcommand{\uSetSmallFont}{
+	\renewcommand{\tiny}{\fontsize{5pt}{6pt}\selectfont} % 5,6
+	\renewcommand{\scriptsize}{\fontsize{6pt}{8pt}\selectfont} % 6,7
+	\renewcommand{\footnotesize}{\fontsize{7pt}{9pt}\selectfont} % 7,8
+	\renewcommand{\small}{\fontsize{8pt}{10pt}\selectfont} % 8,9
+	\renewcommand{\normalsize}{\fontsize{10pt}{12pt}\selectfont} % 10,12
+	\renewcommand{\large}{\fontsize{12pt}{14pt}\selectfont} % 12,14
+	\renewcommand{\Large}{\fontsize{14pt}{16pt}\selectfont} % 14,16
+	\renewcommand{\LARGE}{\fontsize{16pt}{18pt}\selectfont} % 16,18
+	\renewcommand{\huge}{\fontsize{20pt}{24pt}\selectfont} % 20,24
+	\renewcommand{\Huge}{\fontsize{24pt}{28pt}\selectfont} % 24,28
+}
+
+% 定义uInputTikz命令
+\newcommand{\uInputTikz}[1]{
+	\begin{tikzpicture}
+		\fontsize{14pt}{16pt}\selectfont % 设置normalsize
+		\input{#1}
+	\end{tikzpicture}
+}
+% 全局设置
+%\uSetList[TeX]
+
+% 设置英文主字体、无衬线字体和等宽字体
+\setmainfont{Times New Roman}    % 设置英文字体（正文）
+\setsansfont{Arial}             % 设置英文字体（无衬线）
+\setmonofont{Courier New}       % 设置英文字体（等宽）
+
+%% 设置中文字体
+%\setCJKmainfont{PingFang SC}         % 设置中文主字体（STSong）
+%\setCJKsansfont{STSong}         % 设置中文无衬线字体（黑体）
+%\setCJKmonofont{SimFang}         % 设置中文等宽字体（仿宋）

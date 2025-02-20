@@ -1,0 +1,17 @@
+\documentclass[tikz, border=10pt]{standalone}
+\usetikzlibrary{intersections}
+\begin{document}
+\begin{tikzpicture}
+    \coordinate (O) at (0,0);
+    \draw [name path=CA] (O) circle (4);
+    \node at (O) [below left] {$O$};
+    \filldraw (O) circle(1pt);
+    \draw [name path=CB] (45:2) circle(2);
+    % 计算交点P的坐标
+    \path [name intersections={of=CA and CB, by={P}}];
+    \filldraw (P) circle(1pt);
+    \node at (P) [above right] {$P$};
+    \draw (O) -- (P);
+
+\end{tikzpicture}
+\end{document}
