@@ -221,6 +221,8 @@
     \draw[thick] (0:2) arc(0:90:2);  % 画一个圆弧，0度角到90度角，半径2
     \node at (0:0) [below ]{$O(0:0)$}; % 标注圆心
     \fill (0:0) [red] circle(1pt);
+    \draw [dotted] (0:0) -- (0:2); % 用点线连接原点与圆弧起点
+    \draw [dotted] (0:0) -- (90:2);  % 用点线连接原点与圆弧终点
 
 \end{tikzpicture}
 \end{minted}
@@ -230,7 +232,9 @@
     \draw[thick] (0:2) arc(0:90:2);  % 画一个圆弧，0度角到90度角，半径2
     \node at (0:0) [below ]{$O(0:0)$}; % 标注圆心
     \fill (0:0) [red] circle(1pt);
-
+    \draw [dotted] (0:0) -- (0:2); % 用点线连接原点与圆弧起点
+    \draw [dotted] (0:0) -- (90:2);  % 用点线连接原点与圆弧终点
+    
 \end{tikzpicture}
 
 \end{frame}
