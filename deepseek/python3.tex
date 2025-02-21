@@ -4,11 +4,10 @@
 \usepackage{tikz}
 \usepackage{listings}
 \usepackage{graphicx}
-\usepackage{hyperref}
 \usepackage{universe} % 自定义的宏包
 \usepackage{titling}
 \usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}  % 设置页边距为2cm
-
+\usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage{lastpage}  % 引入 lastpage 宏包，获取总页数
 % 去掉页眉下的横线
@@ -22,6 +21,21 @@
 \title{Python编程入门讲义}
 \author{致慧星空工作室}
 \date{\today}
+
+\lstset{
+    language=Python,                              % 设置语言
+    basicstyle=\ttfamily\normalsize,          % 设置基本字体
+    keywordstyle=\color{orange}\bfseries,     % 关键字用橙色和加粗显示
+    commentstyle=\color{red},                 % 注释用红色显示
+    stringstyle=\color{blue},                 % 字符串用蓝色显示
+    numbers=left,                             % 在左侧显示行号
+    numberstyle=\small\color[RGB]{96,96,96},  % 行号为灰色且字号为小
+    stepnumber=1,                             % 每1行显示一个行号
+    frame=single,                             % 给代码加框
+    backgroundcolor=\color[RGB]{224,224,224}, % 背景色为浅灰色
+    showstringspaces=false,                   % 不显示字符串中的空格
+    tabsize=2,                                % 设置tab键为2个空格宽    
+}
 
 \begin{document}
 \thispagestyle{empty}  % 首页不显示页码
