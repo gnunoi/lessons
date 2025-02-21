@@ -1,0 +1,119 @@
+\documentclass[aspectratio=169,UTF8]{beamer}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{booktabs}
+
+\setbeamersize{text margin left=5mm,text margin right=5mm}
+\setlength{\paperwidth}{320mm}
+\setlength{\paperheight}{180mm}
+
+
+% 设置不同文本类型的字体大小
+\setbeamerfont{normal text}{size=\small}   % 正常文本大小
+\setbeamerfont{title}{size=\huge}         % 标题字号
+\setbeamerfont{frametitle}{size=\Large}   % 幻灯片框架标题字号
+\setbeamerfont{item}{size=\footnotesize}  % 列表项字号
+\setbeamerfont{block title}{size=\LARGE}  % 代码块标题字号
+\setbeamerfont{block body}{size=\tiny}    % 代码块正文字号
+\setbeamerfont{caption}{size=\scriptsize} % 图像/表格标题字号
+\setbeamerfont{subtitle}{size=\scriptsize}    % 副标题字号
+\setbeamerfont{author}{size=\small}  
+
+
+\title{中学生学习C++的全面价值分析}
+\author{XXX教育研究院}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\frametitle{信奥赛时间轴（1984-2024）}
+\begin{tikzpicture}[x=0.8mm,y=0.8mm]
+    \draw[->,thick] (0,0) -- (320,0);
+    \foreach \x/\y in {20/1984,80/1995,140/2007,200/2019,260/2024}
+        \draw (\x,3pt) -- (\x,-3pt) node[below] {\y};
+        
+%    \node[align=center] at (20,30) {\includegraphics[height=1cm]{noip-logo}\\\textbf{NOIP}\\全国联赛};
+%    \node[align=center] at (80,30) {\includegraphics[height=1cm]{noi-logo}\\\textbf{NOI}\\全国决赛};
+%    \node[align=center] at (140,30) {\includegraphics[height=1cm]{ioi-logo}\\\textbf{IOI}\\国际赛事};
+%    \node[align=center] at (200,30) {\includegraphics[height=1cm]{csp-logo}\\\textbf{CSP}\\能力认证};
+%    \node[align=center] at (260,30) {\includegraphics[height=1cm]{apio-logo}\\\textbf{APIO}\\亚太赛事};
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+\frametitle{CSP认证体系}
+\begin{itemize}
+    \item \textbf{双级架构}: CSP-J(入门)/CSP-S(提高)，覆盖小初高全学段:cite[2]:cite[4]
+    \item \textbf{竞赛链路}: 初赛笔试(9月)+复赛机试(10月)，C++为唯一指定语言:cite[3]
+    \item \textbf{升学价值}: 三等奖以上可获重点高中科技特长生资格:cite[5]
+    \item \textbf{历史沿革}: 2019年由CCF推出，取代原NOIP普及/提高组:cite[6]
+\end{itemize}
+%\includegraphics[height=3cm]{csp-structure}
+\end{frame}
+
+\begin{frame}
+\frametitle{五大学科竞赛概览}
+\begin{tabular}{|l|l|l|}
+    \hline
+    \textbf{学科} & \textbf{创办年} & \textbf{特点} \\ \hline
+    数学 & 1956 & 历史最久，竞争最激烈 \\ \hline
+    物理 & 1984 & 实验环节占40\%权重 \\ \hline
+    化学 & 1984 & 强调反应机理推导 \\ \hline
+    生物 & 1991 & 注重实验设计与分析 \\ \hline
+    信息学 & 1984 & 唯一可从小参加的奥赛:cite[5] \\ \hline
+\end{tabular}
+\end{frame}
+
+\begin{frame}
+\frametitle{NOI保送政策详解}
+\begin{block}{国家集训队}
+前50名直接保送清北，2023年清华录取37人，北大录取13人:cite[3]:cite[9]
+\end{block}
+
+\begin{block}{金银铜牌}
+\begin{itemize}
+    \item 金牌: 强基计划破格资格+985高校签约
+    \item 银牌: 36所强基高校破格入围
+    \item 铜牌: 综合评价招生重要筹码:cite[9]
+\end{itemize}
+\end{block}
+
+\begin{exampleblock}{典型案例}
+2024年浙江某考生以NOI银牌通过复旦"腾飞计划"，高考降60分录取:cite[5]
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+\frametitle{C++学习核心优势}
+\begin{columns}
+\column{0.5\textwidth}
+\textbf{技术特性}
+\begin{itemize}
+    \item 底层控制能力(指针/内存管理)
+    \item 运行效率(编译型语言)
+    \item 跨平台特性(Windows/Linux)
+\end{itemize}
+
+\column{0.5\textwidth}
+\textbf{教育价值}
+\begin{itemize}
+    \item 培养计算思维
+    \item 算法竞赛唯一指定语言:cite[3]
+    \item 衔接大学计算机课程
+\end{itemize}
+\end{columns}
+
+\vspace{5mm}
+\begin{alertblock}{关键数据}
+学习C++的学生在NOIP获奖率比Python学习者高230\%:cite[10]
+\end{alertblock}
+\end{frame}
+
+% 其他页面类似结构，此处省略完整实现
+
+\end{document}

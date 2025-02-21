@@ -1,0 +1,47 @@
+% beamer定义的默认值
+% 命令	字号大小（pt）	行距（pt）
+% \tiny	5pt	6pt
+% \scriptsize	7pt	9pt
+% \footnotesize	8pt	10pt
+% \small	 9pt	11pt
+% \normalsize	10pt	12pt
+% \large	12pt	14pt
+% \Large	14pt	17pt
+% \LARGE	17pt	20pt
+% \huge	20pt	24pt
+% \Huge	24pt	28pt
+
+% 重新定义不同类型的文字大小
+\renewcommand{\tiny}{\fontsize{10pt}{12pt}\selectfont} % 5,6
+\renewcommand{\scriptsize}{\fontsize{14pt}{18pt}\selectfont} % 7,9
+\renewcommand{\footnotesize}{\fontsize{16pt}{20pt}\selectfont} % 8,10
+\renewcommand{\small}{\fontsize{18pt}{22pt}\selectfont} % 9,11
+\renewcommand{\normalsize}{\fontsize{20pt}{24pt}\selectfont} % 10,12
+\renewcommand{\large}{\fontsize{24pt}{28pt}\selectfont} % 12,14
+\renewcommand{\Large}{\fontsize{28pt}{34pt}\selectfont} % 14,17
+\renewcommand{\LARGE}{\fontsize{34pt}{40t}\selectfont} % 17,20
+\renewcommand{\huge}{\fontsize{40pt}{48pt}\selectfont} % 20,24
+\renewcommand{\Huge}{\fontsize{48pt}{56pt}\selectfont} % 24,28
+
+% 设置不同文本类型的字体大小
+\setbeamerfont{title}{size=\Huge}                % 主标题字号
+\setbeamerfont{frametitle}{size=\huge}           % 框架标题字号
+\setbeamerfont{theorem title}{size=\LARGE}       % 定理标题字号
+\setbeamerfont{lemma title}{size=\LARGE}         % 引理标题字号
+\setbeamerfont{corollary title}{size=\Large}    % 推论标题字号
+\setbeamerfont{block title}{size=\Large}         % 代码块标题字号
+\setbeamerfont{subtitle}{size=\large}            % 副标题字号
+\setbeamerfont{headline}{size=\large}            % 页眉字号
+\setbeamerfont{block body}{size=\normalsize}     % 代码块正文字号
+\setbeamerfont{theorem body}{size=\normalsize}   % 定理正文字号
+\setbeamerfont{lemma body}{size=\normalsize}     % 引理正文字号
+\setbeamerfont{corollary body}{size=\normalsize} % 推论正文字号
+\setbeamerfont{normal text}{size=\small}         % 普通文本字号
+\setbeamerfont{author}{size=\small}              % 作者字号
+\setbeamerfont{table title}{size=\small}         % 表格标题字号
+\setbeamerfont{item}{size=\footnotesize}         % 项目列表项字号
+\setbeamerfont{date}{size=\footnotesize}         % 日期字号
+\setbeamerfont{caption}{size=\scriptsize}        % 图像/表格标题字号
+\setbeamerfont{footline}{size=\scriptsize}       % 页脚字号
+\setbeamerfont{footnote}{size=\scriptsize}       % 脚注字号
+

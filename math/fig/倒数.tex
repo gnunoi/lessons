@@ -3,6 +3,8 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage{amsmath}
+\usetikzlibrary{calc}
+
 \begin{document}
 
 \begin{tikzpicture}
@@ -16,16 +18,18 @@
         ymin = -\MAX, ymax = \MAX,
         grid = both,
         minor tick num = 1,
-        major tick length = 0.1cm,
+        major tick length = 1pt,
         grid style = {black!10},
         xtick = {-6, -4, -2, 0, 2, 4, 6},
         ytick = {-6, -4, -2, 0, 2, 4, 6},
-        domain = -\MAX:\MAX,
+        domain=-\MAX+1:\MAX-1,
         xtick align=inside, % 将主刻度线对齐到坐标轴内侧
         ytick align=inside,  % 将主刻度线对齐到坐标轴内侧
+        axis line style={black}, % 确保坐标轴是黑色的
+        restrict y to domain=-5:5, 
     ]
     % 绘制函数y=1/x
-    \addplot[red, domain=-\MAX+1:\MAX-1, samples=500, thick] {(1/x)};
+    \addplot[red,  samples=1000, thick] {(1/x)};
 
     \node at (2,4) [red] {$f(x)=\dfrac{1}{x}$}; 
     \end{axis}

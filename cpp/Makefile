@@ -1,10 +1,11 @@
 SHELL=bash
 LATEX=xelatex --shell-escape
 LATEXMK=latexmk -xelatex --shell-escape
-LATEXMK=latexmk -quiet -xelatex --shell-escape
+#LATEXMK=latexmk -quiet -xelatex --shell-escape
+LATEXMK=$(LATEX)
 TEX=$(wildcard *.tex)
 PDF=$(TEX:.tex=.pdf)
-MAIN=C++程序设计
+MAIN=中学生学习C++程序设计的益处
 
 .PHONY:all clean distclean c d
 
