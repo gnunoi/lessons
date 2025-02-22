@@ -1,18 +1,15 @@
 \documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
-\usetheme{Madrid} %Madrid，蓝色调为主。
-\usecolortheme{beaver} %beaver
-\usefonttheme{professionalfonts}
 
 \makeatletter
 \def\input@path{{../styles}}  % 
 \makeatother
-\usepackage{universe}
+\usepackage{ubeamer}
 \uBigPaper
 
 \date{\today}
 \begin{document}
 
-% 1.5 有理数的代销比较
+% 1.5 有理数的大小比较
 \begin{frame}[t]{1.5有理数的大小比较规则}
 \large
 \begin{enumerate}[label={\arabic*.}]
@@ -21,7 +18,7 @@
   \item 负数 \alert{<} 0
   \item 正数 \alert{>} 负数
   \item 两个负数比较，绝对值大的反而\alert{小} ！
-  \par 如果$a > b$，则：$-a < -b$
+  \par 如果$a > b > 0$，则：$-a < -b < 0$
 \end{enumerate}
 
 \end{frame}

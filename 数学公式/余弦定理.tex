@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage{ctex}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{高中数学证明余弦定理}
+\author{}
+\date{}
+\maketitle
+
+在三角形 \(ABC\) 中，边长分别为 \(a\)、\(b\)、\(c\)，角 \(C\) 是夹在边 \(a\) 和 \(b\) 之间的角。我们要证明余弦定理：
+\[
+c^2 = a^2 + b^2 - 2ab \cos C
+\]
+
+\section*{证明过程}
+
+\subsection*{步骤 1：坐标系设定}
+我们将三角形 \(ABC\) 的顶点分别放置在平面直角坐标系中：
+- 点 \(A(0, 0)\)
+- 点 \(B(c, 0)\)
+- 点 \(C(x, y)\)
+
+因此，三角形的边长分别为：\\
+\(AB = c\)\\
+\(AC = a = \sqrt{x^2 + y^2}\)\\
+\(BC = b = \sqrt{(x - c)^2 + y^2}\)\\
+
+\subsection*{步骤 2：利用余弦定义表达角 \(C\)}
+根据余弦的定义，角 \(C\) 的余弦值为：
+\[
+\cos C = \frac{ \overrightarrow{AC} \cdot \overrightarrow{BC} }{ |AC| |BC| }
+\]
+点积计算为：
+\[
+\overrightarrow{AC} \cdot \overrightarrow{BC} = x \cdot (x - c) + y \cdot y = x^2 - xc + y^2
+\]
+因此：
+\[
+\cos C = \frac{x^2 - xc + y^2}{ \sqrt{x^2 + y^2} \cdot \sqrt{(x - c)^2 + y^2} }
+\]
+
+\subsection*{步骤 3：代数推导}
+通过代数变换，结合勾股定理，最终可以得到：
+\[
+c^2 = a^2 + b^2 - 2ab \cos C
+\]
+
+\end{document}

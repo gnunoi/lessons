@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage{ctex}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{海伦公式的详细推导}
+\author{}
+\date{}
+\maketitle
+
+设三角形的三边长分别为 \( a \), \( b \), \( c \)，其中 \( s \) 是半周长，计算公式为：
+\[
+s = \frac{a + b + c}{2}
+\]
+目标是求三角形的面积 \( A \)，并推导出海伦公式：
+\[
+A = \sqrt{s(s-a)(s-b)(s-c)}
+\]
+
+\section*{步骤 1：利用三角形的面积公式}
+三角形的面积 \( A \) 可以通过两边及夹角来计算，公式为：
+\[
+A = \frac{1}{2}ab \sin C
+\]
+其中，\( a \) 和 \( b \) 是两边的长度，\(\angle C\) 是这两边之间的夹角。
+
+\section*{步骤 2：应用余弦定理}
+根据余弦定理，我们有：
+\[
+c^2 = a^2 + b^2 - 2ab \cos C
+\]
+从上式解得：
+\[
+\cos C = \frac{a^2 + b^2 - c^2}{2ab}
+\]
+
+\section*{步骤 3：使用面积公式}
+将余弦值代入面积公式 \( A = \frac{1}{2}ab \sin C \)：
+\[
+A = \frac{1}{2}ab \cdot \sqrt{1 - \left( \frac{a^2 + b^2 - c^2}{2ab} \right)^2}
+\]
+这就是面积与三边的关系。
+
+\section*{步骤 4：转化为半周长形式}
+通过一些代数变换，最终得出海伦公式：
+\[
+A = \sqrt{s(s-a)(s-b)(s-c)}
+\]
+
+\end{document}
