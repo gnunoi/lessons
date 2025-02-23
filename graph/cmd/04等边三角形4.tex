@@ -1,9 +1,8 @@
-\coordinate (A) at (0,0); % 定义点A 
-\coordinate (B) at (5,0); % 定义点B
-
+% 定义点 A 和 B
+\coordinate (A) at (0,0);
+\coordinate (B) at (5,0);
 % 绘制等边三角形
-\draw[thick] (A) --++(60:5) coordinate(C) -- (B) -- cycle;
-
-\node at (A) [below left] {$A$}; % 左下方标注点A
-\node at (B) [below right] {$B$}; % 右下方标注点B
-\node at (C) [above] {$C$};  % 上方标注点C
+\draw[thick] (A) --++ (60:5) coordinate (C) -- (B) -- cycle;
+\node at (A) [below left] {$A$};
+\node at (B) [below right] {$B$};
+\node at (C) [above] {$C$};        

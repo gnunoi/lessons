@@ -8,25 +8,28 @@
 
 \begin{document}
 
-\begin{frame}[t]{平方差公式证明（构造法）}
-  平方差公式是：$a^2 - b^2 = (a + b)(a - b)$\\
-  思考：从左向右证明一下找不到思路，那么先从右边向左边验证：
+\begin{frame}[t]{平方差公式证明（逆向思维、构造法）}
+平方差公式是：$a^2 - b^2 = (a + b)(a - b)$，如何证明呢？
+\vspace{1cm}
+\begin{columns}[t]
+\column{0.45\textwidth}
+思考：如果从左向右证明一下找不到思路，那么可以先从右边向左边验证：
 \begin{align*}
   (a + b)(a - b) &= a(a - b) + b(a - b)  \\
   &= a^2 - ab + ba - b^2 \\
   &= a^2 - ab + ab - b^2 \\
   &= a^2 - b^2
  \end{align*}
-有了上述的验证过程，从下往上写，就找到构造公式，并予以证明。\\
-
-证明：
+ \column{0.45\textwidth}
+ 有了上述的验证过程，从下往上写，就找到构造公式，并予以证明。\\
+ 证明：
 \begin{align*}
   a^2 - b^2  &= a^2 - ab + ab - b^2 \\
   &= a^2 - ab + ba - b^2 \\
   &= a(a - b) + b(a - b) \\
   &= (a + b)(a - b) 
  \end{align*}
-
+\end{columns}
 \end{frame}
 
 \end{document}
