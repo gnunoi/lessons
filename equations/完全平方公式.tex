@@ -1,0 +1,22 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\begin{document}
+
+\begin{frame}[t]{完全平方公式}
+完全平方差公式是：$(a + b)^2 = a^2 + 2ab + b^2$，如何证明呢？\\
+\vspace{1cm}
+证明：
+\begin{flalign*} % 公式左对齐，需要收尾都有&字符。
+&(a + b)^2 = (a + b)(a + b) & \\
+&= a^2 + ab + ba + b^2 &\\
+&= a^2 + 2ab + b^2 &
+\end{flalign*}
+\end{frame}
+
+\end{document}

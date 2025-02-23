@@ -10,6 +10,21 @@
 \date{\today}
 \begin{document}
 
-\uMintedFrame{TeX}{cmd/太极图1}{太极图画法一}
+%\uMintedFrame{TeX}{cmd/太极图1}{太极图画法一}
+\def\cmdfile{cmd/太极图1}
+\begin{frame}[t]{太极图画法一}
+\inputminted[bgcolor=black!5]{TeX}{\cmdfile}
+\begin{tikzpicture}[
+      overlay, % 浮于正文上方
+      remember picture,  % 允许引用页面坐标系
+      shift={(current page.east)},  % 将坐标系原点移到页面右下角
+      xshift=-7cm,  % 向左移动 8cm（避免贴边）
+      yshift=-2cm,    % 向上移动 5cm（避免贴边）
+      scale=0.8,
+      transform shape
+    ]
+\input{\cmdfile}
+\end{tikzpicture}
+\end{frame}
 
 \end{document}

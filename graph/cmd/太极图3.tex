@@ -1,17 +1,14 @@
 \def\r{12}
 % 绘制阴阳鱼的大圆
-\draw (0,0) circle(\r);
+\draw [thick](0,0) circle(\r);
 \clip (0,0) circle(\r);
 % 绘制黑色部分（右半圆涂黑）
-%\fill [black] (90:\r) arc(90:-90:\r) -- cycle;
 \fill [black] (0, -\r) rectangle (\r, \r);
 % 绘制鱼头鱼尾
 % 黑色半圆中画大圆半径1/2的白色实心圆
 \fill [white] (90:{1/2*\r}) circle({1/2*\r});
 % 白色半圆中画大圆半径1/2的黑色实心圆
 \fill [black] (-90:{1/2*\r}) circle({1/2*\r});
-% 绘制鱼眼
-% 白色半圆中画大圆半径1/6的白色实心圆
+% 绘制鱼眼，1/6半径
 \fill [black] (90:{1/2*\r}) circle({1/6*\r});
-% 白色半圆中画大圆半径1/6的黑色实心圆
 \fill [white] (-90:{1/2*\r}) circle({1/6*\r});

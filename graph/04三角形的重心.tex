@@ -11,19 +11,21 @@
 \begin{document}
 
 %\uMintedFrame{TeX}{cmd/04等边三角形4}{等边三角形画法四}
-\def\cmdfile{cmd/04等边三角形4}
-\begin{frame}[t]{等边三角形画法四}
+\uSetMiddleFont
+\def\cmdfile{cmd/04三角形的重心}
+\begin{frame}[t]{三角形的重心}
 \inputminted[bgcolor=black!5]{TeX}{\cmdfile}
 \begin{tikzpicture}[
       overlay, % 浮于正文上方
       remember picture,  % 允许引用页面坐标系
-      shift={(current page.south)},  % 将坐标系原点移到页面右下角
-%      xshift=-10cm,  % 向左移动 8cm（避免贴边）
-      yshift=2cm,    % 向上移动 5cm（避免贴边）
-      scale=1,
-      transform shape
+      shift={(current page.north east)},  % 将坐标系原点移到页面右下角
+      xshift=-9cm,  % 向左移动（避免贴边）
+      yshift=-8cm,    % 向上移动（避免贴边）
+      scale=1.5,
+%      transform shape
     ]
 \input{\cmdfile}
 \end{tikzpicture}
 \end{frame}
+\uSetBigFont
 \end{document}

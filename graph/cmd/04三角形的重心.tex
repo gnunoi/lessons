@@ -1,0 +1,19 @@
+\coordinate (A) at (0,0); % 定义顶点A
+\coordinate (B) at (4,0); % 定义顶点B
+\coordinate (C) at (1,3); % 定义顶点C
+\coordinate (D) at ($(B)!0.5!(C)$); % BC边的中点
+\coordinate (E) at ($(A)!0.5!(C)$); % AC边的中点
+\coordinate (F) at ($(A)!0.5!(B)$); % AB边的中点
+\draw[thick] (A) -- (B) -- (C) -- cycle;% 绘制三角形
+\draw[blue, dotted, name path=AD] (A) -- (D); % 中线AD
+\draw[blue, dotted, name path=BE] (B) -- (E); % 中线BE
+\draw[blue, dotted, name path=CF] (C) -- (F); % 中线CF
+\path[name intersections={of=AD and BE, by=O}]; % 中线交点O
+\fill[black] (O) circle[radius=0.5pt]; % 绘制重心O
+\node[right] at (O) {$O$}; % 标注重心O
+\node[above right] at (D) {$D$}; % 标注中点D
+\node[above left] at (E) {$E$}; % 标注中点E
+\node[below] at (F) {$F$}; % 标注中点F
+\node[below left] at (A) {$A$}; % 标注顶点A
+\node[below right] at (B) {$B$}; % 标注顶点B
+\node[above] at (C) {$C$}; % 标注顶点C

@@ -12,6 +12,20 @@
 
 \date{\today}
 \begin{document}
-\uMintedFrame{TeX}{cmd/04等边三角形3}{等边三角形画法三}
-
+%\uMintedFrame{TeX}{cmd/04等边三角形3}{等边三角形画法三}
+\def\cmdfile{cmd/04等边三角形3}
+\begin{frame}[t]{等边三角形画法三}
+\inputminted[bgcolor=black!5]{TeX}{\cmdfile}
+\begin{tikzpicture}[
+      overlay, % 浮于正文上方
+      remember picture,  % 允许引用页面坐标系
+      shift={(current page.north east)},  % 将坐标系原点移到页面右下角
+      xshift=-10cm,  % 向左移动 8cm（避免贴边）
+      yshift=-10cm,    % 向上移动 5cm（避免贴边）
+      scale=1.2,
+      transform shape
+    ]
+\input{\cmdfile}
+\end{tikzpicture}
+\end{frame}
 \end{document}
