@@ -1,51 +1,72 @@
-\documentclass{article}
-\usepackage{ctex}
-\usepackage{amsmath}
+\documentclass{beamer}
+
+\makeatletter
+\def\input@path{{../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+\uSetMiddleFont
 
 \begin{document}
+\begin{frame}[t]{海伦公式的证明}
+\begin{columns}
+\column{0.5\textwidth}
+$a,b,c$为三角形三边长，半周长 $p = \dfrac{a+b+c}{2}$。
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=0.6] % 使用transform shape可以是含文字一起缩小
+\tiny
+    % 坐标系设定
+    \coordinate (A) at (3,4);
+    \coordinate (B) at (0,0);
+    \coordinate (C) at (5,0);
+    \coordinate (D) at ($(B)!(A)!(C)$); % (直线起点)!(投影点)!(直线终点)
+    
+    % 绘制三角形
+    \draw[thick] (B) -- node[below]{$a$} (C)
+                 -- node[right]{$b$} (A)
+                 -- node[left]{$c$} cycle;
+    \node[above] at (A) {$A$};
+    \node[left] at (B) {$B$};
+    \node[right] at (C) {$C$};
+    % 绘制高度线
+    \draw[dashed, red] (A) -- node[right]{$h$} (D) ;
+    \node[above right] at (D) {$D$};
+    
+    % 标注线段
+    \draw[<->,>=stealth] (0,-0.6) -- node[below]{$x$} (3,-0.6);
+    \draw[<->,>=stealth] (3,-0.6) -- node[below]{$a-x$} (5,-0.6);
+\end{tikzpicture}
+\end{figure}
 
-\title{海伦公式的详细推导}
-\author{}
-\date{}
-\maketitle
+证明：设三角形ABC中：高AD长度为$h$，线段BD长度为$x$，线段DC长度为$a-x$ ，根据勾股定理得到：
+$$
+\begin{cases}
+c^2 = h^2 + x^2 & \text{$\triangle ABD$} \\
+b^2 = h^2 + (a-x)^2 & \text{$\triangle ACD$}
+\end{cases}
+$$
 
-设三角形的三边长分别为 \( a \), \( b \), \( c \)，其中 \( s \) 是半周长，计算公式为：
-\[
-s = \frac{a + b + c}{2}
-\]
-目标是求三角形的面积 \( A \)，并推导出海伦公式：
-\[
-A = \sqrt{s(s-a)(s-b)(s-c)}
-\]
+将两式相减消去$h^2$：
+$$c^2 - b^2 = x^2 - (a-x)^2 = 2ax - a^2$$
+解得：$$x = \frac{a^2 + c^2 - b^2}{2a}$$
+代入第一个方程求高度，得到：
+$$h^2 = c^2 - \left( \frac{a^2 + c^2 - b^2}{2a} \right)^2$$
+\column{0.5\textwidth}
 
-\section*{步骤 1：利用三角形的面积公式}
-三角形的面积 \( A \) 可以通过两边及夹角来计算，公式为：
-\[
-A = \frac{1}{2}ab \sin C
-\]
-其中，\( a \) 和 \( b \) 是两边的长度，\(\angle C\) 是这两边之间的夹角。
-
-\section*{步骤 2：应用余弦定理}
-根据余弦定理，我们有：
-\[
-c^2 = a^2 + b^2 - 2ab \cos C
-\]
-从上式解得：
-\[
-\cos C = \frac{a^2 + b^2 - c^2}{2ab}
-\]
-
-\section*{步骤 3：使用面积公式}
-将余弦值代入面积公式 \( A = \frac{1}{2}ab \sin C \)：
-\[
-A = \frac{1}{2}ab \cdot \sqrt{1 - \left( \frac{a^2 + b^2 - c^2}{2ab} \right)^2}
-\]
-这就是面积与三边的关系。
-
-\section*{步骤 4：转化为半周长形式}
-通过一些代数变换，最终得出海伦公式：
-\[
-A = \sqrt{s(s-a)(s-b)(s-c)}
-\]
-
+三角形面积表达式：
+$$S = \frac{1}{2}ah \Rightarrow S^2 = \frac{a^2}{4}h^2$$
+将$h^2$表达式代入：
+\begin{align*}
+S^2 &= \frac{1}{4}a^2 \left[ c^2 - \frac{(a^2 + c^2 - b^2)^2}{4a^2} \right ] \\
+&= \frac{4a^2c^2 - (a^2+c^2-b^2)^2}{16}\\
+&=\frac{(2ac)^2 - (a^2+c^2-b^2)^2}{16} \\
+&=\frac{(2ac+a^2+c^2-b^2)(2ac-a^2-c^2+b^2)}{16}\\
+&=\frac{(a+b+c)(a+c-b)(a+b-c)(b+c-a)}{16} \\
+&=\frac{(a+b+c)}{2}\frac{(a+c-b)}{2}\frac{(a+b-c)}{2}\frac{(b+c-a)}{2}
+\end{align*}
+令p为半周长，即：$p=\dfrac{a+b+c}{2}$，则：\\
+$S=\sqrt{p(p-a)(p-b)(p-c)}$
+\end{columns}
+\end{frame}
 \end{document}

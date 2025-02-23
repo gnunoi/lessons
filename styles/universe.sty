@@ -40,7 +40,7 @@
 % Kaiti SC：楷体
 % Xingkai SC：行楷
 \setCJKmainfont{Songti SC}         % 设置中文主字体
-\setCJKsansfont{Kaiti SC}         % 设置中文无衬线字体
+\setCJKsansfont{PingFang SC}         % 设置中文无衬线字体
 \setCJKmonofont{FangSong}         % 设置中文等宽字体
 
 
@@ -81,30 +81,42 @@
 }
 
 % 重新定义不同页面大小下的字号
-\newcommand{\uSetBigFont}{
-	\renewcommand{\tiny}{\fontsize{12pt}{14pt}\selectfont} % 5,6
-	\renewcommand{\scriptsize}{\fontsize{14pt}{16pt}\selectfont} % 6,7
-	\renewcommand{\footnotesize}{\fontsize{16pt}{18pt}\selectfont} % 7,8
-	\renewcommand{\small}{\fontsize{18pt}{20pt}\selectfont} % 8,9
-	\renewcommand{\normalsize}{\fontsize{24pt}{28pt}\selectfont} % 10,12
-	\renewcommand{\large}{\fontsize{28pt}{36pt}\selectfont} % 12,14
-	\renewcommand{\Large}{\fontsize{32pt}{40pt}\selectfont} % 14,16
-	\renewcommand{\LARGE}{\fontsize{36pt}{44pt}\selectfont} % 16,18
-	\renewcommand{\huge}{\fontsize{40pt}{48pt}\selectfont} % 20,24
-	\renewcommand{\Huge}{\fontsize{48pt}{60pt}\selectfont} % 24,28
-}
-
 \newcommand{\uSetSmallFont}{
 	\renewcommand{\tiny}{\fontsize{5pt}{6pt}\selectfont} % 5,6
-	\renewcommand{\scriptsize}{\fontsize{6pt}{8pt}\selectfont} % 6,7
-	\renewcommand{\footnotesize}{\fontsize{7pt}{9pt}\selectfont} % 7,8
-	\renewcommand{\small}{\fontsize{8pt}{10pt}\selectfont} % 8,9
+	\renewcommand{\scriptsize}{\fontsize{6pt}{8pt}\selectfont} % 6,8
+	\renewcommand{\footnotesize}{\fontsize{7pt}{9pt}\selectfont} % 7,9
+	\renewcommand{\small}{\fontsize{8pt}{10pt}\selectfont} % 8,10
 	\renewcommand{\normalsize}{\fontsize{10pt}{12pt}\selectfont} % 10,12
 	\renewcommand{\large}{\fontsize{12pt}{14pt}\selectfont} % 12,14
 	\renewcommand{\Large}{\fontsize{14pt}{16pt}\selectfont} % 14,16
 	\renewcommand{\LARGE}{\fontsize{16pt}{18pt}\selectfont} % 16,18
 	\renewcommand{\huge}{\fontsize{20pt}{24pt}\selectfont} % 20,24
 	\renewcommand{\Huge}{\fontsize{24pt}{28pt}\selectfont} % 24,28
+}
+
+\newcommand{\uSetMiddleFont}{
+	\renewcommand{\tiny}{\fontsize{8pt}{10pt}\selectfont} % 8,10
+	\renewcommand{\scriptsize}{\fontsize{10pt}{12pt}\selectfont} % 10,12
+	\renewcommand{\footnotesize}{\fontsize{11pt}{13pt}\selectfont} % 12,14
+	\renewcommand{\small}{\fontsize{12pt}{14pt}\selectfont} % 12,14
+	\renewcommand{\normalsize}{\fontsize{16pt}{18pt}\selectfont} % 16,18
+	\renewcommand{\large}{\fontsize{18pt}{22pt}\selectfont} % 18,22
+	\renewcommand{\Large}{\fontsize{20pt}{24pt}\selectfont} % 20,24
+	\renewcommand{\LARGE}{\fontsize{24pt}{28pt}\selectfont} % 24,28
+	\renewcommand{\huge}{\fontsize{30pt}{36pt}\selectfont} % 20,24
+	\renewcommand{\Huge}{\fontsize{36pt}{42pt}\selectfont} % 24,28
+}
+\newcommand{\uSetBigFont}{
+	\renewcommand{\tiny}{\fontsize{12pt}{14pt}\selectfont} % 12,14
+	\renewcommand{\scriptsize}{\fontsize{14pt}{16pt}\selectfont} % 14,16
+	\renewcommand{\footnotesize}{\fontsize{16pt}{18pt}\selectfont} % 16,18
+	\renewcommand{\small}{\fontsize{18pt}{20pt}\selectfont} % 18,20
+	\renewcommand{\normalsize}{\fontsize{24pt}{28pt}\selectfont} % 14,28
+	\renewcommand{\large}{\fontsize{28pt}{36pt}\selectfont} % 28,36
+	\renewcommand{\Large}{\fontsize{32pt}{40pt}\selectfont} % 32,40
+	\renewcommand{\LARGE}{\fontsize{36pt}{44pt}\selectfont} % 36,44
+	\renewcommand{\huge}{\fontsize{40pt}{48pt}\selectfont} % 40,48
+	\renewcommand{\Huge}{\fontsize{48pt}{56pt}\selectfont} % 48,56
 }
 
 % 自定义uSetList命令
