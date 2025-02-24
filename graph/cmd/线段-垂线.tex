@@ -1,6 +1,6 @@
 \coordinate (A) at (0,0); % 设定A点坐标
-\coordinate (B) at (5,0); % 设定A点坐标
-\coordinate (C) at (3,3); % 设定A点坐标
+\coordinate (B) at (5,0); % 设定B点坐标
+\coordinate (C) at (3,3); % 设定C点坐标
 % $(起点)!(投影点)!(终点)$
 \coordinate (D) at ($(A)!(C)!(B)$); 
 \fill (A) circle(1pt); % A点画1pt的实心圆
@@ -10,6 +10,6 @@
 \node[left] at (A) {$A$}; % 标记A
 \node[right] at (B) {$B$}; % 标记B
 \node[above] at (C) {$C$}; % 标记C
-\node[below] at (D) {$D$}; % 标记C
+\node[below] at (D) {$D$}; % 标记D
 \draw (A) -- (B); % 画线AB
 \draw[red,dashed] (C) -- (D); % 画线CD

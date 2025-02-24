@@ -1,0 +1,16 @@
+\documentclass[border=12pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc,intersections}
+
+\begin{document}
+\begin{tikzpicture}
+
+\def\r{5}
+\foreach \deg in {0,1,...,360} {
+	\draw [black, rotate around={\deg:(0,0)}] (0,0) -- (\r,0);
+}
+\foreach \radius in {5,...,5}
+	\draw [black] (0:0) circle (\radius);
+	
+\end{tikzpicture}
+\end{document}

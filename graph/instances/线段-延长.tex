@@ -1,0 +1,19 @@
+\documentclass[border=12pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc,intersections}
+\begin{document}
+\begin{tikzpicture}
+
+\coordinate (A) at (0,0); % 设定A点坐标
+\coordinate (B) at (2,0); % 设定A点坐标
+
+% $(起点)!放大系数!(终点)$，放大系数正负数均可
+\coordinate (C) at ($(A)!2!(B)$); 
+\coordinate (D) at ($(A)!-1!(B)$); 
+\foreach \p in {A,B,C,D} \fill (\p) circle(1pt) node [below] {\textit{\p}};
+
+\draw (A) -- (B); % 画线AB
+\draw [red, densely dotted] (B) -- (C); % 画线BC
+\draw [green!50!black, densely dotted] (A) -- (D); % 画线AD
+\end{tikzpicture}
+\end{document}

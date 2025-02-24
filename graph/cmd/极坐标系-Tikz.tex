@@ -1,0 +1,20 @@
+\coordinate (O) at (0:0);
+\fill (O) circle(1pt) node [below right] {$O$};
+% 以(0,0)为中心，旋转指定角度
+\foreach \deg in {30,60,...,330} {
+\draw [densely dotted, gray, rotate around={\deg:(0,0)}] (0,0) -- (5.5,0);
+\node [black, distance=2pt] at(\deg:6) {\deg\textdegree};
+}
+\node [black,  below] at (0:6) {0\textdegree};
+\foreach \radius in {1,...,5}{
+\draw [densely dotted, gray](0,0) circle(\radius);
+}
+\draw [-stealth] (0,0) -- (8,0) node [below] {$x$};
+\coordinate (M) at (60:4);
+\fill (M) circle(1pt) node [right] {M(60:4)};
+\coordinate (N) at ($(0:0)!(60:4)!(0:8)$);
+\fill (N) circle(1pt) node [below right] {$N$};
+\coordinate (P) at ($(90:0)!(60:4)!(90:8)$);
+\fill (P) circle(1pt) node [below right] {$P$};
+\draw [red, densely dotted] (M) -- (N);
+\draw [red, densely dotted] (M) -- (P);
