@@ -1,0 +1,24 @@
+\coordinate (A) at (0,0); % 定义三角形顶点A
+\coordinate (B) at (4,0); % 定义三角形顶点B
+\coordinate (C) at (1,3); % 定义三角形顶点C
+\draw[thick] (A) node[below left]{$A$} -- 
+(B) node[below right]{$B$} -- 
+(C) node[above]{$C$} -- cycle; % 绘制三角形ABC
+\draw[red, dotted, name path=arcA] 
+(A) ++(90:4) arc (90:-270:4);  % % 以A为圆心画弧，++操作保持圆心在A
+\draw[red, dotted, name path=arcB] 
+(B) ++(90:4) arc (90:-270:4);  % % 以B为圆心画弧，++操作保持圆心在B
+\draw[blue, dotted, name path=arcC] 
+(C) ++(0:4) arc (0:360:4); %   % 以C为圆心画弧，++操作保持圆心在C
+\path[name intersections={of=arcA and arcB, by={D,E}}]; % 求交点
+\draw[red, densely dashed, name path=DE] (D) -- (E); % 绘制垂直平分线DE
+\path[name intersections={of=arcA and arcC, by={F,G}}]; % 求交点
+\draw[blue, densely dashed, name path=FG] (F) -- (G); % 绘制垂直平分线FG
+\path[name intersections={of=arcB and arcC, by={M,N}}]; % 求交点
+\draw[green!50!black, densely dashed, name path=FG] (M) -- (N); % 绘制垂直平分线MN
+\path[name intersections={of=DE and FG, by={O}}]; % 确定外心O
+\node[above left] at (O) {$O$};
+\node[draw=orange, thick, circle through=(A)] at (O) {};  % 绘制外接圆
+\draw[gray] (O) -- (A) (O) -- (B) (O) -- (C);
+\foreach \p in {A,B,C,O} 
+\node[circle, inner sep=1pt, fill=orange] at (\p) {};

@@ -1,0 +1,40 @@
+% 定义三角形顶点
+\coordinate (A) at (0,0);
+\coordinate (B) at (4,0);
+\coordinate (C) at (1,3);
+% 绘制三角形ABC
+\draw[thick] (A) node[below]{A} -- 
+(B) node[below]{B} -- 
+(C) node[above]{C} -- cycle;
+% ====== AB边垂直平分线 ======
+% 以A为圆心画弧
+\draw[red, dotted, name path=arcAB1] 
+(A) ++(90:3) arc (90:-270:3);  % ++操作保持圆心在A
+% 以B为圆心画弧
+\draw[red, dotted, name path=arcAB2] 
+(B) ++(90:3) arc (90:-270:3);  % ++操作保持圆心在B
+% 求交点并绘制垂直平分线DE
+\path[name intersections={of=arcAB1 and arcAB2, by={D,E}}];
+\draw[red, densely dashed, name path=DE] (D) -- (E);
+% ====== AC边垂直平分线 ======
+% 计算AC边角度
+\pgfmathsetmacro{\angleAC}{atan2(3,1)}  % atan2(y,x)=71.565°
+% 以A为圆心画弧
+\draw[blue, dotted, name path=arcAC1] 
+(A) ++(\angleAC+90:2.5) arc (\angleAC+90:\angleAC-270:2.5);
+% 以C为圆心画弧
+\draw[blue, dotted, name path=arcAC2] 
+(C) ++(\angleAC-90:2.5) arc (\angleAC-90:\angleAC+270:2.5);
+% 求交点并绘制垂直平分线FG
+\path[name intersections={of=arcAC1 and arcAC2, by={F,G}}];
+\draw[blue, densely dashed, name path=FG] (F) -- (G);
+% ====== 确定外心O ======
+\path[name intersections={of=DE and FG, by={O}}];
+\fill[purple] (O) circle (2pt) node[above right] {O};
+% ====== 绘制外接圆 ======
+\node[draw=green!50!black, thick, 
+circle through=(A)] at (O) {};  % 自动通过三点验证
+% ====== 几何验证 ======
+\draw[gray, opacity=1] (O) -- (A) (O) -- (B) (O) -- (C);
+\foreach \p in {A,B,C,O} 
+\node[circle, inner sep=2pt, fill=orange] at (\p) {};

@@ -1,0 +1,30 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\usepackage{umint}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+\uSetMiddleFont
+\def\cmdfile{cmd/04三角形的外心}
+\begin{frame}[t]{三角形的外心}
+\inputminted[bgcolor=black!5]{TeX}{\cmdfile}
+\begin{tikzpicture}[
+      overlay, % 浮于正文上方
+      remember picture,  % 允许引用页面坐标系
+      shift={(current page.north east)},  % 将坐标系原点移到页面右下角
+      xshift=-7cm,  % 向左移动（避免贴边）
+      yshift=-6cm,  % 向上移动（避免贴边）
+      scale=1.2,
+%      transform shape
+    ]
+\input{\cmdfile}
+\end{tikzpicture}
+\end{frame}
+\uSetBigFont
+\end{document}

@@ -9,21 +9,20 @@
 
 \date{\today}
 \begin{document}
-
-%\uMintedFrame{TeX}{cmd/03画线1}{Tikz画线}
-\def\cmdfile{cmd/03画线1}
-\begin{frame}[t]{Tikz画线}
+\uSetMiddleFont
+\def\cmdfile{cmd/线段-垂线}
+\begin{frame}[t]{线外一点画垂线}
 \inputminted[bgcolor=blue!5]{TeX}{\cmdfile}
-\begin{tikzpicture}
-[
+\begin{tikzpicture}[
       overlay, % 浮于正文上方
       remember picture,  % 允许引用页面坐标系
-      shift={(current page.south)},  % 将坐标系原点移到页面右下角
-      xshift=0cm,  % 向左移动 8cm（避免贴边）
-      yshift=1cm,    % 向上移动 5cm（避免贴边）
-      scale=0.6
+      shift={(current page.north east)},  % 将坐标系原点移到页面右下角
+      xshift=-8cm,  % 向左移动 8cm（避免贴边）
+      yshift=-7cm,    % 向上移动 5cm（避免贴边）
+      scale=1, % 缩放比例
     ]
 \input{\cmdfile}
 \end{tikzpicture}
 \end{frame}
+\uSetBigFont
 \end{document}
