@@ -1,18 +1,14 @@
-\coordinate (A) at (0:0); % 定义点A
-\coordinate (B) at (0:5); % 定义点B
-% A为圆心，半径5，65~55度角
-\draw [name path=A1] [thick] (A)+(65:5) arc(65:55:5); 
-% B为圆心，半径5，125~115度角
-\draw[thick, name path=A2] (B)+(125:5) arc(125:115:5); 
-% A为圆心，半径5，-65~-55度角
-\draw[thick, name path=A3] (A)+(-65:5) arc(-65:-55:5);
-% B为圆心，半径5，-125~-115度角
-\draw [name path=A4] [thick] (B)+(-125:5) arc(-125:-115:5); 
-\path [name intersections={of=A1 and A2, by=P}]; % 求交点P
-\path [name intersections={of=A3 and A4, by=Q}]; % 求交点Q
-\draw (A) -- (B) (P) -- (Q); % 连接PQ两点
-\draw [dotted] (A) -- (P) -- (B) (A) -- (Q) -- (B); % 画点线的辅助线
-\node at (A) [left] {$A$}; % 点A左边标注A
-\node at (B) [right] {$B$}; % 点B右边标注B
-\node at (P) [above] {$P$}; % 点P上方标注P
-\node at (Q) [below] {$Q$}; % 点Q下方标注Q
+\coordinate (A) at (0,0); % 设定A点坐标
+\coordinate (B) at (5,0); % 设定A点坐标
+\coordinate (C) at (3,3); % 设定A点坐标
+\coordinate (D) at ($(A)!(C)!(B)$); % $(起点)!(投影点)!(终点)$
+\fill (A) circle(1pt); % A点画1pt的实心圆
+\fill (B) circle(1pt); % B点画1pt的实心圆
+\fill (C) circle(1pt); % C点画1pt的实心圆
+\fill (D) circle(1pt); % C点画1pt的实心圆
+\node[left] at (A) {$A$}; % 标记A
+\node[right] at (B) {$B$}; % 标记B
+\node[above] at (C) {$C$}; % 标记C
+\node[below] at (D) {$D$}; % 标记C
+\draw (A) -- (B); % 画线AB
+\draw[red,dashed] (C) -- (D); % 画线CD
