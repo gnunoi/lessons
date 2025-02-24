@@ -6,10 +6,14 @@
 
 \coordinate (A) at (0, 0); % 定义点A
 \coordinate (B) at (5, 0); % 定义点B
-\draw [name path=A1] (A)+(65:5) arc(65:55:5); % 画圆弧A1，A为圆心，65-55度，半径5
-\draw [name path=A2] (B)+(125:5) arc(125:115:5); % 画圆弧A2，B为圆心，125-115度，半径5
-\path [name intersections={of=A1 and A2, by=P}]; % 求交点P
-\draw [thick] (A) -- (B) -- (P) -- cycle; % 画连接A, B, P的三角形
+% 画圆弧A1，A为圆心，65-55度，半径5
+\draw [name path=A1] (A)+(65:5) arc(65:55:5); 
+% 画圆弧A2，B为圆心，125-115度，半径5
+\draw [name path=A2] (B)+(125:5) arc(125:115:5); 
+% 求交点P
+\path [name intersections={of=A1 and A2, by=P}]; 
+% 画连接A, B, P的三角形
+\draw [thick] (A) -- (B) -- (P) -- cycle; 
 \node at (A) [below left] {A}; % 标注点A
 \node at (B) [below right] {B}; % 标注点B
 \node at (P) [above] {P}; % 标注点P

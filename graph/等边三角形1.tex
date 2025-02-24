@@ -9,18 +9,19 @@
 
 \date{\today}
 \begin{document}
-%\uMintedFrame{TeX}{cmd/04等边三角形1}{等边三角形画法一}
+%\uMintedFrame{TeX}{cmd/等边三角形1}{等边三角形画法一}
 \begin{frame}[t]{等边三角形画法一}
-\inputminted[bgcolor=blue!5]{TeX}{cmd/04等边三角形1}
+\def\cmdfile{cmd/等边三角形1}
+\inputminted[bgcolor=blue!5]{TeX}{\cmdfile}
 \begin{tikzpicture}[
       overlay, % 浮于正文上方
       remember picture,  % 允许引用页面坐标系
       shift={(current page.south east)},  % 将坐标系原点移到页面右下角
-      xshift=-8cm,  % 向左移动 8cm（避免贴边）
-      yshift=5cm,    % 向上移动 5cm（避免贴边）
+      xshift=-7cm,  % 左右移动（避免贴边）
+      yshift=4.5cm,  % 上下移动（避免贴边）
       scale=0.6
     ]
-\input{cmd/04等边三角形1}
+\input{\cmdfile}
 \end{tikzpicture}
 \end{frame}
 \end{document}
