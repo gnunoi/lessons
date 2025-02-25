@@ -1,0 +1,23 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{ctex}
+\usetikzlibrary{intersections}
+
+\begin{document}
+\begin{tikzpicture}[scale=3]
+
+% 命名并绘制三角形路径
+\path [draw, thick, black, name path=TA] 
+    (0,0) -- (2,0) -- (1,2) -- cycle;
+
+% 创建另一条路径（水平线）
+\path [draw, black, name path=LA] 
+    (0,1) -- (2,1);
+
+% 计算交点并标注
+\path [name intersections={of=TA and LA, by={A,B}, total=\t}];
+
+\fill (A) circle (1pt) node[above right] {$A$};
+\fill (B) circle (1pt) node[above left] {$B$};
+
+\end{tikzpicture}
+\end{document}

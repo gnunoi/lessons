@@ -1,0 +1,50 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc,intersections}
+
+\begin{document}
+% 必须使用绝对坐标
+\begin{tikzpicture}
+% \fill (0,0) coordinate (O) circle(1pt) node [below]{$O$};
+\coordinate (A) at (0,0);
+\coordinate (B) at (5,0);
+\coordinate (C) at (0,3);
+\coordinate (RO) at (4,4);
+
+\begin{scope}[red, rotate around={0:(RO)}]
+\path [draw, thick, black, name path=TA] 
+    (0,0) -- (2,0) -- (1,2) -- cycle;
+	\path [draw, thick, blue, name path=triangle]
+		(0,0) -- (5,0) -- (0,3) -- cycle;
+	\draw[blue] (0,0) -- (5,0) node [midway, below]{$a$};
+	\draw[blue] (5,0) -- (0,3) node [midway, above]{$c$};
+	\draw[blue] (0,3) -- (0,0) node [midway, left]{$b$};
+%\end{scope}
+
+\begin{scope}[red, rotate around={90:(RO)}]
+	\path [draw, thick, blue, name path=TB] (0,0) -- (5,0) -- (0,3) -- cycle;
+    \draw (0,0) -- (5,0) node [midway, right]{$a$};
+    \draw (5,0) -- (0,3) node [midway, left]{$c$};
+    \draw (0,3) -- (0,0) node [midway, below]{$b$};
+\end{scope}
+
+\begin{scope}[green!50!black, rotate around={180:(RO)}]
+    \draw (0,0) -- (5,0) -- (0,3) -- cycle;
+    \draw (0,0) -- (5,0) node [midway, above]{$a$};
+    \draw (5,0) -- (0,3) node [midway, below]{$c$};
+    \draw (0,3) -- (0,0) node [midway, right]{$b$};
+\end{scope}
+
+\begin{scope}[orange, rotate around={270:(RO)}]
+    \draw (0,0) -- (5,0) -- (0,3) -- cycle;
+    \draw (0,0) -- (5,0) node [midway, left]{$a$};
+    \draw (5,0) -- (0,3) node [midway, right]{$c$};
+    \draw (0,3) -- (0,0) node [midway, above]{$b$};
+\end{scope}
+%\path [name intersections={of=arcA1 and arcB1, by=P}]; % 求交点P
+\path [name intersections={of=triangle and TB, by=P}];	
+%\fill (P) circle(1pt) node {$P$};
+
+\end{tikzpicture}
+
+\end{document}
