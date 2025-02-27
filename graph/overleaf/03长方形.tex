@@ -1,0 +1,21 @@
+\documentclass [border=12pt] {standalone}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}
+
+% 作长方形
+\draw (1,0)  rectangle (5,3); 
+
+\draw (6,0) -- (10,0) -- (10,3) -- (6,3) -- cycle;
+
+\draw (1,4) -- (5,4);
+\draw (5,4) -- (5,7);
+\draw (5,7) -- (1,7); 
+\draw (1,7) -- (1,4);
+
+\draw (6,4) -| (10,7) -| cycle; % 先水平后垂直
+
+
+\end{tikzpicture}
+\end{document}

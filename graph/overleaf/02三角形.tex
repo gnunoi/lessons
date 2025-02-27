@@ -1,0 +1,14 @@
+\documentclass [border=12pt] {standalone}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}
+
+\draw (1,0)  -- (5,0) -- (3,4) -- cycle; % 完全闭合
+
+\draw (1,5) -- (5,5);
+\draw (5,5) -- (3,9);
+\draw (3,9) -- (1,5); % 注意与cycle的区别，放大后比较
+
+\end{tikzpicture}
+\end{document}

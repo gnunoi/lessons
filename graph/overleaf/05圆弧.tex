@@ -1,0 +1,23 @@
+\documentclass[tikz, border=12pt]{standalone}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}
+
+% 起点坐标 arc(起始角度:结束角度:半径)
+% 起始角度与结束角度站在圆心位置上看
+
+%圆弧起点： 0°角，6为半径，圆弧从0°到90°
+\draw[black] (0:6) arc(0:90:6);
+
+%圆弧起点： 90°角，6为半径，圆弧从0°到-90°
+\draw[black] (90:6) arc(0:-90:6);
+
+%圆弧起点： 180°角，6为半径，圆弧从180°到270°
+\draw[black] (180:6) arc(180:270:6);
+
+%圆弧起点： 0°角，6为半径，圆弧从90°到180°
+\draw[black] (0:6) arc(90:180:6);
+
+\end{tikzpicture}
+\end{document}

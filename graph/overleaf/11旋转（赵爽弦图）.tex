@@ -1,0 +1,46 @@
+\documentclass[border=0.2cm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc,intersections}
+
+\begin{document}
+
+% 必须使用绝对坐标
+\begin{tikzpicture}
+
+\coordinate (A) at (0,0);
+\coordinate (C) at (3,0);
+\coordinate (B) at (3,4);
+\coordinate (RO) at (3.5,0.5);
+
+% rotate：旋转；around：围绕
+% {0:(RO)}，围绕(RO)坐标，旋转0度
+\begin{scope}[red, rotate around={0:(RO)}]
+	\draw (0,0) -- (3,0) node [midway, above]{$a$};
+	\draw (3,0) -- (3,4) node [midway, left]{$b$};
+	\draw (3,4) -- (0,0) node [midway, right]{$c$};
+\end{scope}
+
+% {0:(RO)}，围绕(RO)坐标，旋转90度
+\begin{scope}[blue, rotate around={90:(RO)}]
+	\draw (0,0) -- (3,0) node [midway, left]{$a$};
+	\draw (3,0) -- (3,4) node [midway, below]{$b$};
+	\draw (3,4) -- (0,0) node [midway, above]{$c$};
+\end{scope}
+
+% {0:(RO)}，围绕(RO)坐标，旋转180度
+\begin{scope}[orange, rotate around={180:(RO)}]
+	\draw (0,0) -- (3,0) node [midway, below]{$a$};
+	\draw (3,0) -- (3,4) node [midway, right]{$b$};
+	\draw (3,4) -- (0,0) node [midway, left]{$c$};
+\end{scope}
+
+% {0:(RO)}，围绕(RO)坐标，旋转270度
+\begin{scope}[green!50!black, rotate around={270:(RO)}]
+	\draw (0,0) -- (3,0) node [midway, right]{$a$};
+	\draw (3,0) -- (3,4) node [midway, above]{$b$};
+	\draw (3,4) -- (0,0) node [midway, below]{$c$};
+\end{scope}
+
+\end{tikzpicture}
+
+\end{document}

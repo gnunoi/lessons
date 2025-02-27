@@ -1,0 +1,10 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}
+\pgfmathsetmacro{\x}{30} % 定义\x为30
+% 绘制从\x到360-\x的圆弧，半径为1cm
+\draw (0,0) arc ({\x}:{360-\x}:1cm);
+\end{tikzpicture}
+\end{document}
