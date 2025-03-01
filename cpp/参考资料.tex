@@ -1,0 +1,30 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+\usetheme{Madrid} %Madrid，蓝色调为主。
+\usecolortheme{beaver} %beaver
+\usefonttheme{professionalfonts}
+
+\makeatletter
+\def\input@path{{../styles}}  % 
+\makeatother
+\usepackage{universe}
+\usepackage{umint}
+\uBigPaper
+\begin{document}
+
+\begin{frame}[t]{学习工具}
+\begin{columns}
+\column{0.9\textwidth}
+\begin{spacing}{1.5} %设置行距
+{
+\large
+\begin{enumerate}[label={\arabic*.}]
+\item \textbf{DeepSeek：\textcolor{blue}{\href{https://chat.deepseek.com/}{https://chat.deepseek.com/}}}
+\item \textbf{C++在线参考手册：\textcolor{blue}{\href{https://zh.cppreference.com/w/cpp}{https://zh.cppreference.com/w/cpp}}}
+\item \textbf{C++ Primer Plus第六版}
+\end{enumerate}
+}
+\end{spacing}
+\end{columns}
+\end{frame}
+
+\end{document}
