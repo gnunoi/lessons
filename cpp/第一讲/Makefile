@@ -5,7 +5,7 @@ LATEXMK=latexmk -xelatex --shell-escape
 #LATEXMK=$(LATEX)
 TEX=$(wildcard *.tex)
 PDF=$(TEX:.tex=.pdf)
-MAIN=C++程序设计讲义
+MAIN=C++程序设计
 
 .PHONY:all clean distclean c d
 

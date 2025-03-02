@@ -1,20 +1,15 @@
-\documentclass[aspectratio=169]{ctexart} %[t]：顶端对齐
+\documentclass{book} %[t]：顶端对齐
 
 \makeatletter
 \def\input@path{{../styles}} 
 \makeatother
-\RequirePackage{umint}
-
+\RequirePackage{ubook}
 
 \date{\today}
 \begin{document}
 
-%\subfile{程序设计学习的特点}
-%\subfile{参考资料}
-%\uSetMiddleFont
-%\uMinted{cpp}{src/hello.cpp}{第一个C++程序}
-%\uSetBigFont
 
+\uMinted{cpp}{src/hello.cpp}{第一个C++程序}
 \uMinted{cpp}{src/1-1.cpp}{竞赛：1-1}
 \uMinted{cpp}{src/B2001.cpp}{洛谷：B2001，求两个整数的和}
 \uMinted{cpp}{src/B2001-1.cpp}{洛谷：B2001，求两个整数的和}

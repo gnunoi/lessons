@@ -1,0 +1,28 @@
+% universe.sty (universal style)
+\ProvidesPackage{ubook}
+\RequirePackage{umint}
+\RequirePackage[a4paper, margin=2cm]{geometry} % 同时指定A4纸和页边距
+
+\RequirePackage{tcolorbox}
+\tcbuselibrary{minted, breakable, skins}  % 关键依赖库
+
+\newtcblisting{breakablecode}[2][]{
+  listing engine=minted,
+  minted language=#2,
+  listing only,
+  breakable,
+  enhanced,
+  colback=white,
+  colframe=gray!20,
+  #1
+}
+
+% 定义自动包裹 frame 的命令
+\renewcommand{\uMinted}[4][]{
+  	\textbf{{#4}:}\\
+	\begin{breakablecode}{#2}
+		\inputminted[#1]{#2}{#3}
+	\end{breakablecode}
+}
+
+
