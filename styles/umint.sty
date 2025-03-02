@@ -30,5 +30,16 @@
   \end{frame}
 }
 
+% 定义自动包裹 frame 的命令
+\newcommand{\uMinted}[4][]{%
+  \ifbool{inbeamer}{%
+    \begin{frame}[t]{#4}% 第 4 个参数作为标题
+      \inputminted[#1]{#2}{#3}%
+    \end{frame}%
+  }{%
+    \inputminted[#1]{#2}{#3}%
+  }%
+}
+
 % 全局设置
 \uSetMinted

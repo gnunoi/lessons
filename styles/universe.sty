@@ -1,4 +1,3 @@
-% universe.sty (universal style)
 \ProvidesPackage{universe}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
@@ -6,7 +5,7 @@
 \RequirePackage{enumitem} % 有序列表
 \RequirePackage{fontspec}
 \RequirePackage{hyperref} % 用于创建超链接
-\usepackage{ifthen}  % 用于检查可选参数是否存在
+\RequirePackage{ifthen}  % 用于检查可选参数是否存在
 \RequirePackage{listings} % 语法高亮
 \RequirePackage{pgfplots}
 \RequirePackage{setspace} % 设置行间距
@@ -15,6 +14,8 @@
 \RequirePackage{xcolor}
 \RequirePackage{hyperref}
 \RequirePackage{subfiles}
+\RequirePackage{minted}
+\RequirePackage{etoolbox} % 提供条件判断宏
 
 % 使用 TikZ 库
 \usetikzlibrary{arrows.meta}
@@ -24,9 +25,14 @@
 
 \pgfplotsset{compat=1.18} %兼容到1.18版及以下版本的特性
 
+% 检测是否在 beamer 环境中
+\providebool{inbeamer}
+\boolfalse{inbeamer} % 默认设为 false
+\@ifclassloaded{beamer}{\booltrue{inbeamer}}{}
+
+
 % 全局设置
 \author{丁保华}
-\institute{致慧星空工作室}
 
 % 设置英文主字体、无衬线字体和等宽字体
 \setmainfont{Times New Roman}    % 设置英文字体（正文）
@@ -49,76 +55,6 @@
 \definecolor{uLightGray}{rgb}{0.9, 0.9, 0.9} % 定义背景颜色
 \definecolor{uCommentColor}{rgb}{0.0, 0.5, 0.0}  % 定义注释颜色
 
-% 定义页面大小
-\newcommand{\uBigPaper}{
-	\RequirePackage{geometry}
-	\geometry{paperwidth=320mm, paperheight=180mm}
-	\uSetTextSize
-	\uSetBigFont
-}
-
-% 设置不同文本类型的字体大小
-\newcommand{\uSetTextSize}{
-	\setbeamerfont{title}{size=\Huge}                % 主标题字号
-	\setbeamerfont{frametitle}{size=\Large}           % 框架标题字号
-	\setbeamerfont{theorem title}{size=\Large}       % 定理标题字号
-	\setbeamerfont{lemma title}{size=\Large}         % 引理标题字号
-	\setbeamerfont{corollary title}{size=\Large}    % 推论标题字号
-	\setbeamerfont{block title}{size=\Large}         % 代码块标题字号
-	\setbeamerfont{subtitle}{size=\large}            % 副标题字号
-	\setbeamerfont{headline}{size=\large}            % 页眉字号
-	\setbeamerfont{block body}{size=\normalsize}     % 代码块正文字号
-	\setbeamerfont{theorem body}{size=\normalsize}   % 定理正文字号
-	\setbeamerfont{lemma body}{size=\normalsize}     % 引理正文字号
-	\setbeamerfont{corollary body}{size=\normalsize} % 推论正文字号
-	\setbeamerfont{normal text}{size=\small}         % 普通文本字号
-	\setbeamerfont{author}{size=\small}              % 作者字号
-	\setbeamerfont{table title}{size=\small}         % 表格标题字号
-	\setbeamerfont{item}{size=\footnotesize}         % 项目列表项字号
-	\setbeamerfont{date}{size=\footnotesize}         % 日期字号
-	\setbeamerfont{caption}{size=\scriptsize}        % 图像/表格标题字号
-	\setbeamerfont{footline}{size=\scriptsize}       % 页脚字号
-	\setbeamerfont{footnote}{size=\scriptsize}       % 脚注字号
-}
-
-% 重新定义不同页面大小下的字号
-\newcommand{\uSetSmallFont}{
-	\renewcommand{\tiny}{\fontsize{5pt}{6pt}\selectfont} % 5,6
-	\renewcommand{\scriptsize}{\fontsize{6pt}{8pt}\selectfont} % 6,8
-	\renewcommand{\footnotesize}{\fontsize{7pt}{9pt}\selectfont} % 7,9
-	\renewcommand{\small}{\fontsize{8pt}{10pt}\selectfont} % 8,10
-	\renewcommand{\normalsize}{\fontsize{10pt}{12pt}\selectfont} % 10,12
-	\renewcommand{\large}{\fontsize{12pt}{14pt}\selectfont} % 12,14
-	\renewcommand{\Large}{\fontsize{14pt}{16pt}\selectfont} % 14,16
-	\renewcommand{\LARGE}{\fontsize{16pt}{18pt}\selectfont} % 16,18
-	\renewcommand{\huge}{\fontsize{20pt}{24pt}\selectfont} % 20,24
-	\renewcommand{\Huge}{\fontsize{24pt}{28pt}\selectfont} % 24,28
-}
-
-\newcommand{\uSetMiddleFont}{
-	\renewcommand{\tiny}{\fontsize{8pt}{10pt}\selectfont} % 8,10
-	\renewcommand{\scriptsize}{\fontsize{10pt}{12pt}\selectfont} % 10,12
-	\renewcommand{\footnotesize}{\fontsize{12pt}{14pt}\selectfont} % 12,14
-	\renewcommand{\small}{\fontsize{14pt}{16pt}\selectfont} % 12,14
-	\renewcommand{\normalsize}{\fontsize{18pt}{22pt}\selectfont} % 18,22
-	\renewcommand{\large}{\fontsize{20pt}{24pt}\selectfont} % 20,24
-	\renewcommand{\Large}{\fontsize{22pt}{26pt}\selectfont} % 22,26
-	\renewcommand{\LARGE}{\fontsize{24pt}{28pt}\selectfont} % 24,28
-	\renewcommand{\huge}{\fontsize{30pt}{36pt}\selectfont} % 20,24
-	\renewcommand{\Huge}{\fontsize{36pt}{42pt}\selectfont} % 24,28
-}
-\newcommand{\uSetBigFont}{
-	\renewcommand{\tiny}{\fontsize{12pt}{14pt}\selectfont} % 12,14
-	\renewcommand{\scriptsize}{\fontsize{14pt}{16pt}\selectfont} % 14,16
-	\renewcommand{\footnotesize}{\fontsize{16pt}{18pt}\selectfont} % 16,18
-	\renewcommand{\small}{\fontsize{18pt}{20pt}\selectfont} % 18,20
-	\renewcommand{\normalsize}{\fontsize{24pt}{28pt}\selectfont} % 14,28
-	\renewcommand{\large}{\fontsize{28pt}{36pt}\selectfont} % 28,36
-	\renewcommand{\Large}{\fontsize{32pt}{40pt}\selectfont} % 32,40
-	\renewcommand{\LARGE}{\fontsize{36pt}{44pt}\selectfont} % 36,44
-	\renewcommand{\huge}{\fontsize{40pt}{48pt}\selectfont} % 40,48
-	\renewcommand{\Huge}{\fontsize{48pt}{56pt}\selectfont} % 48,56
-}
 
 % 自定义uSetList命令
 \newcommand{\uSetList}[1]{

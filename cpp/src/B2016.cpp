@@ -9,7 +9,7 @@ int main()
     cin >> x;
     
     // 输出：长长整型
-    printf("%lld", (long long)x);
+    cout << (long long int)x;
     
     return 0;
 }
