@@ -1,8 +1,8 @@
 #include <iostream>
+using namespace std;
 
 int main()
 {
-	using namespace std;
 	// 定义两个长长整型的变量a和b
 	long long a, b;
 

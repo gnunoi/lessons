@@ -4,7 +4,7 @@ LATEXMK=latexmk -xelatex --shell-escape
 #LATEXMK=latexmk -quiet -xelatex --shell-escape
 TEX=$(wildcard *.tex)
 PDF=$(TEX:.tex=.pdf)
-MAIN=DeepSeek讲稿
+MAIN=中学生学习C++程序设计的优势
 
 .PHONY:all clean distclean c d
 
