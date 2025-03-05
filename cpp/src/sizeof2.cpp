@@ -33,7 +33,7 @@ s_type type_array[]={
 
 int print_type2() 
 {
-    for (int i = 0; i < sizeof(type_array) / sizeof(s_type); i++){
+    for (unsigned long i = 0; i < sizeof(type_array) / sizeof(s_type); i++){
         cout << type_array[i].name << ": " << type_array[i].size << "字节" << endl;
     }
     return 0;
