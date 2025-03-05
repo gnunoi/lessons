@@ -28,13 +28,12 @@ int main()
 
 long long factorial(int n)
 {
-    if (n == 0) return 1;
-    
     int i = 1;
     long long fac = 1;
     
-    for (i = 1; i <= n; i++){
-        fac *= i;
+    for (i = 0; i <= n; i++){
+        if (i == 0) fac = 1;
+		else fac *= i;
         d("%d: %d! = %lld\n", n, i, fac);
     }
     d("%d! = %lld\n", i, fac);
