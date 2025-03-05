@@ -20,7 +20,7 @@ int main()
     for(int i = 0; i <= n; i++){
         fac = factorial(i);
         e += 1.0/fac;
-        d("%d: %lld, %g\n", i, fac, e);
+        d("%d: %lld, %Lf\n", i, fac, e);
     }
     cout << fixed << setprecision(10) << e << endl;
     return 0;
