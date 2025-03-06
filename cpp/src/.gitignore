@@ -1,9 +1,0 @@
-.*
-*
-*.*
-!.gitignore
-!Makefile
-!*.cpp
-!*.tex
-!*.sty
-!error
