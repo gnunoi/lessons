@@ -16,19 +16,15 @@ $for(classoption)$
   $classoption$$sep$,
 $endfor$
 ]{$documentclass$}
-
-\usepackage{ctex}
-
+\usepackage{ctex} % 使用ctex以支持中文
 $if(beamerarticle)$
 \usepackage{beamerarticle} % needs to be loaded first
 $endif$
 \usepackage{xcolor}
 $if(geometry)$
-%\usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
-
-\usepackage[paper=a4paper, margin=1cm]{geometry}
-
+\usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $endif$
+\usepackage[paper=a4paper, margin=2cm]{geometry} % 设置页边距
 \usepackage{amsmath,amssymb}
 $--
 $-- section numbering
