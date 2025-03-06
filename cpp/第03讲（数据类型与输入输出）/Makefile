@@ -8,14 +8,14 @@ PANDOC := pandoc
 PANDOC_FLAGS := -s -f markdown \
   -V author="丁保华（致慧星空工作室）" \
   -V numbersections \
-  -V secnumdepth:3 \
-  --pdf-engine=xelatex --pdf-engine-opt=-shell-escape \
+  -V secnumdepth:4 \
+  --listings \
+  --pdf-engine=xelatex \
   --template=../../styles/upandoc.tex
 
 .PHONY:all clean c
 
-#all:$(MAIN).pdf
-all:$(PDF) $(DOCX)
+all:$(PDF)
 
 %.pdf:%.md
 	$(PANDOC) $(PANDOC_FLAGS) -t pdf $< -o $@

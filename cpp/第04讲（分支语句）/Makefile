@@ -9,6 +9,7 @@ PANDOC_FLAGS := -s -f markdown \
   -V author="丁保华（致慧星空工作室）" \
   -V numbersections \
   -V secnumdepth:4 \
+  --wrap=none \
   --listings \
   --pdf-engine=xelatex \
   --template=../../styles/upandoc.tex

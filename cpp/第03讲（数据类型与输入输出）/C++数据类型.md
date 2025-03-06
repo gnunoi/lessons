@@ -1,3 +1,7 @@
+---
+geometry: landscape, top=2cm, bottom=2cm, left=2.5cm, right=2.5cm
+---
+
 # C++基础数据类型
 
 ## 整型（Signed / Unsigned）

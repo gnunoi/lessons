@@ -65,10 +65,15 @@ $endif$
 \usepackage{ctex} % 使用ctex以支持中文
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\usepackage{minted} % 语法高亮
+%\usepackage{fvextra}  % 扩展 minted 的分页功能
+\usepackage{listings}
+\usepackage{xcolor} % 可选：支持颜色
 \pagestyle{fancy}
 %\fancyhf{} % 清空所有页眉页脚
 \fancyhead[C]{${author}}  % 显示作者：[L]左，[C]中，[R]右
-\fancyfoot[C]{\thepage/\pageref{LastPage}}  % 页脚显示页码/总页数
+\fancyfoot[C]{\today}  % 日期
+\fancyfoot[R]{\thepage/\pageref{LastPage}}  % 页脚显示页码/总页数
 % 设置中英文字体
 \setmainfont{Times New Roman}    % 设置英文字体（正文）
 \setsansfont{Arial}             % 设置英文字体（无衬线）
@@ -91,6 +96,50 @@ $endif$
 	\renewcommand{\Huge}{\fontsize{28pt}{32pt}\selectfont}
 }
 \uSetMiddleFont
+
+\setminted{
+    autogobble=true,         % 自动去除多余空白行
+    bgcolor=black!10,         % 设置背景颜色
+    fontfamily=tt,           % 字体：默认tt，等宽字体；rm，衬线字体；sf，无衬线字体    
+    fontsize=\normalsize,    % 设置字体大小    
+    frame=single,            % 设置边框类型
+    framesep=5pt,            % 设置边框和代码的间距
+    highlightcolor=yellow,   % 高亮颜色
+    linenos=true,            % 显示行号
+    numberblanklines=true,   % 空行是否显示行号    
+    numbersep=5pt,           % 设置行号和代码的间距
+    showspaces=false,        % 是否显示空格  
+    style=xcode,             % 选择语法高亮风格
+    tabsize=2,               % 设置Tab大小    
+    xleftmargin=24pt,        % 设置左侧缩进
+    xrightmargin=24pt,       % 设置右侧缩进     
+    breaklines=true,     % 允许代码行内换行
+    breakanywhere=true,  % 允许在任意位置分页（包括单词中间）
+    breakautoindent=true,% 分页后保持缩进
+    breaksymbolleft=,    % 分页符左侧标记（默认空）
+    breaksymbolright=,   % 分页符右侧标记（默认空）
+}
+
+% 全局代码块样式设置
+\lstset{
+    numbers=left,           % 行号在左侧
+    numberstyle=\ttfamily\small\color{black!50}, % 行号字体和颜色
+    stepnumber=1,           % 每行显示行号
+    numbersep=5pt,          % 行号与代码间距
+    backgroundcolor=\color{black!5}, % 背景色
+    showspaces=false,       % 不显示空格
+    showstringspaces=false,
+    basicstyle=\ttfamily\small, % 基础字体
+    keywordstyle=\color{blue!60!black},  % 关键词颜色
+    commentstyle=\color{red}, % 注释颜色
+    stringstyle=\color{green!50!black},    % 字符串颜色
+    identifierstyle=\color{magenta}, % 标识符颜色（包括变量与函数）
+    frame=single,            % 边框样式
+    rulecolor=\color{black!50}, % 边框颜色
+    breaklines=true,         % 自动换行
+    breakatwhitespace=true,
+    tabsize=2,
+}
 
 % ==== 自定义结束 ====
 
