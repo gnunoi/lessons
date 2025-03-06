@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage{ctex} % 中文字体支持
+\usepackage{minted} % 高亮引擎
+\usepackage{xcolor} % 颜色支持
+\usepackage[most]{tcolorbox} % 代码块样式
+
+% 配置minted
+\setminted{
+  linenos=true, % 显示行号
+  breaklines=true, % 自动换行
+  frame=lines, % 边框样式
+  bgcolor=gray!10, % 背景颜色
+  fontsize=\small,
+}
+
+\setmainfont{Times New Roman}    % 设置英文字体（正文）
+\setsansfont{Arial}             % 设置英文字体（无衬线）
+\setmonofont{Courier New}       % 设置英文字体（等宽）
+\setCJKmainfont{Songti SC}         % 设置中文主字体
+\setCJKsansfont{PingFang SC}         % 设置中文无衬线字体
+\setCJKmonofont{FangSong}         % 设置中文等宽字体
+
+
+\begin{document}
+$body$
+\end{document}
