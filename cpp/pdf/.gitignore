@@ -1,0 +1,10 @@
+!*
+.*
+pdf
+*.pdf
+!.gitignore
+!Makefile
+!*.tex
+!*.sty
+!src
+!课程方案
