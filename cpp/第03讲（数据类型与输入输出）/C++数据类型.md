@@ -1,3 +1,6 @@
+---
+geometry: "landscape, a4paper, margin=2cm"
+---
 # C++基础数据类型
 
 ## **整型（Signed / Unsigned）**
