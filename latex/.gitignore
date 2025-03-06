@@ -1,7 +1,5 @@
 .*
-*.*
 !.gitignore
 !Makefile
 !*.tex
 !*.sty
-!latex
