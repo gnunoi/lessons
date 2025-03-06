@@ -2,6 +2,7 @@
 *.*
 !.gitignore
 !Makefile
-!*.tex
+!*.cpp
+!*.md
 !*.sty
-!latex
+!*.tex
