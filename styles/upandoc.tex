@@ -1,0 +1,167 @@
+$passoptions.latex()$
+\documentclass[
+$for(babel-otherlangs)$
+  $babel-otherlangs$,
+$endfor$
+$if(babel-lang)$
+  $babel-lang$,
+$endif$
+$if(fontsize)$
+  $fontsize$,
+$endif$
+$if(papersize)$
+  $papersize$paper,
+$endif$
+$for(classoption)$
+  $classoption$$sep$,
+$endfor$
+]{$documentclass$}
+$if(beamerarticle)$
+\usepackage{beamerarticle} % needs to be loaded first
+$endif$
+\usepackage{xcolor}
+$if(geometry)$
+\usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
+$else$
+\usepackage[paper=a4paper, top=2cm, bottom=1.5cm, left=1cm, right=1cm]{geometry} % 设置页边距
+$endif$
+\usepackage{amsmath,amssymb}
+$--
+$-- section numbering
+$--
+$if(numbersections)$
+\setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
+$else$
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+$endif$
+
+$fonts.latex()$
+$font-settings.latex()$
+$common.latex()$
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+$after-header-includes.latex()$
+$hypersetup.latex()$
+
+$if(title)$
+\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+$endif$
+$if(subtitle)$
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{$subtitle$}
+$endif$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+\date{$date$}
+
+% ==== 自定义开始 ====
+\newcommand\myauthor{丁保华}% ==== 如果作者未定义，定义默认作者 ====
+\usepackage{ctex} % 使用ctex以支持中文
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+%\fancyhf{} % 清空所有页眉页脚
+\fancyhead[C]{${author}}  % 显示作者：[L]左，[C]中，[R]右
+\fancyfoot[C]{\thepage/\pageref{LastPage}}  % 页脚显示页码/总页数
+% 设置中英文字体
+\setmainfont{Times New Roman}    % 设置英文字体（正文）
+\setsansfont{Arial}             % 设置英文字体（无衬线）
+\setmonofont{Aptos}       % 设置英文字体（等宽）
+\setCJKmainfont{Songti SC}         % 设置中文主字体
+\setCJKsansfont{PingFang SC}         % 设置中文无衬线字体
+\setCJKmonofont{STFangsong}         % 设置中文等宽字体，FangSong
+
+% 重新定义字号
+\newcommand{\uSetMiddleFont}{
+	\renewcommand{\tiny}{\fontsize{8pt}{10pt}\selectfont}
+	\renewcommand{\scriptsize}{\fontsize{9pt}{11pt}\selectfont}
+	\renewcommand{\footnotesize}{\fontsize{10pt}{12pt}\selectfont}
+	\renewcommand{\small}{\fontsize{11pt}{13pt}\selectfont}
+	\renewcommand{\normalsize}{\fontsize{12pt}{14pt}\selectfont}
+	\renewcommand{\large}{\fontsize{16pt}{20pt}\selectfont}
+	\renewcommand{\Large}{\fontsize{18pt}{22pt}\selectfont}
+	\renewcommand{\LARGE}{\fontsize{20pt}{24pt}\selectfont}
+	\renewcommand{\huge}{\fontsize{24pt}{28pt}\selectfont}
+	\renewcommand{\Huge}{\fontsize{28pt}{32pt}\selectfont}
+}
+\uSetMiddleFont
+
+% ==== 自定义结束 ====
+
+\begin{document}
+$if(has-frontmatter)$
+\frontmatter
+$endif$
+$if(title)$
+\maketitle
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+$endif$
+
+$for(include-before)$
+$include-before$
+
+$endfor$
+$if(toc)$
+$if(toc-title)$
+\renewcommand*\contentsname{$toc-title$}
+$endif$
+{
+$if(colorlinks)$
+\hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$$endif$}
+$endif$
+\setcounter{tocdepth}{$toc-depth$}
+\tableofcontents
+}
+$endif$
+$if(lof)$
+\listoffigures
+$endif$
+$if(lot)$
+\listoftables
+$endif$
+$if(linestretch)$
+\setstretch{$linestretch$}
+$endif$
+$if(has-frontmatter)$
+\mainmatter
+$endif$
+$body$
+
+$if(has-frontmatter)$
+\backmatter
+$endif$
+$if(nocite-ids)$
+\nocite{$for(nocite-ids)$$it$$sep$, $endfor$}
+$endif$
+$if(natbib)$
+$if(bibliography)$
+$if(biblio-title)$
+$if(has-chapters)$
+\renewcommand\bibname{$biblio-title$}
+$else$
+\renewcommand\refname{$biblio-title$}
+$endif$
+$endif$
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+
+$endif$
+$endif$
+$if(biblatex)$
+\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+
+$endif$
+$for(include-after)$
+$include-after$
+
+$endfor$
+\end{document}
