@@ -1,7 +1,7 @@
 SHELL=bash
 LATEX=xelatex --shell-escape
-LATEXMK=latexmk -xelatex --shell-escape
-#LATEXMK=latexmk -quiet -xelatex --shell-escape
+#LATEXMK=latexmk -xelatex --shell-escape
+LATEXMK=latexmk -quiet -xelatex --shell-escape
 TEX=$(wildcard *.tex)
 PDF=$(TEX:.tex=.pdf)
 MAIN=DeepSeek讲稿
