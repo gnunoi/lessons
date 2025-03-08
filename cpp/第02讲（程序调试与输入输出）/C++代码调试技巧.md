@@ -40,6 +40,42 @@ A + B 问题的题目描述如下：给定两个整数 *A* 和 *B*，输出 *A*+
 
 对于 100% 的数据，*A*,*B*,*A*+*B* 均在 32 位整型范围内，且 *A*+*B*≥0。
 
+## B2027 计算球的体积
+
+### 题目描述
+
+已知球半径为 $r$ 时，球的体积为 $V=\frac{4}{3}\pi r^3$。
+
+小理手里有个半径为 $r$ 的球体，他现在想知道这个球的体积为多少？
+
+**计算时，取 $\pi = 3.14$**。
+
+### 输入格式
+
+输入共一行，其中包括一个正整数 $r$ 表示球体的半径。
+
+#### 输出格式
+
+输出共一行，其中包括球体的体积。**要求保留小数点后$5$ 位**。
+
+###### 输入输出样例 #1
+
+**输入 #1**
+
+```
+5
+```
+
+***输出 #1***
+
+```
+523.33333
+```
+
+### 说明/提示
+
+$1\leq r\leq 100$。
+
 ## 程序设计错误
 
 程序设计错误 = 语法错误 / 算法错误 / 数据错误
@@ -55,6 +91,8 @@ A + B 问题的题目描述如下：给定两个整数 *A* 和 *B*，输出 *A*+
 **语法错误的最主要表现就是无法通过编译，无法得到可执行文件。**
 
 **错误案例一**
+
+`B2007`
 
 ```cpp
 #inclde<iostream>
@@ -88,7 +126,9 @@ int main（）
 
 **算法错误的通常表现就是测试点不能够通过。**
 
-**错误案例二**
+**算法错误案例一**
+
+`B2007`
 
 ```cpp
 #include<iostream>
@@ -106,11 +146,36 @@ int main()
 
 ![C++算法错误调试](png/C++算法错误调试.png)
 
+**算法错误案例二**
+
+`B2027`
+
+```cpp
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+    int r;
+
+    cout << fixed << setprecision(5) << 3.14 * 4 / 3 * r * r * r;
+
+    return 0;
+}
+```
+
+
+
 ### 数据错误
 
 数据错误中最常见的错误就是数据的边界错误，即：数据的范围错误和临界值处理错误。
 
 **边界错误的最主要表现就是一部分测试点能够通过，另外一部分测试点不能够通过。**
+
+**数据错误案例一**
+
+`B2007`
 
 ```cpp
 #include<iostream>
@@ -120,8 +185,50 @@ int main()
 {
   short int a, b;
   cin >> a >> b;
-  cout << a - b;
+  cout << a + b;
 }
 ```
 
 ![C++数据错误调试](png/C++数据错误调试.png)
+
+`B2027`
+
+使用float浮点数，精度不够，题目要求保留5位小数，float计算后无法保证5为小数的精确度。需要将float改为double。
+
+**数据错误案例二**
+
+```cpp
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+    int r;
+    cin >> r;
+    float pi = 3.14;
+    double v = 4.0 / 3 * pi * r * r * r;
+    cout << fixed << setprecision(5) << v;
+
+    return 0;
+}
+```
+
+**数据错误案例三**
+
+使用4/3，整数类型除法使用整除法，得不到浮点数。
+
+```cpp
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+    int r;
+    cin >> r;
+    cout << fixed << setprecision(5) << 4 / 3 * 3.14 * r * r * r;
+
+    return 0;
+}
+```
