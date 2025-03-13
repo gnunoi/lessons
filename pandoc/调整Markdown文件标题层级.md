@@ -5,6 +5,8 @@
 ### 命令
 
 ```bash
+pandoc --shift-heading-level-by=2 -o output.md intput.md
+# 或
 pandoc input.md --shift-heading-level-by=2 -o output.md
 ```
 
