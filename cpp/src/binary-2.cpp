@@ -6,7 +6,7 @@ using namespace std;
 void displayBinary(int num) 
 {
     // 使用bitset将整数转换为32位二进制
-    bitset<32> binary(num);
+    bitset<8> binary(num);
     
     // 将bitset转换为字符串
     string binaryStr = binary.to_string();

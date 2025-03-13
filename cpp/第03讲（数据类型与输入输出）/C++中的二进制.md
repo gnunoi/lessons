@@ -35,7 +35,35 @@
 
 为了在输出二进制表示时每4位空一格，你可以对二进制字符串进行处理，每4位插入一个空格。
 
-**binary.cpp**
+**binary-1.cpp**
+
+```cpp
+#include <iostream>
+#include <bitset>
+
+using namespace std;
+
+string ToBinary(int num) 
+{
+    bitset<8> binary(num);
+    return binary.to_string();
+}
+
+int main() 
+{
+    int num;
+    cout << "输入一个整数：" << endl;
+    while(cin >> num){ // 检测EOF，UNIX：CTRL+D，Widnows：CTRL+Z
+        string str = ToBinary(num);
+        cout << str.substr(0, 4) << " " << str.substr(4, 4) << endl;
+    }
+    return 0;
+}
+```
+
+
+
+**binary-2.cpp**
 
 ```cpp
 #include <iostream>
@@ -91,7 +119,7 @@ int main()
 
 这个程序会将32位二进制数每4位用空格分隔，便于阅读。
 
-## 演示代码
+## binary-3.cpp
 
 ``` cpp
 #include <iostream>
