@@ -31,6 +31,66 @@
 
 ------------------------------------------------------------------------
 
+## 显示整数的二进制
+
+为了在输出二进制表示时每4位空一格，你可以对二进制字符串进行处理，每4位插入一个空格。
+
+**binary.cpp**
+
+```cpp
+#include <iostream>
+#include <bitset>
+#include <string>
+using namespace std;
+
+void displayBinary(int num) 
+{
+    // 使用bitset将整数转换为32位二进制
+    bitset<32> binary(num);
+    
+    // 将bitset转换为字符串
+    string binaryStr = binary.to_string();
+    
+    // 每4位插入一个空格
+    string formattedStr;
+    for (int i = 0; i < binaryStr.length(); i++) {
+        formattedStr += binaryStr[i];
+        if ((i + 1) % 4 == 0 && i != binaryStr.length() - 1) {
+            formattedStr += " ";
+        }
+    }
+    
+    cout << formattedStr << endl;
+}
+
+int main() 
+{
+    int num;
+    cout << "输入一个整数：" << endl;
+    while(cin >> num){ // 检测EOF，UNIX：CTRL+D，Widnows：CTRL+Z
+        displayBinary(num);
+    }
+    return 0;
+}
+```
+
+### 说明
+1. `bitset<32> binary(num)`：将整数转换为32位的二进制表示。
+2. `binary.to_string()`：将`bitset`转换为字符串。
+3. 遍历字符串，每4位插入一个空格：
+   - 使用一个循环遍历字符串的每个字符。
+   - 每当处理到第4位（即索引为3、7、11等）时，插入一个空格。
+   - 避免在字符串末尾插入多余的空格。
+
+### 示例运行
+假设输入整数为10，程序输出如下：
+```
+请输入一个整数：10
+整数的二进制表示为：0000 0000 0000 0000 0000 0000 0000 1010
+```
+
+这个程序会将32位二进制数每4位用空格分隔，便于阅读。
+
 ## 演示代码
 
 ``` cpp
@@ -41,7 +101,8 @@
 using namespace std;
 
 // 十进制转二进制（补码形式，指定位数）
-string decimalToBinary(int num, int bits = 8) {
+string decimalToBinary(int num, int bits = 8) 
+{
     string binary;
     for (int i = bits - 1; i >= 0; i--) {
         binary += (num & (1 << i)) ? '1' : '0';
@@ -50,7 +111,8 @@ string decimalToBinary(int num, int bits = 8) {
 }
 
 // 二进制转十进制（支持补码）
-int binaryToDecimal(const string& binary, int bits) {
+int binaryToDecimal(const string& binary, int bits) 
+{
     if (binary.length() != bits) {
         cerr << "错误：二进制位数应为 " << bits << endl;
         return 0;
@@ -82,7 +144,8 @@ int binaryToDecimal(const string& binary, int bits) {
     return isNegative ? -value : value;
 }
 
-int main() {
+int main() 
+{
     // 示例1：十进制转二进制
     int a = 13, b = -5;
     cout << "十进制 " << a << " → 二进制: " << decimalToBinary(a, 8) << endl;
