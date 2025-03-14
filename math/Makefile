@@ -8,8 +8,8 @@ MAIN=七年级上册
 
 .PHONY:all clean distclean c d
 
-all:$(PDF)
-#all:$(MAIN).pdf
+#all:$(PDF)
+all:$(MAIN).pdf
 	make clean
 
 %.pdf:%.tex
