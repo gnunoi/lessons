@@ -1,0 +1,33 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+%%%%%%%
+\begin{frame}[t]{1.12 有理数的混合运算}
+\begin{spacing}{1.2}
+\normalsize
+\alert{有理数的混合运算：}
+\begin{enumerate}[label={\arabic*.}]
+\item 加法和减法叫做第一级运算，互为逆运算
+\item 乘法和除法叫做第二级运算，互为逆运算
+\item 乘方、开方和对数叫做第三级运算，开方是乘方求底数的逆运算，对数是乘方求指数的逆运算
+\end{enumerate}
+
+\alert{运算的优先级：}
+\begin{enumerate}[label={\arabic*.}]
+\item 先做乘方, 再做乘除, 最后做加减;
+\item 同级运算, 按照从左至右的顺序进行;
+\item 如果有括号, 就先算小括号里的, 再算中括号里的, 然后算大括号里的
+\end{enumerate}
+\end{spacing}
+\end{frame}
+
+
+\end{document}

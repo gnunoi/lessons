@@ -1,0 +1,34 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+%%%%%%%
+\begin{frame}[t]{1.13 近似数}
+\begin{spacing}{1.2}
+\normalsize
+\alert{近似数：}
+\begin{enumerate}[label={\arabic*.}]
+\item 与实际值非常接近的数, 称为近似数(approximate number)。例如：\\
+$\pi = 3.141\phantom{e}592\cdots$
+\item 只取整数，精确到个位数：应用四舍五入法，应为$3$
+\item 只取1位小数，精确到十分位（或精确到0.1）：应为$3.1$
+\item 只取2位小数，精确到百分位（或精确到0.01）：应为$3.14$
+\item 光在真空中的传播速度：$c=299 \phantom{e} 792 \phantom{e} 458m/s$
+\item 用科学记数法，只取整数：$c=3×10^8m/s$
+\item 用科学记数法，保留1位小数：$c=3.0×10^8m/s$
+\item 用科学记数法，保留5位小数：$c=2.99792×10^8m/s$
+\item 注意：四舍五入的位置必须为精确位数的向下一位。
+\end{enumerate}
+
+\end{spacing}
+\end{frame}
+
+
+\end{document}

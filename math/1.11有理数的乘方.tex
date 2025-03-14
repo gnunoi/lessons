@@ -1,0 +1,70 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+%%%%%%%
+\begin{frame}[t]{1.11 有理数的乘方}
+\begin{spacing}{1.2}
+\normalsize
+有理数的乘方：求几个相同乘数的积的运算，叫做乘方(involution)。其中，
+\begin{enumerate}[label={\arabic*.}]
+\item 乘方的结果叫做幂(power)
+\item $a$叫做底数(base number)
+\item $n$叫做指数(exponent)
+\item $a^n$读作$a$的$n$次方
+\item 也可读作$a$的$n$次幂
+\end{enumerate}
+
+\end{spacing}
+\end{frame}
+
+%%%%%%%
+\begin{frame}[t]{1.11 有理数的乘方}
+\begin{columns}
+\column{0.9\textwidth}
+\begin{spacing}{1.2}
+\normalsize
+乘方的运算法则：
+\begin{enumerate}[label={\arabic*.}]
+\item 乘方是第三级运算，优先级高于乘除法运算（见P.59）
+\item $a^1 = a$
+\item 乘方的乘法运算：$ a^m \cdot a^n = a ^{m+n}$
+\item 乘方的除法运算：$ a^m ÷ a^n = a ^{m-n} \quad (a \ne 0)$
+\item 乘方的乘方运算：$(a^m)^n = a^{mn}$
+\item $ a^0 = a^{m-m} = a^m ÷ a^m = 1 \quad (a \ne 0)$
+\item $ a^{-1} = a^0 ÷ a^1 = \dfrac{1}{a} \quad (a \ne 0)$
+\item 整数的任何次幂都是整数
+\item 负数的偶数次幂是正数（偶负得正），负数的奇数次幂是负数（奇负得负）
+\item 乘方运算具有右结合的性质：$a^{m^n} = a^{(m^n)}$ 
+\end{enumerate}
+\end{spacing}
+\end{columns}
+\end{frame}
+
+
+%%%%%%%
+\begin{frame}[t]{1.11 有理数的乘方}
+\begin{columns}
+\column{0.9\textwidth}
+\begin{spacing}{1.2}
+\normalsize
+科学记数法：
+\begin{enumerate}[label={\arabic*.}]
+\item 一个绝对值大于 10 的数可以记成$a×10^n$的形式, 其中$1 ≤| a | < 10$, $n$是正整数. 像这样的记数法叫做科学记数法. 例如：\\
+$8 \phantom{e} 000 \phantom{e} 000 = 8×10 ^6$
+\item 一个绝对值小于 1 的数可以记成$a×10^{-n}$的形式, 其中$1≤|a| < 10$, $n$是正整数. 像这样的记数法也叫做科学记数法. 例如：\\
+$0.000  \phantom{0} 008 = 8×10 ^{-6}$
+
+\end{enumerate}
+\end{spacing}
+\end{columns}
+\end{frame}
+
+\end{document}
