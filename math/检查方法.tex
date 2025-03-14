@@ -1,0 +1,35 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+%%%%%%%
+\begin{frame}[t]{检查方法}
+\begin{spacing}{1.2}
+\normalsize
+\alert{常用检查方法：}
+\begin{enumerate}[label={\arabic*.}]
+\item 检查符号，包括中间过程的符号。牢记：
+	\begin{enumerate}[label={\alph*.}]
+	\item 同号相加取其号, 绝对值作加法
+	\item 异号相加取绝对值大的号，绝对值大减小。
+	\item 绝对值大的负数反而小。
+	\item 奇负得负，偶负得正。
+	\end{enumerate}
+\item 检查个位数
+\item 检查位数
+\item 检查进位
+
+\end{enumerate}
+
+\end{spacing}
+\end{frame}
+
+
+\end{document}
