@@ -10,7 +10,7 @@ PANDOC_FLAGS := -s -f markdown \
   -V numbersections \
   -V secnumdepth=4 \
   --listings \
-  --pdf-engine=xelatex \
+  --pdf-engine=latexmk \
   --template=../../styles/upandoc.tex
 
 .PHONY:all clean c
