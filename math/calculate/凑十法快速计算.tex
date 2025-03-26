@@ -1,0 +1,29 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+%%%%%%%
+\begin{frame}[t]{凑十法快速计算}
+\begin{spacing}{1.2}
+\normalsize
+凑十法：$\overline{ab} = (a+b)(a-b)$ \\
+或：$(a+b)(a-b)=a^2 - b^2$ \\
+或：$(a-b)(a+b)=a^2 - b^2$ \\
+例题：
+\begin{enumerate}[label={\arabic*.}]
+\item $32 \times 39 = 32 \times (40-1)=32 \times 40-32=1280-32=1248$
+
+\end{enumerate}
+\alert{总结利用平方差公式快速计算的数字特点，每人出2道类似的题目}
+\end{spacing}
+\end{frame}
+
+
+\end{document}
