@@ -1,0 +1,7 @@
+.*
+*.*
+!.gitignore
+!Makefile
+!*.tex
+!*.sty
+!*.xlsx
