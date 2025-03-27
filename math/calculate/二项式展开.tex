@@ -1,0 +1,32 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+%%%%%%%
+\begin{frame}[t]{二项式速算法}
+\begin{spacing}{1.2}
+\normalsize
+$(a+b)(a+c)=a^2 + a(b+c) +bc$
+\begin{enumerate}[label={\arabic*.}]
+\item $26 \times 26 = (25+1)(25+1) = 25^2 + 2 \times 25 + 1^2 = 625 + 50 + 1 = 676$
+\item $27 \times 27 = (25+2)(25+2) = 25^2 + 2 \times 25 \times 2 + 2^2 = 625 + 100 + 4 = 729$
+\item $36 \times 36 = (35+1)(35+1) = 35^2 + 2 \times 35 + 1^2 = 1225 + 70 + 1 = 1296$
+\item $37 \times 37 = (35+2)(35+2) = 35^2 + 2 \times 35 \times 2 + 2^2 = 1225 + 140 + 4 = 1369$
+\item $37 \times 38 = (40-3)(40-2) = 40^2 - 40 \times (3 + 2) + 3 \times 2 = 1600 - 200 + 6 = 1406$
+\item $27 \times 38 = (30-3)(40-2) = 30 \times 40 - 2 \times 30 - 3 \times 40 + 3^2 = 1200 - 180 + 6 = 1026$
+\item $27 \times 48 = (30-3)(50-2) = 30 \times 50 - 30 \times 2 - 3 \times 50 + 3 \times 2 = 1500 - 60 - 150 + 6 = 1296$
+
+\end{enumerate}
+\alert{总结利用二项式速算法的数字特点，每人出2道类似的题目} \\
+\end{spacing}
+\end{frame}
+
+
+\end{document}
