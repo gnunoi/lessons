@@ -8,8 +8,8 @@ MAIN=速算方法
 
 .PHONY:all clean distclean c d
 
-#all:$(PDF)
-all:$(MAIN).pdf
+all:$(PDF)
+#all:$(MAIN).pdf
 	make clean
 
 %.pdf:%.tex
