@@ -1,0 +1,28 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+%%%%%%%
+\begin{frame}[t]{4的倍数的特征}
+\begin{spacing}{1.2}
+\normalsize
+4的倍数，具有如下特征：
+\begin{enumerate}[label={\arabic*.}]
+\item \alert{十位上的数字为偶数，个位数一定是0、4、8中的一个。如：}\\
+20、24、28、40、44、48、60、64、68、80、84、88、100、104、108。 
+\item \alert{十位上的数字为奇数，个位数一定是2、6中的一个。如：}\\
+12、16、32、36、52、56、72、76、92、96。 
+\end{enumerate}
+
+\end{spacing}
+\end{frame}
+
+
+\end{document}

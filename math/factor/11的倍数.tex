@@ -1,0 +1,78 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+%%%%%%%
+\begin{frame}[t]{11的倍数的特征}
+\begin{spacing}{1.2}
+\normalsize
+11的倍数，具有如下特征：
+\begin{enumerate}[label={\arabic*.}]
+\item \alert{所有奇数位上的数字之和减去所有偶数位上的数字之和，如果是11的倍数，则该数是11的倍数。反之亦然。}
+\end{enumerate}
+证明：设一个数字为$\overline{a_{2n}a_{2n-1} \dots a_{2}a_{1}a_{0}}$，则：
+\begin{align*}
+&\overline{a_{2n}a_{2n-1} \cdots a_{2}a_{1}a_{0}} = 10^{2n}a_{2n} + 10^{2n-1}a_{2n-1} +\cdots +10^{2}a_{2}+ 10^{1}a_{1} + 10^0a_{0} \\
+&=(10^{2n}-1)a_{n} + (10^{2n-1}+1)a_{2n-1}+ \cdots +(10^{2}-1)a_{2}+ (10^{1}+1)a_{1} \\
+&+ a_{2n} - a_{2n-1} +\cdots + a_{2} - a_{1} + a_{0} 
+\end{align*}
+对于任意一个整数$n$，都有：$10^{2n}-1$是11的倍数，且$10^{2n-1}+1$是11的倍数， \\
+只要$a_{2n} -  a_{2n-1} +\cdots a_{2} - a_{1} + a_{0}$是11的倍数，则：\\
+$\overline{a_{2n}a_{2n-1} \dots a_{2}a_{1}a_{0}}$是11的倍数。
+\end{spacing}
+\end{frame}
+
+%%%%%%%
+\begin{frame}[t]{习题}
+\begin{columns}
+\column{0.95\textwidth}
+\begin{spacing}{1.2}
+\normalsize
+判断以下各个数字是不是11的倍数：
+\begin{enumerate}[label={\arabic*.}]
+\item 11、22、33、44、55、66、77、88、99
+\item 110、121、132、143、154、165、176、187、198
+\item 209、220、231、242、253、264、275、286、297
+\item 308、319、330、341、352、363、374、385、396
+\item 407、418、429、440、451、462、473、484、495
+\item 506、517、528、539、550、561、572、583、594
+\item 605、616、627、638、649、660、671、682、693
+\item 704、715、726、737、748、759、770、781、792
+\item 803、814、825、836、847、858、869、880、891
+\item 902、913、924、935、946、957、968、979、990
+\end{enumerate}
+\end{spacing}
+\end{columns}
+\end{frame}
+
+%%%%%%%
+\begin{frame}[t]{习题}
+\begin{columns}
+\column{0.95\textwidth}
+\begin{spacing}{1.2}
+\normalsize
+判断以下各个数字是不是11的倍数：
+\begin{enumerate}[label={\arabic*.}]
+\item 1001、1012、1023、1034、1045、1056、1067、1078、1089
+\item 1100、1111、1122、1133、1144、1155、1166、1177、1188、1199
+\item 1210、1221、1232、1243、1254、1265、1276、1287、1298
+\item 1309、1320、1331、1342、1353、1364、1375、1386、1397
+\item 1408、1419、1430、1441、1452、1463、1474、1485、1496
+\item 1507、1518、1529、1540、1551、1562、1573、1584、1595
+\item 1606、1617、1628、1639、1650、1661、1672、1683、1694
+\item 1705、1716、1727、1738、1749、1760、1771、1782、1793
+\item 1804、1815、1826、1837、1848、1859、1870、1881、1892
+\item 1903、1914、1925、1936、1947、1958、1969、1980、1991
+\end{enumerate}
+\end{spacing}
+\end{columns}
+\end{frame}
+
+\end{document}

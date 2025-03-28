@@ -1,0 +1,33 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+%%%%%%%
+\begin{frame}[t]{2的倍数的特征}
+\begin{spacing}{1.2}
+\normalsize
+
+\begin{enumerate}[label={\arabic*.}]
+\item 偶数，也就是2的倍数，具有如下特征：\\
+$\{x = 2n | n \in \mathbb Z\}$ \\
+偶数的个位数一定是0、2、4、6、8中的一个。\\
+-10、-8、-6、-4、-2、0、2、4、6、8、10都是偶数。 \\
+\alert{注意：2002年，国际数学协会(International Mathematical Association)规定0是偶数。2004年，我国规定0是偶数。}
+\item 奇数，也就是2的倍数余1，具有如下特征：\\
+$\{x = 2n+1 | n \in \mathbb Z\}$ \\
+奇数的个位数一定是1、3、5、7、9中的一个。\\
+-9、-7、-5、-3、-1、1、3、5、7、9都是奇数。 \\
+\end{enumerate}
+
+\end{spacing}
+\end{frame}
+
+
+\end{document}

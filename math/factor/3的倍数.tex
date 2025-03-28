@@ -1,0 +1,32 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+%%%%%%%
+\begin{frame}[t]{3的倍数的特征}
+\begin{spacing}{1.2}
+\normalsize
+3的倍数，具有如下特征：
+\begin{enumerate}[label={\arabic*.}]
+\item 所有位上的数字之和是3的倍数，则该数是3的倍数。反之亦然。
+\end{enumerate}
+证明：设一个数字为$\overline{a_{n}a_{n-1} \dots a_{1}a_{0}}$，则：
+\begin{align*}
+&\overline{a_{n}a_{n-1} \cdots a_{1}a_{0}} = 10^{n}a_{n} + 10^{n-1}a_{n-1} +\cdots + 10^{1}a_{1} + 10^0a_{0} \\
+&=(10^{n}-1)a_{n} + (10^{n-1}-1)a_{n-1}+ \cdots + (10^{1}-1)a_{1} + a_{n} +  a_{n-1} +\cdots + a_{1} + a_{0} 
+\end{align*}
+对于任意一个整数$n$，都有：$10^{n}-1$是3的倍数, \\
+只要$a_{n} +  a_{n-1} +\cdots + a_{1} + a_{0}$是3的倍数，则：\\
+$\overline{a_{n}a_{n-1} \dots a_{1}a_{0}}$是3的倍数。
+\end{spacing}
+\end{frame}
+
+
+\end{document}

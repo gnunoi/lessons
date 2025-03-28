@@ -1,0 +1,32 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+%%%%%%%
+\begin{frame}[t]{8的倍数的特征}
+\begin{spacing}{1.2}
+\normalsize
+8的倍数，具有如下特征：
+\begin{enumerate}[label={\arabic*.}]
+\item \alert{百位上的数字为偶数，十位与个位组成的数一定是4的倍数。如：} \\
+8、16、24、32、40、48、56、64、72、80、88、96；\\
+208、216、224、232、240、248、256、264、272、280、288、296。 \\
+408、416、424、432、440、448、456、464、472、480、488、496。 
+\item \alert{百位上的数字为奇数，十位与个位组成的数一定是2的倍数但不是4的倍数。如：} \\
+102、106、112、120、128、136、144、152、160、168、176、184、192；\\
+302、306、312、320、328、336、344、352、360、368、376、384、392；\\
+502、506、512、520、528、536、544、552、560、568、576、584、592；
+\end{enumerate}
+
+\end{spacing}
+\end{frame}
+
+
+\end{document}
