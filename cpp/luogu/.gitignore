@@ -1,0 +1,12 @@
+.*
+*.*
+!src
+!*.cpp
+!.gitignore
+!Makefile
+!*.cpp
+!*.docx
+!*.md
+!*.sty
+!*.tex
+!*.py
