@@ -3,7 +3,7 @@ PANDOC := pandoc
 MD := $(wildcard *.md)
 PDF := $(MD:.md=.pdf)
 DOCX := $(MD:.md=.docx)
-MAIN := C++程序设计第二讲
+MAIN := 模运算
 PANDOC := pandoc 
 PANDOC_FLAGS := -s -f markdown \
   -V author="丁保华（致慧星空工作室）" \
@@ -16,7 +16,8 @@ PANDOC_FLAGS := -s -f markdown \
 
 .PHONY:all clean c
 
-all:$(PDF)
+all:$(MAIN).pdf
+#all:$(PDF)
 
 %.pdf:%.md
 	$(PANDOC) $(PANDOC_FLAGS) -t pdf $< -o $@
