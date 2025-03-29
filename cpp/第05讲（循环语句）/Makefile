@@ -16,8 +16,8 @@ PANDOC_FLAGS := -s -f markdown \
 
 .PHONY:all clean c
 
-all:$(MAIN).pdf
-#all:$(PDF)
+#all:$(MAIN).pdf
+all:$(PDF)
 
 %.pdf:%.md
 	$(PANDOC) $(PANDOC_FLAGS) -t pdf $< -o $@
