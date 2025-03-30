@@ -1,0 +1,44 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+\usetikzlibrary{calc, positioning, shapes.misc}
+
+\begin{document}
+
+%%%%%%%
+\begin{frame}[t]{平方差公式的证明}
+三角形面积公式是：$S = \frac{1}{2}ah$，如何证明呢？
+\vspace{1cm}
+
+\begin{tikzpicture}[
+      overlay, % 浮于正文上方
+      remember picture,  % 允许引用页面坐标系
+      shift={(current page.north east)},  % 将坐标系原点移到右上角
+      xshift=-15cm,  % 向左移动
+      yshift=-8cm,    % 向上移动
+      scale=1.5,
+      transform shape
+    ]
+    % 定义三角形的三个顶点
+    \coordinate (A) at (0,0); % 底边左端点
+    \coordinate (B) at (5,0); % 底边右端点
+    \coordinate (C) at (2.5,4); % 顶点
+    % 绘制三角形
+    \draw (A) -- (B) -- (C) -- cycle;
+    % 标注底边为a
+    \draw [thick] (A) -- (B) node[midway, below] {$a$};
+    % 计算顶点到底边的垂足
+    \coordinate (D) at ($(A)!(C)!(B)$); % 垂足点
+    % 用虚线绘制高
+    \draw[thick, red, dashed] (C) -- (D) node[midway, right] {$h$};
+    % 添加垂直符号（直角符号）
+    \draw pic [draw] {right angle = A--D--C};
+
+\end{tikzpicture}
+
+\end{frame}
+\end{document}
