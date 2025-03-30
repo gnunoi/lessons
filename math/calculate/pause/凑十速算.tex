@@ -1,0 +1,111 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+%%%%%%%
+\begin{frame}[t]{逢五凑十法}
+\begin{spacing}{1.2}
+\normalsize
+计算：$\overline{ab} \times \overline{cd}$ \\
+当$b = 5$，$d$为偶数时，通常可以使用《逢五凑十法》，即：\\
+对$\overline{cd}$先除以2，再乘以2，即：$\overline{cd} = \overline{ef} \times 2$，则：\\
+$\overline{ab} \times \overline{cd} = \overline{ab} \times \overline{cd} \div 2 \times 2 = (\overline{ab} \times 2) \times \overline{ef} $ \\
+例题：
+\begin{enumerate}[label={\arabic*.}]
+\item $15 \times 18  = 15 \times 2 \times 9=30 \times 9 = 270$
+\item $25 \times 34  = 25 \times 2 \times 17=50 \times 17 = 850$
+\item $35 \times 16  = 35 \times 2 \times 8=70 \times 8 = 560$
+\item $75 \times 14  = 75 \times 2 \times 7=150 \times 7 = 1050$
+\end{enumerate}
+\alert{思考：逢五凑十法本质就是乘五等于乘十除二，利用了乘法的什么规律？} \\
+\alert{总结逢五凑十法的数字特点，每人出2道类似的题目} \\
+\end{spacing}
+\end{frame}
+
+%%%%%%%
+\begin{frame}[t]{习题}
+\begin{spacing}{1.2}
+\normalsize
+计算下列各式的值：
+\begin{enumerate}[label={\arabic*.}]
+\item $25 \times 48  = 25 \times 4 \times 12 = 100 \times 12 = 1200$
+\item $35 \times 28  = 35 \times 2 \times 14 = 70 \times 14 = 980$
+\item $45 \times 16  = 45 \times 2 \times 8 = 90 \times 8 = 720$
+\item $55 \times 18  = 55 \times 2 \times 9 = 110 \times 9 = 990$
+\item $25 \times 36  = 25 \times 4 \times 9 = 100 \times 9 = 900$
+\item $23 \times 44  = (25 - 2) \times 44 = 25 \times 44 - 2 \times 44 = 1100 - 88 = 1012$
+\item $22 \times 36  = 22 \times (35+1) = 22 \times 35 + 22 \times 1 = 770 + 22 = 792$
+\item $22 \times 37  = 22 \times (35+2) = 22 \times 35 + 22 \times 2 = 770 + 44 = 814$
+\item $24 \times 28  = (25-1) \times 28 = 25 \times 4 \times 7 - 28 = 700 - 28 = 672$
+\end{enumerate}
+
+\end{spacing}
+\end{frame}
+
+%%%%%%%
+\begin{frame}[t]{大数凑十法}
+\begin{spacing}{1.2}
+\normalsize
+计算：$\overline{ab} \times \overline{cd}$ \\
+当尾数（或个位数）$b \ge 6$时，通常可以使用《大数凑十法》，即：\\
+设：$e = a+1, f = 10-b$，则：\\
+$\overline{ab} \times \overline{cd} = \overline{e0} \times \overline{cd} - \overline{f} \times \overline{cd}$ \\
+例题：
+\begin{enumerate}[label={\arabic*.}]
+\item $22 \times 37  = 22 \times (40-3) = 22 \times 40 - 22 \times 3 = 880 - 66 = 814$
+\item $22 \times 37  = 22 \times (35+2) = 22 \times 35 + 22 \times 2 = 770 + 44 = 814$
+\item $32 \times 39  = 32 \times (40-1)=32 \times 40 - 32=1280-32=1248$
+\item $52 \times 39  = 52 \times (40-1)=52 \times 40 - 52=2080-52=2028$
+\item $48 \times 43  = (50-2) \times 43=50 \times 43 - 2 \times 43=2150-86=2064$
+\item $37 \times 37  = (40-3)(40-3)=40^2 - 2\times40\times3 +3^2=1600-240+9=1369$
+
+\end{enumerate}
+\alert{思考：大数凑十法速利用了乘法的什么规律？数字有什么特点？}\\
+\alert{每人出2道类似的题目}  \\
+\alert{$32 \times 39 $还可以用什么方法速算？} \\
+\alert{$48 \times 43 $还可以用什么方法速算？}
+\end{spacing}
+\end{frame}
+
+%%%%%%%
+\begin{frame}[t]{习题}
+\begin{spacing}{1.2}
+\normalsize
+计算下列各式的值：
+\begin{enumerate}[label={\arabic*.}]
+\item $15 \times 49  = 15 \times (50-1) = 15 \times 50 - 15 = 750 - 15 = 735$
+\item $23 \times 29  = 23 \times (30-1) = 23 \times 30 - 23 = 690 - 23 = 667$
+\item $24 \times 28  = 24 \times (30-2) = 24 \times 30 - 24 \times 2 = 720 - 48 = 672$
+\item $32 \times 57  = 32 \times (60-3) = 32 \times 60 - 32 \times 3 = 1920 - 96 = 1824$
+\end{enumerate}
+
+\end{spacing}
+\end{frame}
+
+%%%%%%%
+\begin{frame}[t]{双向凑十法}
+\begin{spacing}{1.2}
+\normalsize
+计算：$\overline{a9} \times \overline{c9}$ \\
+当两个尾数都等于9时，通常可以使用《双向凑十法》，即：\\
+设：$e = a+1, f = d+1$，则：\\
+$\overline{a9} \times \overline{c9} = (\overline{e0}-1) \times (\overline{f0} - 1)  = \overline{e0} \times \overline{f0} - \overline{e0} - \overline{f0} + 1$ \\
+例题：
+\begin{enumerate}[label={\arabic*.}]
+\item $29 \times 39  = (30-1) \times (40-1) = 30 \times 40 - 30 - 40 + 1=1200-70+1=1131$
+\item $19 \times 59  = (20 -1) \times (60-1) = 20 \times 60 - 20 - 60 + 1=1200-80+1=1121$
+\item $29 \times 69  = (30 -1) \times (70-1) = 30 \times 70 - 30 - 70 + 1=2100-100+1=2001$
+\end{enumerate}
+\alert{思考：双向凑十法速利用了乘法的什么规律？}\\
+\alert{每人出2道类似的题目} 
+\end{spacing}
+\end{frame}
+
+\end{document}

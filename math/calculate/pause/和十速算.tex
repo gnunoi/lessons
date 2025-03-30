@@ -1,0 +1,60 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+%%%%%%%
+\begin{frame}[t]{和十速算法}
+\begin{spacing}{1.2}
+\normalsize
+计算：$\overline{ab} \times \overline{ad}$ \\
+当个位数之和等于10，即：$b + d = 10$时，可以使用《和十速算法》，即：\\
+设：$e = a+1$，$a(a+1)=\overline{AB}$，$bd = \overline {CD}$则：\\
+$\overline{ab} \times \overline{ad} = (10a+b)(10a+d) = 100a^2 + 10a(b+d) + bd = 100a(a+1) + bd = \overline{ABCD}$ \\
+例题：
+\begin{enumerate}[label={\arabic*.}]
+\item $21 \times 29  = 100 \times 2 \times 3 + 1 \times 9 = 600 + 9 = 609$
+\item $32 \times 38  = 100 \times 3 \times 4 + 2 \times 8 = 1200 + 16 = 1216$
+\item $43 \times 47  = 100 \times 4 \times 5 + 3 \times 7 = 2000 + 21 = 2021$
+\item $45 \times 45  = 100 \times 4 \times 5 + 5 \times 5 = 2000 + 25 = 2025$
+\item $74 \times 76  = 100 \times 7 \times 8 + 4 \times 6 = 5600 + 24 = 5624$
+\end{enumerate}
+\alert{思考：和十速算法速利用了乘法的什么规律？数字有什么特点？}\\
+\alert{每人出2道类似的题目}  \\
+
+\end{spacing}
+\end{frame}
+
+%%%%%%%
+\begin{frame}[t]{和十速算法}
+\begin{spacing}{1.2}
+\normalsize
+\begin{enumerate}[label={\arabic*.}]
+\item $21 \times 29$ \\
+
+$ \because 2 \times 3 = 6, \quad 1 \times 9 = 9, \quad \therefore 21 \times 29 = \overline{06} \quad \overline{09} = 609$
+\item $32 \times 38$ \\
+
+$ \because 3 \times 4 = 12, \quad 2 \times 8 = 16, \quad \therefore 32 \times 38 = \overline{12} \quad \overline{16} = 1216$
+\item $43 \times 47 = $ \\
+
+$ \because 4 \times 5 = 20, \quad 3 \times 7 = 21, \quad \therefore 43 \times 47 = \overline{20} \quad \overline{21} = 2021$
+\item $45 \times 45$ \\
+
+$ \because 4 \times 5 = 20, \quad 5 \times 5 = 25, \quad \therefore 45 \times 45 = \overline{20} \quad \overline{25} = 2025$
+\item $74 \times 76$ \\
+
+$ \because 7 \times 8 = 56, \quad 4 \times 6 = 24, \quad \therefore 74 \times 76 = \overline{56} \quad \overline{24} = 5624$
+\end{enumerate}
+
+
+\end{spacing}
+\end{frame}
+
+\end{document}

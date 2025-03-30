@@ -1,0 +1,54 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+%%%%%%%
+\begin{frame}[t]{平方差法}
+\begin{spacing}{1.2}
+\normalsize
+平方差公式：$a^2 - b^2 = (a+b)(a-b)$ \\
+或：$(a+b)(a-b)=a^2 - b^2$ \\
+或：$(a-b)(a+b)=a^2 - b^2$ \\
+或反向平方差：$a^2 = (a-b)(a+b) + b^2$ \\
+例题：
+\begin{enumerate}[label={\arabic*.}]
+\item $28 \times 32  = (30-2)(30+2)=30^2-2^2=900-4=896$
+\item $39 \times 41  = (40-1)(40+1)=40^2-1^2=1600-1=1599$
+\item $45 \times 55  = (50-5)(50+5)=50^2-5^2=2500-25=2475$
+\item $62 \times 78  = (70-8)(70+8)=70^2-8^2=4900-64=4836$
+\item $63 \times 87  = (75-12)(75+12)=75^2-12^2=5625-144=5481$
+\item $45 \times 45  = 45^2 - 5^2 + 5^2 = (45+5)(45-5) + 25 =50 \times 40 + 25=2000 + 25 = 2025$
+\end{enumerate}
+\alert{总结利用平方差法的数字特点，每人出2道类似的题目} \\
+
+平均数为整十或整五的数字相乘，可以非常方便地使用平方差法。
+\end{spacing}
+\end{frame}
+
+%%%%%%%
+\begin{frame}[t]{习题}
+\begin{spacing}{1.2}
+\normalsize
+\begin{enumerate}[label={\arabic*.}]
+\item $15 \times 25 =  (20-5)(20+5) = 20^2-5^2 = 400-25 = 375$
+\item $25 \times 35 =  (30-5)(30+5) = 30^2-5^2 = 900-25 = 875$
+\item $24 \times 36 =  (30-6)(30+6) = 30^2-6^2 = 900-36 = 864$
+\item $35 \times 45 =  (40-5)(40+5) = 40^2-5^2 = 1600-25 = 1575$
+\item $15 \times 35 =  (25-10)(25+10) = 25^2-10^2 = 625-100 = 525$
+\item $24 \times 46 =  (35-11)(35+11) = 35^2-11^2 = 1225-121 = 1104$
+\item $75 \times 75 =  70 \times 80 + 5 \times 5 = 5600 + 25 = 5625$
+\item $85 \times 85 =  80 \times 90 + 5 \times 5 = 7200 + 25 = 7225$
+\item $95 \times 95 =  90 \times 100 + 5 \times 5 = 9000 + 25 = 9025$
+\end{enumerate}
+\alert{思考：还有没有其它速算方法可以计算上述代数式？}
+\end{spacing}
+\end{frame}
+
+\end{document}
