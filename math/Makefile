@@ -4,7 +4,7 @@ LATEXMK=latexmk -xelatex --shell-escape
 #LATEXMK=latexmk -silent -xelatex --shell-escape
 TEX=$(wildcard *.tex)
 PDF=$(TEX:.tex=.pdf)
-MAIN=倍数的特征
+MAIN=速算方法
 
 .PHONY:all clean distclean c d
 
