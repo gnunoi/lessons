@@ -13,7 +13,7 @@ all:$(PDF)
 	make clean
 
 %.pdf:%.tex
-	$(LATEXMK) $<
+	kk
 
 clean: 
 	@rm -f *.aux
