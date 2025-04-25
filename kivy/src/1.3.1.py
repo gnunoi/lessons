@@ -9,11 +9,11 @@ class IndexPage(BoxLayout):
         self.join = Button(text = 'Hello World')
         self.add_widget(self.join)
 
-class TestApp(App):
+class MathdocApp(App):
     def build(self):
         return IndexPage()
 
 if __name__ == '__main__':
-    app = TestApp()
+    app = MathdocApp()
     app.run()
     
