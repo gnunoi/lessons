@@ -1,22 +1,40 @@
 \documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
 
 \makeatletter
-\def\input@path{{../styles}}  % 
+\def\input@path{{../../styles}}  % 
 \makeatother
 \usepackage{ubeamer}
 \uBigPaper
 
 \begin{document}
 
-\begin{frame}[t]{完全平方公式}
-完全平方差公式是：$(a + b)^2 = a^2 + 2ab + b^2$，如何证明呢？\\
-\vspace{1cm}
-证明：
+\begin{frame}[t]{完全平方公式及其证明}
+完全平方公式有两个，分别是： \\
+$(a + b)^2 = a^2 + 2ab + b^2$ \\
+$(a - b)^2 = a^2 - 2ab + b^2$ \\
+如何证明呢？
+\vspace{0.5cm}
+\begin{columns}
+\column{0.5\textwidth}
 \begin{flalign*} % 公式左对齐，需要收尾都有&字符。
+\text{证明：}\\
 &(a + b)^2 = (a + b)(a + b) & \\
+&=a(a+b) + b(a+b) \\
 &= a^2 + ab + ba + b^2 &\\
+&= a^2 + ab + ab + b^2 & \\
 &= a^2 + 2ab + b^2 &
 \end{flalign*}
+\column{0.5\textwidth}
+
+\begin{flalign*} % 公式左对齐，需要收尾都有&字符。
+\text{证明：}\\
+&(a - b)^2 = (a - b)(a - b) & \\
+&=a(a - b) - b(a - b) \\
+&= a^2 - ab - ba + b^2 &\\
+&= a^2 - ab - ab + b^2 & \\
+&= a^2 - 2ab + b^2 &
+\end{flalign*}
+\end{columns}
 \end{frame}
 
 \end{document}
