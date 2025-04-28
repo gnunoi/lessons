@@ -17,8 +17,8 @@ DOCX := $(MD:.md=.docx)
 PDF := $(MD:.md=.pdf)
 PDF += $(TEX:.tex=.pdf)
 MAIN=变量与类型
-.PHONY:all clean c
 
+.PHONY:all clean c
 all:$(PDF)
 
 %.pdf:%.md
