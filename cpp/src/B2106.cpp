@@ -7,7 +7,7 @@ int main()
     int n, m;
     cin >> n >> m;
 
-    int a[n][m]={0,};
+    int a[n][m];
 
     int i, j;
     for(i = 0; i < n; i++)
