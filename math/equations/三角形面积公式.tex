@@ -14,6 +14,10 @@
 三角形面积公式是：$S = \frac{1}{2}ah$，如何证明呢？
 \vspace{1cm}
 
+证明：\\
+$\because S_\text{平行四边形} = a \cdot h$ \\
+$\therefore S_\text{三角形} = \dfrac{1}{2}S_\text{平行四边形} = \dfrac{1}{2}a \cdot h$
+
 \begin{tikzpicture}[
       overlay, % 浮于正文上方
       remember picture,  % 允许引用页面坐标系
@@ -35,8 +39,13 @@
     \coordinate (D) at ($(A)!(C)!(B)$); % 垂足点
     % 用虚线绘制高
     \draw[thick, red, dashed] (C) -- (D) node[midway, right] {$h$};
-    % 添加垂直符号（直角符号）
-    \draw pic [draw] {right angle = A--D--C};
+    % 画直角符号
+    \draw ($(D) + (0, 0.5)$) -- ($(D) + (0.5, 0.5)$) -- ($(D) + (0.5, 0)$);
+    % 再画一个倒三角形，构成平行四边形
+    % 使用向量运算计算E点坐标：E = B + C - A
+    \coordinate (E) at ($(B) + (C) - (A)$);
+    \draw (C) -- (E) -- (B);
+    
 
 \end{tikzpicture}
 

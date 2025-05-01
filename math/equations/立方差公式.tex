@@ -9,27 +9,26 @@
 \begin{document}
 
 %%%%%%%
-\begin{frame}[t]{平方差公式及其证明}
-平方差公式是：$a^2 - b^2 = (a + b)(a - b)$，如何证明呢？
+\begin{frame}[t]{立方差公式及其证明}
+立方差公式是：$a^3 - b^3 = (a - b)(a^2+ab+b^2)$，如何证明呢？
 \vspace{1cm}
 \begin{columns}[t]
 \column{0.45\textwidth}
 思考：直接从左向右证明有一些难度，如果无法立即找到思路，可以先从右向左验证。\\
 证明：
 \begin{align*}
-  (a + b)(a - b) &= a(a - b) + b(a - b)  \\
-  &= a^2 - ab + ba - b^2 \\
-  &= a^2 - ab + ab - b^2 \\
-  &= a^2 - b^2
+  &(a - b)(a^2 + ab + b^2) \\
+  &= a(a^2 +ab + b^2) - b(a^2 +ab + b^2)  \\
+  &= a^3 + a^2b + ab^2 - a^2b - ab^2 - b^3 \\
+  &= a^3  - b^3 
 \end{align*}
 \column{0.45\textwidth}
  有了上述的验证过程，从下往上写，就找到构造公式，并予以证明。\\
  证明：
 \begin{align*}
-  a^2 - b^2  &= a^2 - ab + ab - b^2 \\
-  &= a^2 - ab + ba - b^2 \\
-  &= a(a - b) + b(a - b) \\
-  &= (a + b)(a - b) 
+  a^3 - b^3  &= a^3 + a^2b + ab^2 - a^2b - ab^2 - b^3 \\
+  &= a(a^2 + ab + b^2) - b(a^2 + ab + b^2) \\
+  &= (a-b)(a^2 + ab + b^2)
  \end{align*}
 \end{columns}
 \end{frame}
