@@ -1,0 +1,32 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+\begin{frame}[t]{数列的概念与性质}
+题目3：已知数列${a_n}$的通项公式为$a_n = n^2(\dfrac{8}{9})^{n-1}$，若对于任意正整数$n$，都有$a_n \le a_m$成立，则$m$的值为 \\
+$A. \quad 15 \qquad B. \quad 16 \qquad C. \quad 17 \qquad D. \quad 18$ \\
+\pause
+解：数列${a_n}$具有先单调递增，后单调递减的特点，$a_m$为最大值，有：$a_{m} > a_{m+1}$ \\
+\pause
+$\Rightarrow m^2 \left(\dfrac{8}{9} \right)^{m-1} - (m+1)^2 \left(\dfrac{8}{9} \right)^{m} > 0$ \\
+\pause
+$\Rightarrow 9m^2 - 8(m+1)^2 > 0$ \\
+\pause
+$\Rightarrow m^2 - 16m - 8 > 0$ \\
+\pause
+$\Rightarrow (m - 8)^2 - 72 > 0$ \\
+\pause
+数列的项数$m$满足$m \ge 1$，则：$\Rightarrow m > 8 + 6\sqrt{2}$ \\
+\pause
+$m > 16$且$m<17$，因为数列的项数为正整数，所以$m = 17$ \\
+正确答案为选项C.
+\end{frame}
+
+\end{document}

@@ -1,0 +1,36 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+\begin{frame}[t]{数列的概念与性质}
+题目2：数列${a_n}$的通项公式为$a_n = n^2 - 10n + 21$，则该数列的前$n$项和取得最小值时，$n$的值为\\
+$A. \quad 5 \qquad B. \quad 7 \qquad C. \quad 7\text{或}8 \qquad D. \quad 6\text{或}7$ \\
+\pause
+解：
+\pause
+根据函数$f(n) = n^2 - 10n + 21 = (n-5)^2 -4$的单调性可知，当$n \le 5$时，函数单调递减；当$n \ge 5$时，函数单调递增；\\
+\pause
+$n^2 - 10n + 21 \le 0$ \\
+\pause
+$\Rightarrow (n-5)^2 - 4 \le 0$ \\
+\pause
+$\Rightarrow (n-5)^2 \le 4$ \\
+\pause
+$\Rightarrow n \ge 7$或$n \le 3$ \\
+\pause
+$a_1, a_2$均大于0，$a_3 = 0$，$a_4, a_5, a_6$均小于0，$a_7 = 0$，$a_8, a_9, \dots$均大于0，前6项与前7项之和均为最小值，即：\\
+\pause
+$S_1 > S_2 = S_3 > S_4 > S_5 > S_6 = S_7 < S_8 < S_9$，因此：\\
+\pause
+正确答案为选项D.
+\end{frame}
+
+
+\end{document}
