@@ -1,0 +1,30 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+\begin{frame}[t]{等比数列}
+题目3：【多选】在正项等比数列$\{a_n\}$中，$a_4 = 4$，$a_6 = 16$，则数列$\{ b_n = a_na_{n+1} \}$ \\
+A. 数列$\{ b_n \}$的首项为$\dfrac{1}{2}$  \hspace{2em} B. 数列$\{ b_n \}$是公比为2的等比数列   \hspace{2em} C. 数列$\{ b_n \}$是公比为4的等比数列 \hspace{2em} D. 数列$\{ b_n \}$的前$n$项和为$\dfrac{1}{6}(4^n-1)$ \\
+\vspace{0.5cm}
+\pause
+解：因为正项等比数列$a_n$中，$a_4 = 4$，$a_6 = 16$，所以公比$q = \sqrt{\dfrac{a_6}{a_4}} = 2$，\\
+\pause
+因此$a_n = a_4 \cdot q^{n-4} = 4 \times 2^{n-4} = 2^{n-2}$。\\
+\pause
+A. $a_1 = 4 \times 2^-3 = \dfrac{1}{2}$，正确 \\
+\pause
+B. C. $\dfrac{a_{n+1} \cdot a_{n+2}}{a_{n} \cdot a_{n+1}} = 2 \times 2 = 4$，因此数列$\{b_n\}$的公比为4，B错误，C正确 \\
+\pause
+D. $b_1 = a_1 \cdot a_2 = \dfrac{1}{2}$，公比为4，则$Sn = b_1 \cdot \dfrac{4^n - 1}{4-1} = \dfrac{1}{6}(4^n-1)$，正确 \\
+\pause
+正确的选项是ACD.
+\end{frame}
+
+\end{document}

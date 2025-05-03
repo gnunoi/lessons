@@ -1,0 +1,146 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../../styles}} 
+\makeatother
+\usepackage{ubeamer}
+
+\begin{document}
+
+% 封面
+\begin{frame}{数列的知识点讲解}
+\title{等差数列与等比数列}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+\section{数列的概念回顾}
+\begin{frame}{数列的概念回顾}
+\begin{itemize}
+\item \textbf{定义}：按照一定顺序排列的一列数称为数列。数列中的每一个数叫做这个数列的项，排在第一位的数是第一项（或首项），排在第$n$位的数是第$n$项（或通项）。
+\item \textbf{表示方法}：一般用$a_1, a_2, a_3, \dots, a_n$表示数列的各项，其中$a_n$表示数列的通项。数列可以看作是定义域为正整数集或其有限子集$\{1, 2, 3, \dots, n\}$的函数$a_n = f(n)$，当自变量依次取$1, 2, 3, \dots, n$时对应的函数值依次排列而成。
+\end{itemize}
+\end{frame}
+
+\section{等差数列}
+\subsection{定义}
+\begin{frame}{等差数列的定义}
+\begin{itemize}
+\item \textbf{定义}：一般地，如果一个数列从第二项起，每一项与它的前一项的差等于同一个常数，那么这个数列就叫做等差数列，这个常数叫做等差数列的公差，公差通常用字母$d$表示。
+\item \textbf{符号表示}：对于等差数列$\{a_n\}$，有$a_n - a_{n-1} = d\quad(n \geq 2, n \in \mathbb{N}^*, d\text{为常数})$
+\end{itemize}
+\end{frame}
+
+\subsection{通项公式推导与证明}
+\begin{frame}{等差数列的通项公式推导与证明}
+\begin{itemize}
+\item \textbf{推导过程}：以首项为$a_1$，公差为$d$的等差数列$\{a_n\}$为例。
+\begin{align*}
+a_2 - a_1 &= d \Rightarrow a_2 = a_1 + d \\
+a_3 - a_2 &= d \Rightarrow a_3 = a_2 + d = (a_1 + d) + d = a_1 + 2d \\
+a_4 - a_3 &= d \Rightarrow a_4 = a_3 + d = a_1 + 2d + d = a_1 + 3d \\
+&\vdots \\
+a_n &= a_1 + (n - 1)d
+\end{align*}
+\item \textbf{证明}：采用数学归纳法。
+\begin{itemize}
+\item 当$n = 1$时，$a_1 = a_1 + (1 - 1)d = a_1$，等式成立。
+\item 假设当$n = k$（$k \geq 1$）时，等式成立，即$a_k = a_1 + (k - 1)d$。
+\item 那么，当$n = k + 1$时，$a_{k+1} = a_k + d = a_1 + (k - 1)d + d = a_1 + k d$，等式也成立。
+\item 根据数学归纳法原理，等差数列的通项公式$a_n = a_1 + (n - 1)d$对于所有正整数$n$都成立。
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{前n项和公式推导与证明}
+\begin{frame}{等差数列前n项和公式推导与证明}
+\begin{itemize}
+\item \textbf{推导过程}：设等差数列$\{a_n\}$的前$n$项和为$S_n = a_1 + a_2 + a_3 + \dots + a_n$。
+\begin{itemize}
+\item 由于$a_1 + a_n = a_2 + a_{n-1} = a_3 + a_{n-2} = \dots = a_n + a_1$，共有$\frac{n}{2}$对这样的和，所以$S_n = \frac{n}{2} \times (a_1 + a_n)$。
+\item 又因为$a_n = a_1 + (n - 1)d$，代入上式得$S_n = na_1 + \dfrac{n(n-1)}{2}d$。
+\end{itemize}
+\item \textbf{证明}：采用倒序相加法。
+\begin{itemize}
+\item 将$S_n$和倒序后的$S_n$相加：
+\begin{align*}
+S_n &= a_1 + a_2 + \dots + a_{n-1} + a_n \\
+S_n &= a_n + a_{n-1} + \dots + a_2 + a_1 \\
+\text{两式相加得}\quad 2 S_n &= (a_1 + a_n) + (a_2 + a_{n-1}) + \dots + (a_{n-1} + a_2) + (a_n + a_1) \\
+&\text{共有$n$个$(a_1 + a_n)$项，} \\
+&\text{所以}\quad 2 S_n = n (a_1 + a_n) \Rightarrow S_n = \frac{n}{2} \times (a_1 + a_n)
+\end{align*}
+\item 再结合$a_n = a_1 + (n - 1)d$，得到$S_n = na_1 + \dfrac{n(n-1)}{2} d$。
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{基本推论}
+\begin{frame}{等差数列的基本推论}
+\begin{itemize}
+\item \textbf{推论1（通项公式的变形）}：由$a_n = a_1 + (n - 1)d$，可得$a_n = a_m + (n - m)d\quad(m, n \in \mathbb{N}^* \text{且} m \leq n)$，这体现了等差数列中任意两项之间的关系，知道其中一项和公差以及项数关系，就可以求出另一项。
+\item \textbf{推论2（等差中项公式）}：$a_{n-m} + a_{n+m} = 2a_n$ 或$a_n = \dfrac{1}{2}(a_{n-m} + a_{n+m})$，其中：$m, n \in \mathbb{N}^* \text{且} m < n$。等差中项公式是等差数列的一个重要性质。
+\item \textbf{推论3（前n项和的性质）}：$S_n, S_{2n} - S_n, S_{3n} - S_{2n}$也成等差数列，公差为$n^2 d$。这个推论可以用来解决涉及等差数列前若干项和的有关问题，通过将前$n$项和看作新的数列，利用等差数列的性质进行求解。
+\end{itemize}
+\end{frame}
+
+\section{等比数列}
+\subsection{定义}
+\begin{frame}{等比数列的定义}
+\begin{itemize}
+\item \textbf{定义}：一般地，如果一个数列从第二项起，每一项与它的前一项的比等于同一个常数，那么这个数列就叫做等比数列，这个常数叫做等比数列的公比，公比通常用字母$q$表示（$q \neq 0$）。
+\item \textbf{符号表示}：对于等比数列$\{a_n\}$，有$\dfrac{a_n}{a_{n-1}} = q\quad(n \geq 2, n \in \mathbb{N}^*, q \neq 0)$。
+\end{itemize}
+\end{frame}
+
+\subsection{通项公式推导与证明}
+\begin{frame}{等比数列的通项公式推导与证明}
+\begin{itemize}
+\item \textbf{推导过程}：以首项为$a_1$，公比为$q$的等比数列$\{a_n\}$为例。
+\begin{align*}
+a_2 &= a_1 q \\
+a_3 &= a_2 q = a_1 q^2 \\
+a_4 &= a_3 q = a_1 q^3 \\
+&\vdots \\
+a_n &= a_1 q^{n-1}
+\end{align*}
+\item \textbf{证明}：采用数学归纳法。
+\begin{itemize}
+\item 当$n = 1$时，$a_1 = a_1 q^0 = a_1$，等式成立。
+\item 假设当$n = k$（$k \geq 1$）时，等式成立，即$a_k = a_1 q^{k-1}$。
+\item 那么，当$n = k + 1$时，$a_{k+1} = a_k q = a_1 q^{k-1} \times q = a_1 q^k$，等式也成立。
+\item 根据数学归纳法原理，等比数列的通项公式$a_n = a_1 q^{n-1}$对于所有正整数$n$都成立。
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{前n项和公式推导与证明}
+\begin{frame}{等比数列前n项和公式推导与证明}
+\begin{itemize}
+\item \textbf{推导过程}：设等比数列$\{a_n\}$的前$n$项和为$S_n = a_1 + a_2 + a_3 + \dots + a_n$。
+\begin{itemize}
+\item 当$q = 1$时，数列的每一项都相等，所以$S_n = n a_1$。
+\item 当$q \neq 1$时，将$S_n$乘以$q$得$q S_n = a_1 q + a_2 q + \dots + a_n q = a_2 + a_3 + \dots + a_n + a_n q$。
+\item 用原式$S_n$减去这个式子：
+\begin{align*}
+S_n - q S_n &= a_1 - a_n q \Rightarrow S_n (1 - q) = a_1 - a_n q \\
+\text{又因为}\quad a_n &= a_1 q^{n-1} \Rightarrow S_n = \dfrac{a_1 - a_1 q^{n-1} \times q}{1 - q} = \dfrac{a_1 (1 - q^n)}{1 - q}
+\end{align*}
+\end{itemize}
+\item \textbf{证明}：当$q = 1$时，显然成立；当$q \neq 1$时，上述推导过程已经证明了公式的正确性。
+\end{itemize}
+\end{frame}
+
+\subsection{基本推论}
+\begin{frame}{等比数列的基本推论}
+\begin{itemize}
+\item \textbf{推论1（通项公式的变形）}：由$a_n = a_1 q^{n-1}$，可得$a_n = a_m q^{n-m}\quad(m, n \in \mathbb{N}^* \text{且} m \leq n)$，它反映了等比数列中任意两项之间的关系，类似于等差数列中的相应推论，可用于已知某些项和公比求其他项的情况。
+\item \textbf{推论2（等比中项公式）}：$a_{n-m} \cdot a_{n+m} = a_n^2$。这个推论体现了等比数列中相邻三项（以中间项为对称轴的三项）的中间项与前后两项的积的关系，但要注意等比中项可能有两个值（正负），需要根据数列的具体情况进行取舍。
+\item \textbf{推论3（前n项和的性质）}：$S_n, S_{2n} - S_n, S_{3n} - S_{2n}$也成等比数列，公比为$q^n$。这个推论与等差数列前若干项和的推论类似，不过公比变成了原来的$n$次方，可用于解决有关等比数列前若干项和的综合问题。
+\end{itemize}
+\end{frame}
+
+\end{document}

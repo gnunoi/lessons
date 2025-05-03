@@ -1,0 +1,82 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+%\uBigPaper
+
+\date{\today}
+\title{一阶线性递推数列通项公式的推导}
+
+\begin{document}
+
+% 封面
+\begin{frame}
+    \frametitle{}
+    \titlepage
+\end{frame}
+
+% 定义
+\section{一阶线性递推关系式定义}
+\begin{frame}
+    \frametitle{一阶线性递推关系式定义}
+    \begin{itemize}
+        \item 一阶线性递推关系式形如 \(a_{n+1}=pa_{n}+q\)（\(p≠1\)，\(p\) 和 \(q\) 是常数）
+        \item “一阶”：相邻两项间有关联，\(a_{n+1}\) 和 \(a_{n}\)
+        \item “线性”：\(a_{n}\) 的次数为 1
+    \end{itemize}
+    \alert{如果$p = 1$呢？} \\
+    \pause 数列$\{   a_n \}$就是公差为$q$的等差数列
+\end{frame}
+
+% 推导步骤 - 构造归零形式
+\section{推导通项公式的步骤}
+\begin{frame}
+    \frametitle{推导通项公式的步骤 - 构造归零形式}
+    构造新数列：\(a_{n+1} -k =p(a_{n}-k)\)，确定常数 \(k\)
+
+    展开并代入原递推式，比较常数项得 \(k = \dfrac{q}{1 -p}(p≠1)\)
+\end{frame}
+
+% 推导步骤 - 构造等比数列
+\begin{frame}
+    \frametitle{推导通项公式的步骤 - 构造等比数列}
+    得到 \(\{a_{n} - \dfrac{q}{1 -p}\}\) 是公比为 \(p\) 的等比数列
+
+    首项为 \(a_{1} - \dfrac{q}{1 -p}\)，通项为 \(\left(a_{1} - \dfrac{q}{1 -p}\right)p^{n -1}\)
+\end{frame}
+
+% 推导步骤 - 求出原数列通项
+\begin{frame}
+    \frametitle{推导通项公式的步骤 - 求出原数列通项}
+    \(a_{n} =\left(a_{1} - \dfrac{q}{1 -p}\right)p^{n -1} + \dfrac{q}{1 -p}\)
+
+    以 \(a_{n+1}=2a_{n}+1\) 为例，\(p=2\)，\(q=1\)，\(k=-1\)
+
+    \(\{a_{n}+1\}\) 是公比为 2 的等比数列，首项为 \(a_{1}+1\)
+
+    通项公式为 \(a_{n}=(a_{1}+1)\cdot 2^{n -1} -1\)
+\end{frame}
+
+% 举例验证
+\section{举例验证}
+\begin{frame}
+    \frametitle{举例验证}
+    已知 \(a_{1}=1\)，代入通项公式得 \(a_{n}=2^{n} -1\)
+
+    验证 \(n=1\)，\(a_{1}=2^{1} -1=1\)，符合已知条件
+
+    验证 \(n=2\)，按递推关系式 \(a_{2}=3\)，按通项公式 \(a_{2}=3\)，正确
+\end{frame}
+
+% 总结
+\section{总结}
+\begin{frame}
+    \frametitle{总结}
+    通过构造新数列，将一阶线性递推数列转化为等比数列来求通项公式
+
+    掌握这种方法可以解决类似的一阶线性递推数列问题
+\end{frame}
+
+\end{document}

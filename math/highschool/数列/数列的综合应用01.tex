@@ -1,0 +1,59 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+%\uSetMiddleFont
+
+\date{\today}
+\begin{document}
+
+\begin{frame}[t]{数列的综合应用}
+题目1：已知数列$\{  a_n \}$前$n$项和为$S_n$，$4S_{n+1} = 3a_{n+1} + 9a_n$，$a_1 = 3$， \\
+(1) 证明数列$\{  a_{n+1} - 3a_n \}$为等比数列；\\
+(2) 设$b_n = \dfrac{a_n}{(n+1)(n+2)}$，求数列$\{  b_n \}$的前$n$项和$T_n$。\\
+\pause
+证明：\\
+(1) $4a_{n+1} = 4S_{n+1} - 4S_n = 3a_{n+1} + 9a_n - (3a_{n} + 9a_{n-1}) =  3a_{n+1} + 6a_n - 9a_{n-1}$，\\
+\pause
+所以$a_{n+1} = 6a_n - 9a_{n-1} \quad (n \geq 2)$ \\
+\pause
+令$c_n = a_{n+1} - 3a_n $，则$C_{n+1} = a_{n+2} - 3a_{n+1} = 6a_{n+1} - 9a_{n} - 3a_{n+1} = 3(a_{n+1} - 3a_{n}) = 3C_n$，\\
+所以$\dfrac{c_{n+1}}{c_n} = 3$，因此数列$\{  a_{n+1} - 3a_n \}$是公比为3的等比数列。\\
+\pause
+由$4S_{n+1} = 3a_{n+1} + 9a_n$得$4S_2 = 4a_2 + 4a_1 = 3a_2 + 9a_1 \quad \Rightarrow a_2 = 5a_1 = 15$ \\
+\pause
+$c_1 = a_2 - 3a_1 = 15 - 9 = 6$，因此数列$\{  a_{n+1} - 3a_n \}$是首项为6、公比为3的等比数列。
+\end{frame}
+
+%\uSetMiddleFont
+\begin{frame}[t]{数列的综合应用}
+题目1：已知数列$\{  a_n \}$前$n$项和为$S_n$，$4S_{n+1} = 3a_{n+1} + 9a_n$，$a_1 = 3$， \\
+(2) 设$b_n = \dfrac{a_n}{(n+1)(n+2)}$，求数列$\{  b_n \}$的前$n$项和$T_n$。\\
+\pause
+解：\\ 
+已经求得$a_n = (2n + 1) \cdot 3^{n-1}$，其特征方程为$r^2 - 6r + 9 = 0 \quad \Rightarrow (r - 3)^2 = 0$，\\
+\pause
+求得特征方程具有重根$r = 3$，因此数列$\{ a_n \}$可以写成的$a_n = (C_1 + C_2 n)3^n$形式，将$a_1, a_2$的值带入，得到方程组\\
+\pause
+\[
+\begin{cases}
+3(C_1 + C_2) = 3 \\
+9(C_1 + 2C_2) = 15
+\end{cases}
+\Rightarrow 
+\begin{cases}
+C1 = \frac{1}{3}\\
+C2 = \frac{2}{3}
+\end{cases}
+\Rightarrow a_n = (\dfrac{1}{3} + \dfrac{2}{3}n)3^n = (2n+1)3^{n-1}
+\]
+\pause
+$b_n = \dfrac{a_n}{(n+1)(n+2)} = \left (\dfrac{3}{n+2} - \dfrac{1}{n+1} \right ) 3^{n-1} = \dfrac{1}{n+2}3^n - \dfrac{1}{n+1} 3^{n-1}$ \\
+\pause
+所以$T_n = b_1 + b_2 + \cdots + b_n = \dfrac{1}{3}3^1 - \dfrac{1}{2}3^0 + \dfrac{1}{4}3^2 - \dfrac{1}{3}3^1 + \cdots + \dfrac{1}{n+2}3^n - \dfrac{1}{n+1}3^{n-1} = \dfrac{3^n}{n+2} - \dfrac{1}{2}$
+\end{frame}
+
+\end{document}

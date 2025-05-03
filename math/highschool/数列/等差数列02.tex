@@ -1,0 +1,28 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+\begin{frame}[t]{等差数列}
+题目2：已知两个等差数列$\{a_n\}$与$\{b_n\}$的前$n$项之和分别为$A_n$与$B_n$，若$\dfrac{A_n}{B_n} = \dfrac{n+3}{2(n+1)}$，则$\dfrac{a_5}{b_5} = $ \rule{5cm}{0.4pt}。\\
+
+\vspace{0.5cm}
+\pause
+解：\\
+$\because A_9 = \dfrac{9(a_1 + a_9)}{2} = 9a_5, \qquad B_9 = \dfrac{9(b_1 + b_9)}{2} = 9b_5$ \\
+\pause
+$\therefore \dfrac{a_5}{b_5} =\dfrac{9a_5}{9b_5} = \dfrac{A_9}{B_9} = \dfrac{9+3}{2 \times (9+1)} = \dfrac{12}{20} = \dfrac{3}{5}$ 
+
+\vspace{1cm}
+\pause
+结论：\\
+若等差数列$\{a_n\}$与$\{b_n\}$的前$n$项之和分别为$S_n$与$T_n$，则$\dfrac{a_n}{b_n} =\dfrac{S_{2n-1}}{T_{2n-1}}$
+\end{frame}
+
+\end{document}

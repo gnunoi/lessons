@@ -1,0 +1,76 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../../styles}} 
+\makeatother
+\usepackage{ubeamer}
+
+\begin{document}
+
+\begin{frame}
+\title{二阶齐次递推公式的通项公式推导}
+\titlepage
+\end{frame}
+
+\begin{frame}{二阶齐次递推公式的通项公式推导}
+\frametitle{问题说明}
+给定二阶齐次递推公式：
+\[
+a_{n+1} = 6a_n - 9a_{n-1}
+\]
+初始条件为：
+\[
+a_1 = 3, \quad a_2 = 15
+\]
+求该数列的通项公式。
+
+\end{frame}
+
+\begin{frame}{推导过程}
+\frametitle{特征方程}
+假设解为等比数列形式$a_n = r^n$，代入递推公式得到：
+\[
+r^{n+1} = 6r^n - 9r^{n-1}
+\]
+整理后得到特征方程：
+\[
+r^2 - 6r + 9 = 0 \quad \Rightarrow (r - 3)^2 = 0
+\]
+因此，特征方程有一个重根$r = 3$。
+\end{frame}
+
+\begin{frame}{通项公式的一般形式}
+\frametitle{重根情况下的通项公式}
+由于特征方程有重根，通项公式为：
+\[
+a_n = (C_1 + C_2 n) \cdot 3^n
+\]
+代入初始条件$a_1 = 3$和$a_2 = 15$：
+\[
+\begin{cases}
+3(C_1 + C_2) = 3 \\
+9(C_1 + 2C_2) = 15
+\end{cases}
+\]
+解得：
+\[
+C_1 = \frac{1}{3}, \quad C_2 = \frac{2}{3}
+\]
+
+\end{frame}
+
+\begin{frame}{通项公式的最终形式}
+\frametitle{写出通项公式}
+代入常数$C_1$和$C_2$得到：
+\[
+a_n = \left( \frac{1}{3} + \frac{2}{3}n \right) \cdot 3^n
+\]
+化简后得到：
+\[
+a_n = (2n + 1) \cdot 3^{n-1}
+\]
+通过代入初始条件和递推关系验证结果正确。
+\end{frame}
+
+
+\end{document}

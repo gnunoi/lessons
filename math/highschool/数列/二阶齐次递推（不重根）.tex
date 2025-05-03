@@ -1,0 +1,85 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../../styles}} 
+\makeatother
+\usepackage{ubeamer}
+
+\begin{document}
+
+\begin{frame}
+\title{不重根二阶齐次递推公式的通项公式推导}
+\titlepage
+\end{frame}
+
+\begin{frame}{二阶齐次递推公式的通项公式推导}
+\frametitle{问题说明}
+给定二阶齐次递推公式：
+\[
+a_{n+1} = 5a_n - 6a_{n-1}
+\]
+初始条件为：
+\[
+a_1 = 4, \quad a_2 = 9
+\]
+求该数列的通项公式。
+
+\end{frame}
+
+\begin{frame}{推导过程}
+\frametitle{特征方程}
+假设等比数列形式$a_n = r^n$，代入递推公式得到：
+\[
+r^{n+1} = 5r^n - 6r^{n-1}
+\]
+整理后得到特征方程：
+\[
+r^2 - 6r + 9 = 0 \quad \Rightarrow (r - 3)^2 = 0
+\]
+因此，特征方程有两个根分别为$r_1 = 2, r_2 = 3$。
+\end{frame}
+
+\begin{frame}
+当特征方程有两个不同的实根 \(r_1\) 和 \(r_2\) 时，通解为：
+\begin{equation*}
+a_n = A r_1^n + B r_2^n
+\end{equation*}
+其中，\(A\) 和 \(B\) 由初始条件确定。
+\end{frame}
+
+\begin{frame}
+\frametitle{代入初始条件求通项}
+已知 \(a_1 = 5\)，\(a_2 = 13\)：
+
+代入 \(n = 1\)：
+\begin{equation*}
+A \times 2 + B \times 3 = 5
+\end{equation*}
+
+代入 \(n = 2\)：
+\begin{equation*}
+A \times 4 + B \times 9 = 13
+\end{equation*}
+
+解得：
+\begin{align*}
+A &= 1 \\
+B &= 1
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\frametitle{通项公式}
+所以，该数列的通项公式为：
+\begin{equation*}
+a_n = 2^n + 3^n
+\end{equation*}
+
+验证：
+\begin{itemize}
+\item \(a_1 = 2^1 + 3^1 = 2 + 3 = 5\)
+\item \(a_2 = 2^2 + 3^2 = 4 + 9 = 13\)
+\end{itemize}
+\end{frame}
+
+\end{document}
