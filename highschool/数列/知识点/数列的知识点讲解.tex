@@ -93,7 +93,7 @@ S_n &= a_n + a_{n-1} + \dots + a_2 + a_1 \\
 \begin{frame}{等比数列的定义}
 \begin{itemize}
 \item \textbf{定义}：一般地，如果一个数列从第二项起，每一项与它的前一项的比等于同一个常数，那么这个数列就叫做等比数列，这个常数叫做等比数列的公比，公比通常用字母$q$表示（$q \neq 0$）。
-\item \textbf{符号表示}：对于等比数列$\{a_n\}$，有$\dfrac{a_n}{a_{n-1}} = q\quad(n \geq 2, n \in \mathbb{N}^*, q \neq 0)$。
+\item \textbf{符号表示}：对于等比数列$\{a_n\}$，有$\dfrac{a_{n+1}}{a_{n}} = q\quad(n \in \mathbb{N}^*, q \neq 0)$。
 \end{itemize}
 \end{frame}
 
@@ -128,7 +128,7 @@ a_n &= a_1 q^{n-1}
 \item 用原式$S_n$减去这个式子：
 \begin{align*}
 S_n - q S_n &= a_1 - a_n q \Rightarrow S_n (1 - q) = a_1 - a_n q \\
-\text{又因为}\quad a_n &= a_1 q^{n-1} \Rightarrow S_n = \dfrac{a_1 - a_1 q^{n-1} \times q}{1 - q} = \dfrac{a_1 (1 - q^n)}{1 - q}
+\text{又因为}\quad a_n &= a_1 q^{n-1} \Rightarrow S_n = \dfrac{a_1 - a_1 q^{n-1} \times q}{1 - q} = \dfrac{a_1 (1 - q^n)}{1 - q} = \dfrac{a_1 (q^n - 1)}{q - 1}
 \end{align*}
 \end{itemize}
 \item \textbf{证明}：当$q = 1$时，显然成立；当$q \neq 1$时，上述推导过程已经证明了公式的正确性。
@@ -138,7 +138,7 @@ S_n - q S_n &= a_1 - a_n q \Rightarrow S_n (1 - q) = a_1 - a_n q \\
 \subsection{基本推论}
 \begin{frame}{等比数列的基本推论}
 \begin{itemize}
-\item \textbf{推论1（通项公式的变形）}：由$a_n = a_1 q^{n-1}$，可得$a_n = a_m q^{n-m}\quad(m, n \in \mathbb{N}^* \text{且} m \leq n)$，它反映了等比数列中任意两项之间的关系，类似于等差数列中的相应推论，可用于已知某些项和公比求其他项的情况。
+\item \textbf{推论1（通项公式的变形）}：由$a_n = a_1 q^{n-1}$，可得$a_n = a_m q^{n-m}\quad(m, n \in \mathbb{N}^*)$，它反映了等比数列中任意两项之间的关系，类似于等差数列中的相应推论，可用于已知某些项和公比求其他项的情况。
 \item \textbf{推论2（等比中项公式）}：$a_{n-m} \cdot a_{n+m} = a_n^2$。这个推论体现了等比数列中相邻三项（以中间项为对称轴的三项）的中间项与前后两项的积的关系，但要注意等比中项可能有两个值（正负），需要根据数列的具体情况进行取舍。
 \item \textbf{推论3（前n项和的性质）}：$S_n, S_{2n} - S_n, S_{3n} - S_{2n}$也成等比数列，公比为$q^n$。这个推论与等差数列前若干项和的推论类似，不过公比变成了原来的$n$次方，可用于解决有关等比数列前若干项和的综合问题。
 \end{itemize}
