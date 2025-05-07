@@ -1,0 +1,113 @@
+\documentclass[10pt, aspectratio=169]{beamer}
+\usetheme{Madrid} % 兼容性最佳的主题
+\usecolortheme{seahorse} % 清新配色
+\usepackage{ctex} % 中文字体支持
+\usepackage{amsmath, amssymb, amsthm} % 数学符号
+\usepackage{graphicx} % 图片插入
+\usepackage{booktabs} % 表格美化
+\usepackage{array} % 表格列对齐
+
+% 标题信息
+\title{补集及其表示方法}
+\subtitle{高中数学集合论专题}
+\author{教师姓名}
+\institute{XX学校}
+\date{\today}
+
+% 定理环境定制
+\theoremstyle{definition}
+\newtheorem{definition}{定义}[section]
+\theoremstyle{example}
+\newtheorem{example}{示例}[section]
+\theoremstyle{remark}
+\newtheorem{remark}{注意}[section]
+
+\begin{document}
+
+% 标题页
+\begin{frame}[plain] % 去除导航栏
+  \titlepage
+\end{frame}
+
+% 目录页
+\begin{frame}{目录}
+  \tableofcontents[hideallsubsections] % 隐藏子章节
+\end{frame}
+
+% 正文部分
+\section{补集基础概念}
+\begin{frame}{绝对补集}
+  \begin{definition}
+    设全集为$ U $，集合$ A \subseteq U $，则$ A $的绝对补集定义为：
+    $$
+    \complement_U A = \{ x \in U \mid x \notin A \}
+    $$
+  \end{definition}
+  
+  \begin{example}
+    若全集$ U = \{1,2,3,4,5\} $，集合$ A = \{1,3,5\} $，则：
+    $$
+    \complement_U A = \{2,4\}
+    $$
+  \end{example}
+\end{frame}
+
+\section{符号与表示法}
+\begin{frame}{符号系统}
+  \begin{columns}[t]
+    \column{0.4\textwidth}
+      \begin{itemize}
+        \item 绝对补集：$ \complement_U A $、$ C_U A $
+        \item 相对补集：$ A - B $、$ A \setminus B $
+        \item 其他符号：$ A^c $、$ \overline{A} $
+      \end{itemize}
+    \column{0.5\textwidth}
+      \begin{center}
+        \includegraphics[width=0.8\textwidth]{venn_diagram.pdf} % 需替换为实际PDF文件
+      \end{center}
+  \end{columns}
+\end{frame}
+
+\section{运算性质}
+\begin{frame}{德摩根律}
+  \begin{theorem}[德摩根律]
+    $$
+    \complement_U (A \cup B) = \complement_U A \cap \complement_U B
+    $$
+    $$
+    \complement_U (A \cap B) = \complement_U A \cup \complement_U B
+    $$
+  \end{theorem}
+  
+  \begin{proof}[证明思路]
+    \begin{itemize}
+      \item 通过维恩图验证区域覆盖关系
+      \item 利用集合运算定义进行代数推导
+    \end{itemize}
+  \end{proof}
+\end{frame}
+
+\section{典型例题}
+\begin{frame}{参数问题}
+  \begin{example}
+    已知全集$ U = \mathbb{R} $，集合$ A = \{x \mid x^2 - 4x + 3 \leq 0\} $，求$ m $使$ \complement_U A = (-\infty,1) \cup (3,+\infty) $
+  \end{example}
+  \vspace{0.5cm}
+  \begin{solution}
+    \begin{align*}
+      A &= [1,3] \\
+      \complement_U A &= (-\infty,1) \cup (3,+\infty) \\
+      \Rightarrow m &= \text{满足条件的参数值}
+    \end{align*}
+  \end{solution}
+\end{frame}
+
+% 结束页
+\begin{frame}[standout]
+  \centering
+  感谢聆听！
+  \vfill
+  Q\&A
+\end{frame}
+
+\end{document}
