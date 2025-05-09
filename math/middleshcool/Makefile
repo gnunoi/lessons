@@ -8,8 +8,8 @@ MAIN=计算24点
 
 .PHONY:all clean distclean c d
 
-all:$(PDF)
-#all:$(MAIN).pdf
+#all:$(PDF)
+all:$(MAIN).pdf
 	make clean
 
 %.pdf:%.tex
