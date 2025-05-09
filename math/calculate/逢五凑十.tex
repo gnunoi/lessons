@@ -1,0 +1,52 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\begin{document}
+
+%%%%%%%
+\begin{frame}[t]{逢五凑十法}
+\begin{spacing}{1.2}
+\normalsize
+计算：$\overline{ab} \times \overline{cd}$ \\
+当$b = 5$，$d$为偶数时，通常可以使用《逢五凑十法》，即：\\
+对$\overline{cd}$先除以2，再乘以2，即：$\overline{cd} = \overline{ef} \times 2$，则：\\
+$\overline{ab} \times \overline{cd} = \overline{ab} \times \overline{cd} \div 2 \times 2 = (\overline{ab} \times 2) \times \overline{ef} $ \\
+例题：
+\begin{enumerate}[label={\arabic*.}]
+\item $15 \times 18 \pause = 15 \times 2 \times 9=30 \times 9 = 270$
+\item $25 \times 34 \pause = 25 \times 2 \times 17=50 \times 17 = 850$
+\item $35 \times 16 \pause = 35 \times 2 \times 8=70 \times 8 = 560$
+\item $75 \times 14 \pause = 75 \times 2 \times 7=150 \times 7 = 1050$
+\end{enumerate}
+\alert{思考：逢五凑十法本质就是乘五等于乘十除二，利用了乘法的什么规律？} \\
+\alert{总结逢五凑十法的数字特点，每人出2道类似的题目} \\
+\end{spacing}
+\end{frame}
+
+%%%%%%%
+\begin{frame}[t]{习题}
+\begin{spacing}{1.2}
+\normalsize
+计算下列各式的值：
+\begin{enumerate}[label={\arabic*.}]
+\item $25 \times 48 \pause = 25 \times 4 \times 12 = 100 \times 12 = 1200$
+\item $35 \times 28 \pause = 35 \times 2 \times 14 = 70 \times 14 = 980$
+\item $45 \times 16 \pause = 45 \times 2 \times 8 = 90 \times 8 = 720$
+\item $55 \times 18 \pause = 55 \times 2 \times 9 = 110 \times 9 = 990$
+\item $25 \times 36 \pause = 25 \times 4 \times 9 = 100 \times 9 = 900$
+\item $23 \times 44 \pause = (25 - 2) \times 44 = 25 \times 44 - 2 \times 44 = 1100 - 88 = 1012$
+\item $22 \times 36 \pause = 22 \times (35+1) = 22 \times 35 + 22 \times 1 = 770 + 22 = 792$
+\item $22 \times 37 \pause = 22 \times (35+2) = 22 \times 35 + 22 \times 2 = 770 + 44 = 814$
+\item $24 \times 28 \pause = (25-1) \times 28 = 25 \times 4 \times 7 - 28 = 700 - 28 = 672$
+\end{enumerate}
+
+\end{spacing}
+\end{frame}
+
+\end{document}
