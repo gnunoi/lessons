@@ -4,12 +4,13 @@ LATEXMK=latexmk -xelatex --shell-escape
 #LATEXMK=latexmk -silent -xelatex --shell-escape
 TEX=$(wildcard *.tex)
 PDF=$(TEX:.tex=.pdf)
-MAIN=计算24点
+MAIN=速算方法
+MAIN2=速算方法打印版
 
 .PHONY:all clean distclean c d
 
-all:$(PDF)
-#all:$(MAIN).pdf
+#all:$(PDF)
+all:$(MAIN).pdf $(MAIN2).pdf
 	make clean
 
 %.pdf:%.tex
