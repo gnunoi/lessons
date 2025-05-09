@@ -1,0 +1,110 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+\uSetBigFont
+
+\date{\today}
+\begin{document}
+
+% 质数与合数
+\begin{frame}[t]{质数与合数}
+\alert{质数}是指在\alert{大于1的自然数}中，除了\alert{1和本身}之外，\alert{不能}被其他自然数整除的数。例如，2、3、5、7、11 等都是质数。\\
+\alert{合数}是指在\alert{大于1的自然数}中，除了\alert{1和本身}之外，\alert{还能}被其他自然数整除的数。例如，4、6、8、9、10、12 等都是合数。
+\begin{columns}
+\column{0.95\textwidth}
+\begin{enumerate}[label={\arabic*.}]
+\item 自然数0既\alert{不是质数}，也\alert{不是合数}。 \pause
+\item 自然数1既\alert{不是质数}，也\alert{不是合数}。 \pause
+\item 自然数2是最小的\alert{质数}，也是唯一的\alert{偶质数}。 \pause
+\item \alert{除了2以外}，所有其它的质数都是\alert{奇数}。 \pause
+\item 自然数3是最小的\alert{奇质数}。 \pause
+\item 自然数4是最小的\alert{合数}，也是最小的\alert{偶合数}。 \pause
+\item 自然数9是最小的\alert{奇合数}。
+\end{enumerate}
+\end{columns}
+\end{frame}
+
+% 质因数分解
+\begin{frame}[t]{质因数分解}
+\alert{质数}是指在\alert{大于1的自然数}中，除了\alert{1和本身}之外，\alert{不能}被其他自然数整除的数。例如，2、3、5、7、11 等都是质数。
+\begin{columns}
+\column{0.95\textwidth}
+\begin{enumerate}[label={\arabic*.}]
+\item \alert{试除法：}用较小的质数依次去试除被分解的数，若这个质数能够整除被分解的数，则将其记录下来，然后用被分解数除以这个质数得到的商继续用同样的方法分解，直到商为 1 为止。
+\item \alert{质因数分解树法：}将要分解的数写在树的顶端，然后依次将它分解成两个因数，直到分解到质数为止。分解时，每个分支的两个端点都是上一个数的因数，其中一个要是质数。
+\item \alert{短除法：}将被分解的数写在短除符号右边，用一个能整除该数的质数作为除数写在短除符号左边，将商写在下方。然后继续对商进行同样的操作，直到商为 1 为止，左边的质数连乘起来就是该数的质因数分解。
+
+\end{enumerate}
+\end{columns}
+\end{frame}
+
+% 质因数分解练习
+\begin{frame}[t]{质因数分解练习}
+对以下数字进行质因数分解：
+\begin{columns}
+\column{0.95\textwidth}
+\begin{enumerate}[label={\arabic*.}]
+\item $96 \pause = 8 \times 12 = 2 \times 2 \times 2 \times 2 \times 2 \times 3$
+\item $72 \pause = 8 \times 9 = 2 \times 2 \times 2 \times 3 \times 3$
+\item $100 \pause = 2 \times 2 \times 5 \times 5$
+\item $75 \pause = 3 \times 5 \times 5$
+\item $50 \pause = 2 \times 5 \times 5$
+\item $36 \pause = 4 \times 9 = 2 \times 2 \times 3 \times 3$
+\item $32 \pause = 4 \times 8 = 2 \times 2 \times 2 \times 2 \times 2$
+\end{enumerate}
+\end{columns}
+\end{frame}
+
+% 求最大公因数
+\begin{frame}[t]{求最大公因数}
+\begin{columns}
+\column{0.95\textwidth}
+\begin{enumerate}[label={\arabic*.}]
+\item \alert{质因数分解法：}将每个数分解质因数，然后找出它们的公共质因数，将这些公共质因数相乘，所得的积就是它们的最大公因数。
+\item \alert{辗转相除法（欧几里得算法）：}对于两个正整数 a 和 b（a > b），用 a 除以 b 得到余数 r，若余数 r 为 0，则 b 是 a 和 b 的最大公因数；若余数 r 不为 0，则用 b 除以 r，再得到余数 r1，如此反复，直到余数为 0，此时的除数即为最大公因数。
+\item \alert{更相减损术（不建议使用，效率太低）：}对于两个正整数 a 和 b（a > b），用较大的数 a 减去较小的数 b，得到差 c，然后用 b 和 c 再次比较，继续相减，直到两个数相等，这个相等的数就是它们的最大公因数。
+\end{enumerate}
+\end{columns}
+\end{frame}
+
+% 求最大公因数练习
+\begin{frame}[t]{求最大公因数练习}
+\begin{columns}
+\column{0.95\textwidth}
+\begin{enumerate}[label={\arabic*.}]
+\item 求100与75的最大公因数：\pause $100 = 2 \times 2 \times 5 \times 5$， $75 = 3 \times 5 \times 5$，所以100与75的最大公因数为$5 \times 5 = 25$。
+\item 求96与72的最大公因数：\pause $96 = 2 \times 2 \times 2 \times 2 \times 2 \times 3$， $72 = 2 \times 2 \times 2 \times 3 \times 3$，所以96与72的最大公因数为$2 \times 2 \times 2 \times 3  = 24$。
+\item 求72与48的最大公因数：\pause $72 = 24 \times 3$， $48 = 24 \times 2$，所以72与48的最大公因数为$24$。
+\item 求75与50的最大公因数：\pause $75 = 25 \times 3$， $50 = 25 \times 2$，所以75与50的最大公因数为$25$。
+\end{enumerate}
+\end{columns}
+\end{frame}
+
+% 最大公因数习题
+\begin{frame}[t]{最大公因数习题}
+\begin{columns}
+\column{0.95\textwidth}
+\begin{enumerate}[label={\arabic*.}]
+\item 箱子里面有75个白色乒乓球和50个黄色乒乓球，将箱子里面的乒乓球分成堆，要求每堆的白色乒乓球一样多，每堆的黄色乒乓球也一样多，最多可以分成$(\quad)$堆，每堆有白色乒乓球$(\quad)$个、黄色乒乓球$(\quad)$个。\pause \alert{答案：75与50的最大公约数为25，则最多可以分成25对，每堆白色乒乓球$75 \div 25 = 3$个，黄色乒乓球$75 \div 25 = 2$个。}
+\item 用康乃馨和粉百合两种花做花束，康乃馨有96朵，粉百合有72朵，要求每束花里面的康乃馨数量相同，每束花里面的粉百合数量也相同，最多可以做$(\quad)$束花，每束花有康乃馨$(\quad)$朵、粉百合$(\quad)$朵。\pause \alert{答案：96与72的最大公约数为24，则最多可以做24束花，每束花有康乃馨$96 \div 24 = 4$朵、粉百合$72 \div 24 = 3$朵。}
+\end{enumerate}
+\end{columns}
+\end{frame}
+
+% 求最小公倍数
+\begin{frame}[t]{求最小公倍数}
+\begin{columns}
+\column{0.95\textwidth}
+\begin{enumerate}[label={\arabic*.}]
+\item 最小公倍数 = 两数乘积 ÷ 最大公因数，如：
+\item 求100与75的最小公倍数。\pause 最小公倍数$ = 100 \times 75 \div 25 = 100 \times 3 = 300$
+\item 求96与72的最小公倍数。\pause 最小公倍数$ = 96 \times 72 \div 24 = 96 \times 3 = 288$
+\end{enumerate}
+\end{columns}
+\end{frame}
+
+\end{document}
