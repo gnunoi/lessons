@@ -28,6 +28,40 @@
 \end{columns}
 \end{frame}
 
+% 寻找1-100中的质数
+\begin{frame}[t]{寻找1-100中的质数}
+\begin{columns}
+\column{0.4\textwidth}
+见《五年级上册》第43页
+\begin{enumerate}[label={\arabic*.}]
+\item 划掉1；
+\item 划掉除2外所有2的倍数；
+\item 划掉除3外所有3的倍数；
+\item 划掉除5外所有5的倍数；
+\item 划掉除7外所有7的倍数；
+\end{enumerate}
+\column{0.6\textwidth}
+\end{columns}
+
+\begin{tikzpicture}[
+      overlay, % 浮于正文上方
+      remember picture,  % 允许引用页面坐标系
+      shift={(current page.south east)},  % 将坐标系原点移到页面右下角
+      xshift=-22cm,  %（避免贴边）
+      yshift=18cm,  %（避免贴边）
+      scale=1,
+      transform shape
+    ]
+    \tikzset{cell/.style={minimum width=2em, minimum height=1.5em, draw=blue}}
+    \foreach \row in {1,...,10} {
+        \foreach \col in {1,...,10} {
+            \node[cell] at (\col*2,-\row*1.6) {\pgfmathparse{(\row-1)*10+\col}\pgfmathprintnumber{\pgfmathresult}};
+        }
+    }
+\end{tikzpicture}
+
+\end{frame}
+
 % 质因数分解
 \begin{frame}[t]{质因数分解}
 \alert{质数}是指在\alert{大于1的自然数}中，除了\alert{1和本身}之外，\alert{不能}被其他自然数整除的数。例如，2、3、5、7、11 等都是质数。
