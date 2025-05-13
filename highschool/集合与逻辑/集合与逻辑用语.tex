@@ -89,7 +89,6 @@
 \end{frame}
 
 \section{集合的基本运算}
-
 \begin{frame}
 \frametitle{集合的基本运算}
 \begin{itemize}
@@ -99,6 +98,31 @@
 
 \item \textbf{\alert{补集}}：设 \(S\) 是一个集合，\(A\) 是 \(S\) 的子集，由 \(S\) 中不属于 \(A\) 的所有元素组成的集合称为 \(S\) 中子集 \(A\) 的补集，记为 \(\complement_S A\)。即 \(\complement_S A = \{x | x \in S \text{ 且 } x \notin A\}\)。例如，\(S = \{1, 2, 3, 4, 5\}\)，\(A = \{1, 2\}\)，则 \(\complement_S A = \{3, 4, 5\}\)。
 \end{itemize}
+\end{frame}
+
+% Venn图（文氏图）
+\begin{frame}
+\frametitle{Venn图（文氏图）}
+\begin{itemize}
+\item Venn图（文氏图）是一种用于展示集合及其关系的直观图形工具。它通过封闭曲线（通常是圆形）来表示集合，曲线内部的区域表示集合中的元素，外部则表示不属于该集合的元素。Venn图由英国逻辑学家约翰・维恩（John Venn）在19世纪末期提出，因此得名。
+\item 单个集合的Venn图 ：用一个简单的封闭曲线（通常是圆或椭圆）表示一个集合。例如，要表示集合A，可以画一个圆，并在圆内写下属于集合A的元素，圆外则表示不属于集合A的元素。
+\item 多个集合的Venn图 ：当有多个集合时，Venn图通过重叠的封闭曲线来展示它们之间的关系。如两个集合A和B的Venn图，画两个重叠的圆，重叠部分表示同时属于A和B的元素（即$A \cap B$），不重叠的部分分别表示只属于A或只属于B的元素。
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+% 绘制集合B（椭圆）
+\draw[fill=blue!20] (3,0) ellipse (3cm and 1.5cm);
+% 绘制集合A（圆形），使其完全包含在B内
+\draw[fill=red!20] (3,0) circle (0.8cm);
+% 添加标签
+\node at (3,0) {A};
+\node at (5, 0) {B}; % 将B的标注放在椭圆内
+\end{tikzpicture}
+\label{venn:subset_ellipse}
+\end{figure}
+
 \end{frame}
 
 % 练习
@@ -139,28 +163,45 @@
 \item \textbf{充要条件}：如果“若 \(p\)，则 \(q\)”和它的逆命题“若 \(q\)，则 \(p\)”都是真命题，即既有$p \Rightarrow q$，又有$q \Rightarrow p$，就记作$p \iff q$。此时，$p$既是$q$的\alert{充分条件}，有是$q$的\alert{必要条件}，我们说$p$是$q$的\alert{充分必要条件}，简称为\alert{充要条件}(necessary and sufficient condition)。
 
 \end{enumerate}
-\end{frame}
-
-\section{简单的逻辑联结词}
+\end{frame}\section{简单的逻辑联结词}
 \begin{frame}
 \frametitle{简单的逻辑联结词}
-\begin{itemize}
-\item \textbf{或（\(\lor\)）}：用联结词“或”把命题 \(p\) 和命题 \(q\) 联结起来，得到新命题 \(p \lor q\)。当 \(p\)、\(q\) 中有一个为真时，\(p \lor q\) 为真；当 \(p\)、\(q\) 均为假时，\(p \lor q\) 为假。
-\item \textbf{且（\(\land\)）}：用联结词“且”把命题 \(p\) 和命题 \(q\) 联结起来，得到新命题 \(p \land q\)。当 \(p\)、\(q\) 均为真时，\(p \land q\) 为真；当 \(p\)、\(q\) 中有一个为假时，\(p \land q\) 为假。
-\item \textbf{非（\(\neg\)）}：对命题 \(p\) 全盘否定，得到新命题 \(\neg p\)。若 \(p\) 为真，则 \(\neg p\) 为假；若 \(p\) 为假，则 \(\neg p\) 为真。
-\end{itemize}
+\begin{enumerate}[label={\arabic*.}]
+\item \textbf{逻辑与（\(\land\)）}：用联结词“且”把命题 \(p\) 和命题 \(q\) 联结起来，得到新命题 \(p \land q\)。当 \(p\)、\(q\) 均为真时，\(p \land q\) 为真；当 \(p\)、\(q\) 中有一个为假时，\(p \land q\) 为假。\\
+
+\item \textbf{逻辑或（\(\lor\)）}：用联结词“或”把命题 \(p\) 和命题 \(q\) 联结起来，得到新命题 \(p \lor q\)。当 \(p\)、\(q\) 中有一个为真时，\(p \lor q\) 为真；当 \(p\)、\(q\) 均为假时，\(p \lor q\) 为假。\\
+
+\item \textbf{逻辑非（\(\neg\)）}：对命题 \(p\) 全盘否定，得到新命题 \(\neg p\)。若 \(p\) 为真，则 \(\neg p\) 为假；若 \(p\) 为假，则 \(\neg p\) 为真。\\
+
+\end{enumerate}
 \end{frame}
 
 \section{全称量词与存在量词}
 \begin{frame}
 \frametitle{全称量词与存在量词}
 \begin{itemize}
-\item \textbf{全称量词}：短语“对所有的”“对任意一个”称为全称量词，用符号“\(\forall\)”表示。含有全称量词的命题称为全称命题。例如，对任意 \(x \in \mathbb{R}\)，\(x > 1\)，记作 \(\forall x \in \mathbb{R}\)，\(x > 1\)。\\
+\item \textbf{全称量词}：短语“对所有的”、“对任意一个”称为全称量词，用符号“\(\forall\)”表示。含有全称量词的命题称为全称命题。例如，对任意 \(x \in \mathbb{R}\)，\(x > 1\)，记作 \(\forall x \in \mathbb{R}\)，\(x > 1\)。\\
 
-\item \textbf{存在量词}：短语“存在一个”“至少有一个”称为存在量词，用符号“\(\exists\)”表示。含有存在量词的命题称为特称命题（或存在性命题）。例如，存在 \(x \in \mathbb{R}\)，\(x > 1\)，记作 \(\exists x \in \mathbb{R}\)，\(x > 1\)。
+\item \textbf{存在量词}：短语“存在一个”、“至少有一个”称为存在量词，用符号“\(\exists\)”表示。含有存在量词的命题称为特称命题（或存在性命题）。例如，存在 \(x \in \mathbb{R}\)，\(x > 1\)，记作 \(\exists x \in \mathbb{R}\)，\(x > 1\)。
 \end{itemize}
 \end{frame}
 
+\section{全称量词命题与存在量词命题的否定}
+\begin{frame}
+\frametitle{全称量词命题的否定与存在量词命题的否定}
+\begin{itemize}
+\item \textbf{全称量词命题}：  \(\forall x \in \mathbb{M}\)，\(p(x)\)。\\
+
+\item \textbf{它的否定命题}： \(\exists x \in \mathbb{M}\)，\(\neg p(x) \)。 \\
+
+\item \textbf{存在量词命题}：  \(\exists x \in \mathbb{M}\)，\(p(x)\)。\\
+
+\item \textbf{它的否定命题}： \(\forall x \in \mathbb{M}\)，\(\neg p(x) \)。 \\
+\item \alert{由此可见，全称量词名词的否定是存在量词命题；存在量词命题的否定是全称量词命题。}
+\end{itemize}
+\end{frame}
+
+%总结
 \section{总结}
 
 \begin{frame}
@@ -177,6 +218,66 @@
 \item 判断下列命题的真假：若 \(x > 0\)，且 \(y > 0\)，则 \(x + y > 0\)。
 \item 写出命题“若 \(a > 0\)，则 \(a^2 > 0\)”的逆命题、否命题和逆否命题，并判断它们的真假。
 \end{enumerate}
+\end{frame}
+
+\section{例题}
+\begin{frame}
+\frametitle{例题}
+\begin{block}{例题1}
+给定集合 \(A = \{1, 2, 3, 4, 5\}\)，判断以下元素是否属于集合 \(A\)：\\
+$A. \, 2.5 \quad B.\, 3 \quad C.\, 4 \quad D. \, 6$
+\end{block}
+\pause
+集合 \(A\) 的元素为 1, 2, 3, 4, 5，因此：2.5 不属于集合 \(A\)，3 属于集合 \(A\)，4 属于集合 \(A\)，6 不属于集合 \(A\)。\\
+\( 2.5 \notin A, \quad 3 \in A, \quad 4 \in A, \quad 6 \notin A.\)
+\end{frame}
+
+\begin{frame}{例题 2：集合的基本运算}
+给定集合 \(A = \{1, 2, 3\}\)，集合 \(B = \{3, 4, 5\}\)。求以下集合：
+\begin{itemize}
+    \item 并集：\(A \cup B\)
+    \item 交集：\(A \cap B\)
+    \item 差集：\(A - B\)
+    \item 差集：\(B - A\)
+\end{itemize}
+\pause
+\textbf{解析：}
+\begin{itemize}
+    \item 并集 \(A \cup B\) 包含所有属于 \(A\) 或属于 \(B\) 的元素。因此，\(A \cup B = \{1, 2, 3, 4, 5\}\)。
+    \item 交集 \(A \cap B\) 包含所有同时属于 \(A\) 和 \(B\) 的元素。因此，\(A \cap B = \{3\}\)。
+    \item 差集 \(A - B\) 包含所有属于 \(A\) 但不属于 \(B\) 的元素。因此，\(A - B = \{1, 2\}\)。
+    \item 差集 \(B - A\) 包含所有属于 \(B\) 但不属于 \(A\) 的元素。因此，\(B - A = \{4, 5\}\)。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{例题 3：判断命题的真假}
+判断以下命题的真假：
+\begin{itemize}
+    \item 命题 \(p\)：若 \(x > 0\) 且 \(y > 0\)，则 \(x + y > 0\)。
+    \item 命题 \(q\)：若 \(x\) 是偶数，则 \(x^2\) 也是偶数。
+\end{itemize}
+\pause
+\textbf{解析：}
+\begin{itemize}
+    \item 对于命题 \(p\)，假设 \(x\) 和 \(y\) 都是正数，那么 \(x + y\) 的和也一定是正数。因此，命题 \(p\) 为真。
+    \item 对于命题 \(q\)，假设 \(x\) 是偶数，即 \(x = 2k\)（\(k\) 为整数），则 \(x^2 = (2k)^2 = 4k^2 = 2 \cdot (2k^2)\)，显然 \(x^2\) 也是偶数。因此，命题 \(q\) 为真。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{例题 4：逻辑联结词的应用}
+给定命题 \(p\)：今天下雨；命题 \(q\)：今天刮风。写出以下复合命题的符号表示，并判断其真假（假设今天既下雨又刮风）：
+\begin{itemize}
+    \item \(p\) 且 \(q\)
+    \item \(p\) 或 \(q\)
+    \item 非 \(p\)
+\end{itemize}
+\pause
+\textbf{解析：}
+\begin{itemize}
+    \item \(p\) 且 \(q\) 的符号表示为 \(p \land q\)。由于今天既下雨又刮风，因此 \(p\) 和 \(q\) 都为真，所以 \(p \land q\) 为真。
+    \item \(p\) 或 \(q\) 的符号表示为 \(p \lor q\)。由于 \(p\) 和 \(q\) 都为真，因此 \(p \lor q\) 为真。
+    \item 非 \(p\) 的符号表示为 \(\neg p\)。由于 \(p\) 为真，因此 \(\neg p\) 为假。
+\end{itemize}
 \end{frame}
 
 \end{document}
