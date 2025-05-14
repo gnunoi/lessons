@@ -1,0 +1,51 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+\uSetBigFont
+
+\date{\today}
+\begin{document}
+
+% 圆的周长
+\begin{frame}[t]{圆的周长}
+圆周率$\pi$取值3.14。
+\begin{columns}
+\column{0.95\textwidth}
+\begin{enumerate}[label={\arabic*.}]
+\item 已知圆的直径为d，\alert{圆的周长 = $\pi d$}
+\item 已知圆的直径为r，\alert{圆的周长 = $2\pi r$}
+\end{enumerate}
+练习：
+\begin{enumerate}[label={\arabic*.}]
+\item 已知圆的直径为2cm，求圆的周长。\\
+\pause
+解：圆的周长 = $\pi \times 4 = 3.14 \times 4 = 12.56(cm)$
+\item 已知圆的直径为4cm，求半圆的周长。\\
+\pause
+解：半圆的周长 = $\dfrac{1}{2} \times \pi \times 4 + 4= 6.28 + 2 = 8.28(cm)$
+\item 已知圆的直径为4cm，求1/4圆的周长。\\
+\pause
+解：1/4圆的周长 = $\dfrac{1}{4} \times \pi \times 4 + 4= 3.14 + 4 = 7.14(cm)$
+\end{enumerate}
+\end{columns}
+\end{frame}
+
+\begin{tikzpicture}[
+      overlay, % 浮于正文上方
+      remember picture,  % 允许引用页面坐标系
+      shift={(current page.south east)},  % 将坐标系原点移到页面右下角
+      xshift=-10cm,  %（避免贴边）
+      yshift=10cm,  %（避免贴边）
+      scale=1,
+      transform shape
+    ]
+    \coordinate (O) at (0,0);
+    \draw (O) circle(4cm);
+    
+\end{tikzpicture}
+
+\end{document}
