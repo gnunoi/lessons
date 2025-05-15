@@ -1,0 +1,30 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+\uSetBigFont
+
+\date{\today}
+\begin{document}
+
+% 试卷一
+% 第2题
+\begin{frame}[t]{泳速问题}
+杭州亚运会，在女子200m自由泳S5决赛中，中国选手刘玉夺得金牌。假如刘玉在游到终点时，领先亚军8m，领先季军12m。如果亚军与季军继续按照原来的速度游向终点，当亚军到达终点时，季军还差几米才能游到终点？（得数保留整数）（用比例解决问题）\\
+\pause
+\begin{columns}
+\column{0.95\textwidth}
+解：\\
+假设亚军游到终点时，季军还差$x$米才能游到终点。\\
+冠军游到终点时，亚军游了$200 - 8 = 192m$，季军游了$200 - 12 = 188m$，得出：
+$200 - x : 200  = 188 : 192 \Rightarrow 200 - x = \dfrac{188}{192} \times 200 = 195.8 \dot 3 \approx 196$，\\
+所以$x = 200 - 195.8 \dot 3 \approx  4(m)$。\\
+因此，当亚军到达终点时，季军还差\alert{4}米才能游到终点。
+
+\end{columns}
+\end{frame}
+
+\end{document}

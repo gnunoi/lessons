@@ -1,0 +1,27 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+\uSetBigFont
+
+\date{\today}
+\begin{document}
+
+% 试卷一
+% 第2题
+\begin{frame}[t]{鸡兔同笼问题}
+笼中30头88脚，鸡兔各几何？\\
+\pause
+\begin{columns}
+\column{0.95\textwidth}
+解：\\
+假设笼中全部是鸡，30鸡有脚60只，剩余脚28只，\\
+一只兔子比一只鸡多2只脚，故剩余28只脚为14只兔子多出，\\
+因此鸡的数量为\alert{$30 - 14 = 16$}只，兔子\alert{$14$}只。
+\end{columns}
+\end{frame}
+
+\end{document}
