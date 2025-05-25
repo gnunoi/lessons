@@ -1,10 +1,7 @@
 #include <iostream>
-
 using namespace std;
-
-int main()
-{
-    cout << "请输入2个整数（第一个可以是正数，0，或者负数；第2个不可以是0)：" << endl;
+int main(){
+    cout << "请输入2个整数（第2个不可以是0)：" << endl;
     int a, b;
     cin >> a >> b;
     if(b == 0){
@@ -13,6 +10,5 @@ int main()
     }
     cout << a << " / " << b << " = " << a / b << endl;
     cout << a << " % " << b << " = " << a % b << endl;
-    
     return 0;
 }

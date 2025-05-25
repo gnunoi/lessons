@@ -21,7 +21,7 @@ def generate_test_data(divisor, case_number, divisible_case_number):
     # 生成7个能被7整除的数和13个不能被7整除的数
     divisible = []
     indivisible = []
-    number_of_digits = 3
+    number_of_digits = 1000
     indivisible_case_number = case_number - divisible_case_number
     test_info = []
 

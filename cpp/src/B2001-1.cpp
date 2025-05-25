@@ -9,7 +9,7 @@ int main()
   // 输入两个整数到变量a与变量b
 	cin >> a >> b;
   // 输出a+b的数值
-	cout << a+b;
+	cout << a + b << endl;
 
 	return 0;
 }
