@@ -1,0 +1,273 @@
+\documentclass{ctexbeamer}
+
+\makeatletter
+\def\input@path{{../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\title{一元一次方程}
+
+% 封面
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+
+% 方程的定义
+\begin{frame}[t]{方程的定义}
+方程的定义：\\
+　　\alert{含有未知数的等式}叫做\alert{方程}。\\
+\vspace{1em} \\
+例如：\\
+ \begin{center}
+ \(2x + 3 = 7\) \\
+ \end{center}
+ 　　其中 \(x\) 是未知数，这个等式就构成了一个方程。
+\end{frame}
+
+% 一元一次方程的定义
+\begin{frame}[t]{一元一次方程的定义}
+一元一次方程的定义：\\
+　　在一个方程中，只含有一个\alert{未知数（元）}，并且\alert{未知数的指数都是 1（次）}，这样的方程叫做一元一次方程。\\
+\\
+例如：
+\begin{center}
+\(3x - 5 = 10\) 是一元一次方程
+\end{center}
+　　因为只含有\alert{一个未知数 \(x\)}，且\alert{未知数 \(x\) 的次数为 1}。\\
+\\
+补充说明：\\
+　　一般用\alert{$x$、$y$、$z$}表示\alert{未知数}，用\alert{$a$、$b$、$c$}表示\alert{常数}。
+\end{frame}
+
+% 拓展提问
+\begin{frame}[t]{拓展提问}
+提问：\\
+\begin{enumerate}[label={\arabic*.}]
+\item 什么是二元一次方程？试举例说明。
+\pause
+\item 什么是三元一次方程？试举例说明。
+\pause
+\item 什么是一元二次方程？试举例说明。
+\pause
+\item 什么是一元三次方程？试举例说明。
+\pause
+\item 什么是二元二次方程？试举例说明。
+\end{enumerate}
+\end{frame}
+
+% 等式的基本性质
+\begin{frame}[t]{等式的基本性质}
+见：《七年级下册》5.2 解一元一次方程 P6。\\
+\begin{itemize}
+\item \textbf{性质 1：} 等式两边同时加上（或减去）\alert{同一个数或同一个整式}，所得结果仍然是等式。
+\begin{align*}
+\text{如果有} \quad a &= b, \quad \text{则：}\\
+a + c &= b + c \\
+a - c &= b - c
+\end{align*}
+
+\item \textbf{性质 2：} 等式两边同时乘以或除以\alert{同一个数(除数不为 0)}，所得结果仍然是等式。
+\begin{align*}
+\text{如果有} \quad a &= b, \quad \text{则：}\\
+ac &= bc \\
+\dfrac{a}{c} &= \dfrac{b}{c}  \quad (c \neq 0) \\
+\end{align*}
+\end{itemize}
+思考：为什么性质2只强调同一个数？
+\end{frame}
+
+% 方程的变形规则
+\begin{frame}[t]{方程的变形规则}
+见：《七年级下册》5.2 解一元一次方程 P7。\\
+由等式的基本性质，可以得到\alert{方程的变形规则}。
+\begin{enumerate}[label={\arabic*.}]
+\item 方程两边都加上（或都减去）\alert{同一个数或同一个整式}，方程的解不变。
+\item 方程两边都乘以(都或除以)\alert{同一个不为 0的数}，方程的解不变。
+\end{enumerate}
+\vspace{1em}
+方程变形规则的应用：
+\begin{enumerate}[label={\arabic*.}]
+\item 利用变形规则1, 将方程中的某些项改变符号后, 从方程的一边移到另一边。像这样的变形叫做\alert{移项(transposition)}。\\
+如：$x + 3 = 5$，方程两边都减去$3$，得$x = 5 - 3 \Rightarrow x = 2$
+\vspace{1em}
+
+\item 利用变形规则2, 将方程的两边都除以未知数的系数. 像这样的变形通常称作\alert{“将未知数的系数化为1” }，简称\alert{“简化系数”}。 \\
+如：$3x = 15$，方程的两边都除以$3$，得$x = 15 \div 3 \Rightarrow x = 5$
+\end{enumerate}
+思考：为什么变形规则2只强调\alert{同一个不为0的数}？
+\end{frame}
+
+% 方程的解与解方程
+\begin{frame}[t]{方程的解}
+\alert{能使方程左、右两边的值相等的未知数的值}, 叫做\alert{方程的解(solution) }.\\
+\\
+例如$x = 2$ 是方程$x + 3 = 5$的解, 它能使得方程的左、右两边的值相等(都等于5) . \\
+当方程中只有一个未知数时, 方程的解也叫做方程的根(root).\\
+这些性质是解方程的基础。通过运用这些性质，我们可以对一元一次方程进行变形，从而求出未知数的值，即\alert{解方程}。\\
+\\
+例如，对于方程
+\[2x + 4 = 10\]
+我们可以先\alert{移项}，即：利用性质 1，两边同时减去 4(也就是将4移项到方程的右边)，得到
+ \[2x = 6\]
+再\alert{简化系数}，即：利用性质 2，两边同时除以 2，得到
+ \[x = 3\] 
+这就是方程的解。
+\end{frame}
+
+% 解方程的步骤
+\begin{frame}[t]{解方程的步骤}
+解方程的步骤一般为：
+\begin{enumerate}[label={\arabic*.}]
+\item 移项
+\item 合并同类项
+\item 简化系数
+\end{enumerate}
+\end{frame}
+
+% 移项及其示例
+\begin{frame}[t]{移项的定义与示例}
+把方程中的某些项改变符号后，从方程的一边移到另一边，这种变形叫做\alert{移项}。
+\begin{enumerate}[label={\arabic*.}]
+\item \alert{常数移项}：$x + 3 = 5$ \\
+将常数项$3$从方程的左边移项到方程的右边，得：$x = 5 - 3 \Rightarrow x = 2$
+\item \alert{未知数移项}：$3x = 2x + 5$ \\
+将含有未知数的整式项$2x$从方程的右边移项到方程的左边，得：$3x - 2x = 5 \Rightarrow x = 5$
+\item \alert{同时移项}：$3x - 5 = 2x + 10$ 
+\begin{itemize}
+\item 首先，将含有未知数的整式项移到左边，常数项移到右边。\\
+把 \(2x\) 移到左边变为 \(-2x\)，把 \(-5\) 移到右边变为 \(+5\)。\\
+方程变为： \(3x - 2x = 10 + 5\)。
+\item 然后合并同类项，左边变为 \(x\)，右边变为 \(15\)，得到方程的解：\(x = 15\)。
+\end{itemize}
+\item \alert{左右交换位置}：$10 = x + 5$ \\
+$x + 5 = 10 \Rightarrow x = 10 - 5 \Rightarrow x = 5$
+\end{enumerate}
+
+\end{frame}
+
+% 简化系数及其示例
+\begin{frame}{简化系数的定义与示例}
+将方程两边同时除以未知数的系数，使未知数的系数变为 1，从而得到方程的解。
+\begin{enumerate}[label={\arabic*.}]
+\item \alert{整数系数的简化} \\
+求方程 \(4x = 20\)的解。\\
+分析：方程两边同时除以 4，得到方程左边得到$x$，即简化系数为1。\\
+解：
+\pause
+\begin{align*}
+x &= \dfrac{20}{4} \\
+x &= 5
+\end{align*}
+
+\item \alert{分数系数的简化} \\
+求方程 \(\dfrac{1}{4}x = 5\)的解。\\
+分析：方程两边同时乘以 4，得到方程左边得到$x$，即简化系数为1。\\
+解：
+\pause
+\begin{align*}
+x &= 5 \times 4 \\
+x &= 20
+\end{align*}
+
+\end{enumerate}
+\end{frame}
+
+% 行程问题及其示例
+\begin{frame}[t]{行程问题及其示例}
+涉及路程、速度和时间的关系，通常有相遇问题、追及问题等。\\
+甲、乙两人分别从相距 90 千米的 A、B 两地骑行出发，相向而行。甲的速度是12千米/时，乙的速度是18千米/时。甲从A地出发骑行了2.5小时之后，乙从B地骑行出发，乙出发后经过多少小时两人相遇？\\
+\\
+解：\\
+\pause
+设经过 \(x\) 小时两人相遇。根据路程 = 速度 × 时间，甲先骑行了$12 \times 2.5 = 30$千米，然后，甲又骑行了 \(12x\) 千米，乙骑行了 \(18x\) 千米。所以：\\
+\begin{align*}
+ 12 \times 2.5 + 12x + 18x = 90 \\
+30 + 30x = 90 \\
+30x = 90 - 30 = 60 \\
+x = 60 \div 30 \\
+x = 2
+\end{align*}
+答：已出发后经过$2$小时，两人相遇。
+\end{frame}
+
+% 工程问题及其示例
+\begin{frame}[t]{工程问题及其示例}
+涉及工作总量、工作效率和工作时间的关系，通常假设工作总量为单位 “1”。\\
+小亮和老师一起整理了一篇教学材料, 准备录入成电子稿. 按篇幅估计, 老师单独录入需4 h 完成, 小亮单独录入需6 h 完成. 小亮先
+录入了1h 后, 老师开始一起录入, 问: 还需要多少小时完成? \\
+\\
+解：\\
+\pause
+设总工作量为1，则小亮每小时工作量为：$\dfrac{1}{6}$，老师每小时工作量为：$\dfrac{1}{4}$\\
+设还需要$x$小时可以完成，则：\\
+\vspace{12pt} 
+$\dfrac{1}{6} + \dfrac{1}{6}x + \dfrac{1}{4}x = 1$， \\
+\vspace{12pt} 
+$2 + 3x + 2x = 12 \quad \Rightarrow \quad 5x = 10$， \\
+\vspace{12pt} 
+$x = 2$ \\
+\vspace{12pt} 
+答：还需要2小时能够完成。
+\end{frame}
+
+% 经济问题及其示例
+\begin{frame}[t]{经济问题及其示例}
+涉及成本、售价、利润、利润率等经济指标之间的关系。\\
+学校准备添置一批课桌椅, 原订购60 套, 每套200 元. 店方表示: 如果多购买, 可以优惠. 结果校方购买了72 套, 每套减价6 元, 而商店获得同样多的利润. 求每套课桌椅的成本.\\
+\\
+解：设每套桌椅的成本为$x$元，则：
+\pause
+\begin{align*}
+60(200 - x) &= 72(200-6-x) \\
+5(200 - x) &= 6(200 - 6 - x) \\
+1000 - 5x &= 1200 - 36 - 6x \\
+x &= 1200 - 1000 - 36 = 200 - 36 = 164
+\end{align*}
+答：每套桌椅的成本为$164$元。
+\end{frame}
+
+% 浓度问题及其示例
+\begin{frame}[t]{浓度问题及其示例}
+涉及溶液的浓度、溶质质量、溶液质量之间的关系。通常已知不同浓度的溶液混合后的浓度，求某种溶液的质量或浓度等。\\
+题型知识说明：
+\begin{enumerate}[{label=\arabic*.}]
+\item 溶液质量 = 溶质质量 + 溶剂质量
+\item 浓度 = 溶质质量 ÷ 溶液质量 × 100\%
+\item 溶质质量 = 溶液质量 × 浓度
+\item 溶液质量 = 溶质质量 ÷ 浓度
+\item 溶剂质量 = 溶液质量 - 溶质质量 = 溶液质量 × (100\% - 浓度)
+\end{enumerate}
+\end{frame}
+
+% 浓度问题及其示例
+\begin{frame}[t]{浓度问题及其示例}
+例题：有一个 20 克的盐水溶液，浓度为 15\%。现在向其中加入一定量的水后，溶液的浓度变为 10\%。问加入了多少克水？\\
+\\
+解：设加入了$x$克水，则：\\
+\pause
+\begin{align}
+(20 + x) \times 10 \% &= 20 \times 15 \% \\
+2 + 0.1x &= 3 \\
+0.1x &= 3 - 2 = 1 \\
+x &= 10
+\end{align}
+答：加入了$10$克水。
+\end{frame}
+
+% 总结
+\begin{frame}[t]{总结}
+本章我们学习了：
+\begin{enumerate}[label={\arabic*.}]
+\item 方程的定义、方程的解
+\item 一元一次方程的定义
+\item 等式的基本性质
+\item 方程的变形规则：移项和简化系数
+\item 方程的求解方法
+\item 一元一次方程在行程、工程、经济、浓度等问题中的应用。
+\end{enumerate}
+希望大家能够熟练掌握这些知识，并将\alert{一元一次方程及其求解的知识}应用到解决实际生活中的问题。
+\end{frame}
+
+\end{document}

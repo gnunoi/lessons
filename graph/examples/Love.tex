@@ -1,0 +1,21 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+
+\begin{document}
+
+\begin{tikzpicture}
+    % 定义心形曲线的参数方程
+    \def\x(#1){16*sin(deg(#1))^3}
+    \def\y(#1){13*cos(deg(#1)) - 5*cos(deg(2*#1)) - 2*cos(deg(3*#1)) - cos(deg(4*#1))}
+    
+    % 绘制心形曲线
+    \draw[red, thick, domain=0:2*pi, samples=1000, smooth, variable=\t] 
+        plot ({\x(\t)}, {\y(\t)});
+        
+    % 填充心形
+    \fill[red!50, domain=0:2*pi, samples=200, smooth, variable=\t] 
+        plot ({\x(\t)}, {\y(\t)});
+\end{tikzpicture}
+
+\end{document}
