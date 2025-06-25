@@ -1,0 +1,12 @@
+\documentclass[tikz,border=5mm]{standalone}
+\usepackage{ctex}
+\begin{document}
+\begin{tikzpicture}
+% 两点画直线
+\draw (0,0) node [circle,fill=black,inner sep=1pt,label=below:$A$] {} -- (5,0) node [circle,fill=black,inner sep=1pt,label=below:$B$] {} node[midway, label=above:{实心线}] {};
+
+% 画点划线
+\draw [dotted] (0, 2) node[below]{$C$} -- (5,2) node[below]{$D$} node[midway, label=above:{点线}] {};
+    
+\end{tikzpicture}
+\end{document}

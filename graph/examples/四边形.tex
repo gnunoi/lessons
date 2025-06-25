@@ -1,0 +1,10 @@
+\documentclass[tikz,border=5mm]{standalone}
+\begin{document}
+\begin{tikzpicture}
+    % 绘制四边形外轮廓
+    \draw (0,0) -- (2,0) -- (3,1) -- (1,2) -- cycle;
+    
+    % 填充四边形
+    \filldraw[fill=green!20!white, draw=green] (0,0) -- (2,0) -- (3,1) -- (1,2) -- cycle;
+\end{tikzpicture}
+\end{document}

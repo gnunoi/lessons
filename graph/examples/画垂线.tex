@@ -1,0 +1,28 @@
+\documentclass[tikz,border=5mm]{standalone}
+\usetikzlibrary{calc}
+\begin{document}
+\begin{tikzpicture}
+    % 定义线段的两个端点
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (5,0);
+    
+    % 定义线外的点
+    \coordinate (C) at (3,2);
+    
+    % 绘制原始线段AB
+    \draw (A) node[below]{$A$} -- (B) node[below]{$B$};
+    
+    % 计算从点C到线段AB的垂足点D
+    \coordinate (D) at ($(A)!(C)!(B)$);
+    
+    % 绘制从点C到垂足点D的垂线
+    \draw[dashed,blue] (C) node[right]{$C$} -- (D) node[below]{$D$};
+    
+    % 标注垂线
+    \draw (C) -- (D) node[midway,right] {\textcolor{blue}{垂线}};
+    
+    % 绘制点
+    \foreach \point in {A,B,C,D}
+        \fill (\point) circle (1pt);
+\end{tikzpicture}
+\end{document}

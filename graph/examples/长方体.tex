@@ -1,0 +1,11 @@
+\documentclass[tikz,border=5mm]{standalone}
+\begin{document}
+\begin{tikzpicture}
+    % 绘制长方体
+    \draw (0,0,0) -- (2,0,0) -- (2,1,0) -- (0,1,0) -- cycle;
+    \draw (0,1,0) -- (0,1,-1) -- (2,1,-1) -- (2,1,0) -- cycle;
+    \draw [densely dotted] (0,1,-1) -- (0,0,-1) -- (0,0,0);
+    \draw [densely dotted] (0,0,-1) -- (2,0,-1);
+    \draw (2,1,-1) -- (2,0,-1) -- (2,0,0);
+\end{tikzpicture}
+\end{document}
