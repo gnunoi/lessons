@@ -1,0 +1,23 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}
+    % 绘制圆柱体的底面和顶面椭圆
+%    \draw (0,0) ellipse (1 and 0.3); % 底面椭圆
+    \draw (0,2) ellipse (1 and 0.3); % 顶面椭圆
+
+    % 绘制圆柱体的侧面
+    \draw (-1,0) -- (-1,2); % 左侧面
+    \draw (1,0) -- (1,2);   % 右侧面
+
+    % 绘制圆柱体底面椭圆的前半部分（实线）
+    \draw (-1,0) arc (180:360:1 and 0.3);
+
+    % 绘制圆柱体底面椭圆的后半部分（虚线）
+    \draw[dotted] (1,0) arc (0:180:1 and 0.3);
+
+    % 可选：绘制圆柱体顶部的中心线
+    % \draw[dashed] (0,2) ellipse (1 and 0.3);
+    % \draw[very thick] (0,2) ellipse (1 and 0.3);
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,363 @@
+\documentclass[aspectratio=169]{ctexbeamer} %[t]：顶端对齐
+
+\makeatletter
+\def\input@path{{../../styles}}  % 
+\makeatother
+\usepackage{ubeamer}
+\uBigPaper
+
+\date{\today}
+\mode<presentation>{
+    \usetheme{default}
+    \usecolortheme{rose}
+    \usefonttheme{default}
+    \setbeamertemplate{navigation symbols}{}
+    \setbeamertemplate{caption}[numbered]
+}
+
+\title{函数的核心概念与常见类型}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{目录}
+    \tableofcontents
+\end{frame}
+
+\section{函数的定义}
+
+\begin{frame}{函数的定义}
+    \textbf{函数的定义：数学必修A第一册P62} \\
+    一般地，设$A$、$B$是非空的实数集，如果对于集合$A$中的任意一个数$x$，按照某种确定的对应关系$f$，在集合$B$中都有唯一确定的数$y$和它对应，那么就称$f: A→B$为从集合$A$到集合$B$的一个\alert{函数(function)}，记作\alert{$y = f(x), x \in A$}。\\
+    其中：其中，$x$叫做\alert{自变量}，$x$的取值范围$A$叫做函数的\alert{定义域(domain)}；与$x$的值相对应的$y$值叫做\alert{函数值}，函数值的集合$\{f(x)| x \in A\}$叫做函数的\alert{值域(range)}. \\
+    函数的共性：
+    \begin{enumerate}[label={\arabic*.}]
+    		\item 包含两个非空的数集，用$A$和$B$来表示。
+        \item 有一个对应关系。
+        \item 对于定义域(集合$A$)中的任意一个数$x$（自变量），值域(集合$B$)中都有唯一确定的数$y$（因变量）与之对应。
+    \end{enumerate}
+
+    \vspace{0.5cm}
+    \textbf{示例：}
+    \begin{itemize}
+        \item 考虑函数 \( y = 2x + 1 \)，当 \( x = 1 \) 时，\( y = 3 \)；\( x = 2 \) 时，\( y = 5 \)。
+    \end{itemize}
+\end{frame}
+
+% 函数的定义域
+\section{函数的定义域}
+\begin{frame}{函数的定义域}
+    \textbf{定义域：}
+    \begin{itemize}
+        \item 是函数自变量的取值范围。
+        \item 确定定义域时，需考虑使函数运算有意义的条件。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{常见限制条件：}
+    \begin{itemize}
+        \item 分式中分母不能为零，如函数 \( y = \dfrac{1}{x - 1} \)，定义域为 \( x \neq 1 \)。
+        \item 偶次根式被开方数非负，如函数 \( y = \sqrt{x} \)，定义域为 \( x \geq 0 \)。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{例题：}
+    \begin{itemize}
+        \item 求函数 \( y = \dfrac{x + 2}{x^2 - 4} \) 和 \( y = \sqrt[3]{2x - 1} \) 的定义域。
+    \end{itemize}
+\end{frame}
+
+\section{函数的值域}
+
+\begin{frame}{函数的值域}
+    \textbf{值域：}
+    \begin{itemize}
+        \item 是函数因变量的取值范围，取决于定义域和对应法则。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{求值域的方法：}
+    \begin{itemize}
+        \item \textbf{直接法：} 如函数 \( y = x^2 \)，定义域为实数集，值域为 \( y \geq 0 \)。
+        \item \textbf{配方法：} 如函数 \( y = x^2 - 4x + 3 \)，配成 \( y = (x - 2)^2 - 1 \)，值域为 \( y \geq -1 \)。
+        \item \textbf{反函数法：} 通过求反函数的定义域得到原函数的值域。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{实例分析：}
+    \begin{itemize}
+        \item 求函数 \( y = \dfrac{2x + 1}{x - 3} \) 的值域。
+    \end{itemize}
+\end{frame}
+
+% 区间的定义与应用
+\section{区间的概念}
+\begin{frame}{区间的概念}
+    \textbf{区间的定义：}
+    \begin{itemize}
+        \item 是数学中表示实数集合的一种方式，用于描述函数的定义域、值域以及一些性质时的连续范围。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{区间的分类：}
+    \begin{itemize}
+        \item \textbf{闭区间：} 满足不等式$ a \le x \le b$的实数$x$的集合，叫做\alert{闭区间}，表示为 [a, b]，即包含两端的端点$a$和$b$。
+        \item \textbf{开区间：} 满足不等式$ a < x < b$的实数$x$的集合，叫做\alert{开区间}，表示为 (a, b)，即不包含两端的端点$a$和$b$。
+        \item \textbf{半开半闭区间：} 满足不等式$ a \le x < b$或$ a < x \le b$的实数$x$的集合，叫做\alert{半开半闭区间}，表示为 [a, b) 或 (a, b]，即一端包含端点，另一端不包含。
+    \end{itemize}
+\end{frame}
+
+% 区间的数轴表示
+\begin{frame}{区间与数轴表示}
+    \textbf{区间的图形表示：}
+    \begin{itemize}
+        \item 在数轴上，闭区间用实心点表示端点，开区间用空心点表示端点。
+    \end{itemize}
+\begin{center}
+\begin{tabular}{| c | c |}
+\hline
+\textbf{区间} & \textbf{数轴表示} \\
+\hline
+\([a, b]\) & 
+\begin{tikzpicture}[baseline={([yshift=0.5ex]current bounding box.center)}, thick, scale=1]
+    \draw[-{Stealth}] (-1, 0) -- (6, 0);
+    \draw[blue, thick] (1, 0) -- (5, 0);
+    \draw[red, fill] (1, 0) circle (2pt) node[below] {\(a\)};
+    \draw[red, fill] (5, 0) circle (2pt) node[below] {\(b\)};
+\end{tikzpicture} \\
+\hline
+\((a, b)\) & 
+\begin{tikzpicture}[baseline={([yshift=0.5ex]current bounding box.center)}, thick, scale=1]
+    \draw[-{Stealth}] (-1, 0) -- (6, 0);
+    \draw[blue, thick] (1, 0) -- (5, 0);
+    \draw[red, fill=white] (1, 0) circle (2pt) node[below] {\(a\)};
+    \draw[red, fill=white] (5, 0) circle (2pt) node[below] {\(b\)};
+\end{tikzpicture} \\
+\hline
+\([a, b)\) & 
+\begin{tikzpicture}[baseline={([yshift=0.5ex]current bounding box.center)}, thick, scale=1]
+    \draw[-{Stealth}] (-1, 0) -- (6, 0);
+    \draw[blue, thick] (1, 0) -- (5, 0);
+    \draw[red, fill] (1, 0) circle (2pt) node[below] {\(a\)};
+    \draw[red, fill=white] (5, 0) circle (2pt) node[below] {\(b\)};
+\end{tikzpicture} \\
+\hline
+\((a, b]\) & 
+\begin{tikzpicture}[baseline={([yshift=0.5ex]current bounding box.center)}, thick, scale=1]
+    \draw[-{Stealth}] (-1, 0) -- (6, 0);
+    \draw[blue, thick] (1, 0) -- (5, 0);
+    \draw[red, fill=white] (1, 0) circle (2pt) node[below] {\(a\)};
+    \draw[red, fill] (5, 0) circle (2pt) node[below] {\(b\)};
+\end{tikzpicture} \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{frame}
+
+% 区间的定义与应用
+\begin{frame}{区间的应用}
+    \vspace{0.5cm}
+    \textbf{定义域和值域的区间表示：}
+    \begin{itemize}
+        \item 例如，函数 \( y = \sqrt{x - 1} \) 的定义域为 [1, +∞)，值域为 [0, +∞)。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{函数单调性的区间表示：}
+    \begin{itemize}
+        \item 例如，函数 \( y = x^2 \) 在区间 (-∞, 0] 上单调递减，在区间 [0, +∞) 上单调递增。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{区间运算：}
+    \begin{itemize}
+        \item 区间的并：例如，(1, 3) ∪ [5, 7] 表示两个不连续的区间。
+        \item 区间的交：例如，(2, 6) ∩ [4, 8) = [4, 6)。
+        \item 区间的差：例如，[1, 7] \ [3, 5] = [1, 3) ∪ (5, 7]。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{例题：}
+    \begin{itemize}
+        \item 用区间表示函数 \( y = \dfrac{1}{x} \) 的定义域和值域。
+        \item 求函数 \( y = -x^2 + 4 \) 的单调递增区间和单调递减区间。
+    \end{itemize}
+\end{frame}
+
+% 函数的单调性
+\section{函数的单调性}
+\begin{frame}{函数的单调性}
+    \textbf{单调性：}
+    \begin{itemize}
+        \item 描述函数在定义域某些区间上因变量的变化趋势。
+        \item 分为单调递增和单调递减两种情况。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{单调性定义：}
+    \begin{itemize}
+        \item \textbf{单调递增：} 在区间内，自变量增大，因变量也随之增大。
+        \item \textbf{单调递减：} 在区间内，自变量增大，因变量反而减小。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{图像展示：}
+    \begin{itemize}
+        \item \( y = x^3 \)（单调递增）
+        \item \( y = -x + 2 \)（单调递减）
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{判断方法：}
+    \begin{itemize}
+        \item 通过观察函数图像或利用导数判断单调性。
+    \end{itemize}
+\end{frame}
+
+\section{函数的奇偶性}
+
+\begin{frame}{函数的奇偶性}
+    \textbf{奇偶性定义：}
+    \begin{itemize}
+        \item \textbf{奇函数：} 对定义域内任意 \( x \)，有 \( f(-x) = -f(x) \)。例如，\( f(x) = x^3 \)。
+        \item \textbf{偶函数：} 对定义域内任意 \( x \)，有 \( f(-x) = f(x) \)。例如，\( f(x) = x^2 \)。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{图像特点：}
+    \begin{itemize}
+        \item 奇函数图像关于原点对称。
+        \item 偶函数图像关于 \( y \) 轴对称。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{判断实例：}
+    \begin{itemize}
+        \item 判断以下函数的奇偶性：\( f(x) = x^4 - 2x^2 \)、\( f(x) = x^5 + x \)。
+    \end{itemize}
+\end{frame}
+
+\section{一次函数}
+
+\begin{frame}{一次函数}
+    \textbf{一般形式：}
+    \begin{itemize}
+        \item \( y = kx + b \)（\( k \)、\( b \) 为常数，且 \( k \neq 0 \)）
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{参数解读：}
+    \begin{itemize}
+        \item \( k \) 决定图像倾斜程度和单调性：
+        \begin{itemize}
+            \item \( k > 0 \)：函数单调递增。
+            \item \( k < 0 \)：函数单调递减。
+        \end{itemize}
+        \item \( b \) 是 \( y \) 轴截距，决定图像与 \( y \) 轴交点位置。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{图像绘制：}
+    \begin{itemize}
+        \item \( y = x \)、\( y = -x + 2 \)、\( y = 2x + 1 \) 等。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{实际应用：}
+    \begin{itemize}
+        \item 出租车收费模型：起步价为 \( b \)，每公里计费为 \( k \)。
+    \end{itemize}
+\end{frame}
+
+% 反比例函数
+\section{反比例函数}
+
+\begin{frame}{反比例函数}
+    \textbf{反比例函数的定义：}
+    \begin{itemize}
+        \item 反比例函数是一种形如 \( y = \dfrac{k}{x} \)（\( k \) 为常数且 \( k \neq 0 \)）的函数。
+        \item 自变量 \( x \) 的取值范围是 \( x \neq 0 \) 的所有实数，因变量 \( y \) 也随之不能为零。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{反比例函数的图像：}
+    \begin{itemize}
+        \item 图像是双曲线，该双曲线不与坐标轴相交。
+        \item 当 \( k > 0 \) 时，双曲线的两支分别位于第一和第三象限。
+        \item 当 \( k < 0 \) 时，双曲线的两支分别位于第二和第四象限。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{反比例函数的性质：}
+    \begin{itemize}
+        \item 函数在其定义域上是单调的。当 \( k > 0 \) 时，在 \( (-\infty, 0) \) 和 \( (0, +\infty) \) 上都是单调递减的；当 \( k < 0 \) 时，在 \( (-\infty, 0) \) 和 \( (0, +\infty) \) 上都是单调递增的。
+        \item 反比例函数是奇函数，其图像关于原点对称。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{实际应用：}
+    \begin{itemize}
+        \item 例如，速度与时间的关系（当路程一定时），电流与电阻的关系（当电压一定时）等。
+    \end{itemize}
+\end{frame}
+
+% 二次函数
+\section{二次函数}
+
+\begin{frame}{二次函数}
+    \textbf{一般形式：}
+    \begin{itemize}
+        \item \( y = ax^2 + bx + c \)（\( a \)、\( b \)、\( c \) 为常数，且 \( a \neq 0 \)）
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{参数分析：}
+    \begin{itemize}
+        \item \( a \) 决定抛物线开口方向和大小：
+        \begin{itemize}
+            \item \( a > 0 \)：开口向上。
+            \item \( a < 0 \)：开口向下。
+            \item \( |a| \) 越大，开口越小。
+        \end{itemize}
+        \item 顶点坐标为 \( \left( -\dfrac{b}{2a}, \dfrac{4ac - b^2}{4a} \right) \)。
+        \item 对称轴为直线 \( x = -\dfrac{b}{2a} \)。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{图像绘制与变换：}
+    \begin{itemize}
+        \item 标准二次函数 \( y = x^2 \) 的图像变换。
+    \end{itemize}
+\end{frame}
+
+\section{总结与练习}
+\begin{frame}{总结与练习}
+    \textbf{总结回顾：}
+    \begin{itemize}
+        \item 函数的定义、定义域、值域、单调性、奇偶性。
+        \item 一次函数和二次函数的性质和图像。
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \textbf{练习题：}
+    \begin{itemize}
+        \item \textbf{填空题：} 函数 \( y = 3x + 2 \) 的定义域为 \_\_\_\_\_\_，值域为 \_\_\_\_\_\_。
+        \item \textbf{选择题：} 函数 \( y = x^3 \) 是（  ）
+        \begin{itemize}
+            \item A. 奇函数  B. 偶函数  C. 非奇非偶函数
+        \end{itemize}
+        \item \textbf{解答题：} 求二次函数 \( y = -2x^2 + 4x + 1 \) 的顶点坐标和对称轴。
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{结束语}
+    \begin{center}
+        \textbf{函数在数学的应用不胜枚举！} \\
+    \end{center}
+\end{frame}
+
+\end{document}
